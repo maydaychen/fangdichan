@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/custome/index",
+    "pages/house/index",
+    "pages/me/index"
+  ],
+  "tabBar": {
+    "color":"#666666",
+    "selectedColor": "#1B71CC",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "微聊"
+       
+      },
+      {
+        "pagePath": "pages/custome/index",
+        "text": "客户"
+       
+      },
+      {
+        "pagePath": "pages/house/index",
+        "text": "房源"
+
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的"
+   
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2C99EE",
+    "navigationBarTitleText": "经纪人",
+    "navigationBarTextStyle": "black"
+  }
+}

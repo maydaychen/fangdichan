@@ -1,0 +1,10 @@
+<!--pages/house/index.wxml-->
+<view>
+  <view class='house_index'>
+    <image></image>
+    <view>二手房管理</view>
+    <view>二手房列表</view>
+  </view>
+  <view class='house_index'>
+  </view>
+</view>

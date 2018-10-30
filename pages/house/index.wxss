@@ -1,0 +1,6 @@
+/* pages/house/index.wxss */
+
+.house_index {
+  border-radius: 10rpx;
+  margin: 30rpx 40rpx;
+}
