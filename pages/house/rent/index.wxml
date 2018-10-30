@@ -1,15 +1,15 @@
-<!--pages/house/index.wxml-->
+<!--pages/house/rent/index.wxml-->
 <view>
   <navigator class='house_index' url='/pages/house/twohand/index'>
     <image></image>
     <view></view>
-    <view class='house_title'>二手房管理</view>
-    <view class='house_sub'>二手房列表</view>
+    <view class='house_title'>整租</view>
+    <view class='house_sub'>畅想随心所欲</view>
   </navigator>
   <navigator class='house_index' url='/pages/house/rent/index'>
     <image></image>
     <view></view>
-    <view class='house_title'>租房管理</view>
-    <view class='house_sub'>整租 合租</view>
+    <view class='house_title'>合租</view>
+    <view class='house_sub'>合租的乐趣</view>
   </navigator>
 </view>

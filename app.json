@@ -3,31 +3,35 @@
     "pages/index/index",
     "pages/custome/index",
     "pages/house/index",
+    "pages/house/twohand/index",
+    "pages/house/twohand/new/index",
+    "pages/house/twohand/detail/index",
+    "pages/house/rent/index",
+    "pages/house/rent/zhengzu/index",
+    "pages/house/rent/hezu/index",
+    "pages/house/rent/hezu/new/index",
+    "pages/house/rent/hezu/edit/index",
     "pages/me/index"
   ],
   "tabBar": {
-    "color":"#666666",
+    "color": "#666666",
     "selectedColor": "#1B71CC",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "微聊"
-       
       },
       {
         "pagePath": "pages/custome/index",
         "text": "客户"
-       
       },
       {
         "pagePath": "pages/house/index",
         "text": "房源"
-
       },
       {
         "pagePath": "pages/me/index",
         "text": "我的"
-   
       }
     ]
   },
