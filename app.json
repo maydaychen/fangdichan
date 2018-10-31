@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/chat/index",
     "pages/custome/index",
     "pages/house/index",
     "pages/house/twohand/index",
@@ -8,10 +9,15 @@
     "pages/house/twohand/detail/index",
     "pages/house/rent/index",
     "pages/house/rent/zhengzu/index",
+    "pages/house/rent/zhengzu/new/index",
+    "pages/house/rent/zhengzu/edit/index",
     "pages/house/rent/hezu/index",
     "pages/house/rent/hezu/new/index",
     "pages/house/rent/hezu/edit/index",
-    "pages/me/index"
+    "pages/me/index",
+    "pages/me/code/index",
+    "pages/me/certificationPerson/index",
+    "pages/me/certificationCompany/index"
   ],
   "tabBar": {
     "color": "#666666",
