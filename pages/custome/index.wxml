@@ -1,2 +1,44 @@
 <!--pages/custome/index.wxml-->
-<text>pages/custome/index.wxml</text>
+<view class='top'>
+  <text bindtap='show' id="1">客户类型 <text class='iconfont icon-xiasanjiao'></text> </text>
+  <text bindtap='show' id="2">意向客户 <text class='iconfont icon-xiasanjiao'></text> </text>
+  <text bindtap='show' id="3">排序 <text class='iconfont icon-xiasanjiao'></text> </text>
+</view>
+<block wx:for="{{list}}" wx:key="*this">
+  <view class='list'>
+    <view>
+      <image src='../../image/head.jpg' class='left'></image>
+      <view class='left'>张三丰
+        <view class='sale'>
+          <text>185万</text>
+          <text>3室2厅</text>
+          <text>128㎡</text>
+        </view>
+       <text> 最后沟通时间 2018-01-05 16:42:06 </text>
+      </view>
+    </view>
+    <view>
+      <text class='iconfont icon-time'></text> <text class='d'>5小时前在线</text>
+      <image class='right' src='../../image/tel.png' bindtap='call'></image>
+      <image class='right' src='../../image/wexin.png'></image>
+    </view>
+  </view>
+</block>
+<view class='bottom' hidden='{{call}}'>
+  <view>
+    <view>呼叫</view>
+    <image src='../../../image/xian.png'></image>
+    <view>复制代码</view>
+  </view>
+</view>
+<view class='fixed' hidden='{{show}}'>
+  <view>
+    <view class='type'>
+    <image src="../../../image/san.png" class='san' style='left:{{width+30}}rpx;'></image>
+      <block wx:for="{{type}}" wx:key="*this">
+        <view bindtap='choose' id="{{index}}" class='{{indexs == index ? "active" :"" }}'>{{item}}</view>
+      </block>
+    </view>
+    <button bindtap='sure'>确定</button>
+  </view>
+</view>

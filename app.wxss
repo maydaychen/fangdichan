@@ -1,10 +1,17 @@
 /**app.wxss**/
+
 .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+  background-color: #f5f5f5;
+  font-size: var(--font-size-medium-x);
+  line-height: 1.5;
+  font-family: PingFangSC;
+}
+
+.white_block {
+  margin: 20rpx 20rpx 0;
+  width: 100%;
   box-sizing: border-box;
-} 
+  background: white;
+  box-shadow: 0rpx 3rpx 8rpx 0 rgba(172, 171, 171, 0.15);
+  border-radius: 4rpx;
+}

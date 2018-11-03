@@ -1,4 +1,14 @@
 <!--pages/me/index.wxml-->
-<view>
+<view class='container'>
+
+  <view class='person_choice'>
+    <view></view>
+    <view>认证中心</view>
+  </view>
+  <view class='person_choice'>
+    <view></view>
+    <view>带看记录</view>
+  </view>
+  <view class='right'>客服电话：0510-88888</view>
 
 </view>

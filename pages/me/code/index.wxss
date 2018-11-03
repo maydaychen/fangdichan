@@ -1,1 +1,39 @@
 /* pages/me/code/index.wxss */
+
+.logo {
+  width: 109rpx;
+  height: 109rpx;
+  margin: 240rpx auto 0;
+}
+
+.name {
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: #323232;
+  font-size: 36rpx;
+  margin: 0 auto;
+}
+
+.company {
+  width: 50%;
+  font-size: 28rpx;
+  margin-top: 26rpx;
+  margin: 26rpx auto 0;
+  color: #666;
+  text-align: center;
+}
+
+.code {
+  height: 278rpx;
+  width: 278rpx;
+  margin: 63rpx auto 0;
+  text-align: center;
+}
+
+.remark {
+  font-size: 28rpx;
+  color: #9a9a9a;
+  margin: 42rpx auto 0;
+  text-align: center;
+}

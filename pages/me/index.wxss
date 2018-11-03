@@ -1,1 +1,25 @@
 /* pages/me/index.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.person_choice {
+  margin: 14rpx 10rpx 5rpx;
+  background: white;
+  height: 115rpx;
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+}
+person_choice view {
+  line-height: 115rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+
+.right {
+  text-align: center;
+  color: #b4b0b0;
+  margin-top: 32rpx;
+  font-size: 28rpx;
+}

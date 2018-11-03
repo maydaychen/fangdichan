@@ -1,2 +1,7 @@
 <!--pages/me/certificationPerson/index.wxml-->
-<text>pages/me/certificationPerson/index.wxml</text>
+<view class='container'>
+  <view class='white_block cerfitication_type'>
+    <view>个人认证</view>
+    <view>公司认证</view>
+  </view>
+</view>

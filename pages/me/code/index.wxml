@@ -1,2 +1,8 @@
 <!--pages/me/code/index.wxml-->
-<text>pages/me/code/index.wxml</text>
+<view class='container'>
+  <image class='logo'></image>
+  <view class='name'>张三</view>
+  <view class='company'>维特置业</view>
+  <image class='code'></image>
+  <view class='remark'>使用维系扫码进入我的小程序店铺</view>
+</view>

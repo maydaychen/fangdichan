@@ -25,19 +25,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "微聊"
+        "text": "微聊",
+        "iconPath": "image/wechat.png",
+        "selectedIconPath": "image/wechat2.png"
       },
       {
         "pagePath": "pages/custome/index",
-        "text": "客户"
+        "text": "客户",
+        "iconPath": "image/user.png",
+        "selectedIconPath": "image/user2.png"
       },
       {
         "pagePath": "pages/house/index",
-        "text": "房源"
+        "text": "房源",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home2.png"
       },
       {
         "pagePath": "pages/me/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/my2.png"
       }
     ]
   },

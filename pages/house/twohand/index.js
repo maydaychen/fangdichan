@@ -5,9 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:['','','']
   },
-
+  goto:function(){//add
+    wx.navigateTo({
+      url: '/pages/house/rent/hezu/new/index',
+    })
+  },
+  detail:function(){//详情
+    wx.navigateTo({
+      url: '/pages/house/twohand/detail/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

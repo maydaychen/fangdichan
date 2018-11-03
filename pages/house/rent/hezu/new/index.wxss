@@ -1,1 +1,132 @@
 /* pages/house/rent/hezu/new/index.wxss */
+
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1541129673269'); /* IE9*/
+  src: url('iconfont.eot?t=1541129673269#iefix') format('embedded-opentype'),
+         /* IE6-IE8 */ url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+         url('iconfont.ttf?t=1541129673269') format('truetype'),
+         /* chrome,
+         firefox,
+         opera,
+         Safari,
+         Android,
+         iOS 4.2+*/ url('iconfont.svg?t=1541129673269#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-laba:before {
+  content: "\e61d";
+}
+
+.icon-close:before {
+  content: "\e600";
+}
+
+.icon-xiangji:before {
+  content: "\e61b";
+}
+
+.icon-right:before {
+  content: "\e63b";
+}
+
+page {
+  background: #f5f5f5;
+}
+
+input {
+  display: inline-block;
+  vertical-align: middle;
+  width: 130rpx;
+  background: #f5f5f5;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 0 10rpx;
+}
+
+.container {
+  padding: 15rpx;
+}
+
+.top {
+  background: #f2f8fd;
+  padding: 20rpx;
+  position: relative;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.top text:first-child {
+  color: #707070;
+}
+
+.top text:last-child {
+  color: #bfbfbf;
+  position: absolute;
+  right: -5rpx;
+  top: -5rpx;
+}
+
+.list > view {
+  background: #fff;
+  overflow: hidden;
+  padding: 20rpx;
+  font-size: 29rpx;
+}
+
+.view {
+  border-bottom: 1px solid #ddd;
+}
+
+.tops {
+  border-radius: 10rpx 10rpx 0 0;
+  margin-top: 15rpx;
+}
+
+.last {
+  border-radius: 0 0 10rpx 10rpx;
+}
+
+.message {
+  color: #666;
+  font-size: 25rpx;
+  margin-bottom: 15rpx;
+}
+
+.left {
+  width: 33.3333%;
+  height: 215rpx;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.left text {
+  font-size: 100rpx;
+  color: #999;
+  line-height: 215rpx;
+}
+
+.tops checkbox {
+  margin-top: -9%;
+}
+.message text{
+  color:#CE2323;
+  font-size:27rpx;
+  text-decoration:underline;
+}
+button {
+  background: #1d87d9;
+  width: 95%;
+  color: #fff;
+  box-shadow: 0px 1px 1px 0px #1d87d9;
+  margin:0 auto;
+  margin-top:20rpx;
+}
