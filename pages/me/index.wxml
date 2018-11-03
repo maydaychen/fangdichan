@@ -1,14 +1,30 @@
 <!--pages/me/index.wxml-->
-<view class='container'>
-
-  <view class='person_choice'>
-    <view></view>
-    <view>认证中心</view>
+<view class="personal-center">
+  <view class="profile">
+    <view class="profile-left"><image class="avatar" src="/image/head.jpg"></image></view>
+    <view class="profile-right">
+      <text class="name">张三</text>
+      <view class="certification">
+        <view class="certification-left">
+          <text class="certification-title">认证类型</text>
+          <view class="certification-type">个人</view>
+          <view class="certification-type">中介</view>
+        </view>
+        <view class="check-status">审核中</view>
+      </view>
+    </view>
   </view>
-  <view class='person_choice'>
-    <view></view>
-    <view>带看记录</view>
+  <view class="notification">
+    <image class="notify-icon" src="/image/notification-icon.png"></image>
+    <text>房挑房给你意想不到的惊喜！</text>
   </view>
-  <view class='right'>客服电话：0510-88888</view>
-
+  <view class="profile-button">
+    <image class="icon" src="/image/certification-mangement-icon.png"></image>
+    <text>认证中心</text>
+  </view>
+  <view class="profile-button">
+    <image class="icon" src="/image/record-icon.png"></image>
+    <text>带看记录</text>
+  </view>
+  <view class="phone">客服电话：0510-888888</view>
 </view>

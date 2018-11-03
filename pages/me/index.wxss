@@ -1,25 +1,126 @@
 /* pages/me/index.wxss */
-
-page {
-  background: #f5f5f5;
+.personal-center {
+  color: #666666;
 }
 
-.person_choice {
-  margin: 14rpx 10rpx 5rpx;
-  background: white;
-  height: 115rpx;
-  width: calc(100% - 10px);
+.profile {
+  margin: 0 auto;
+  margin-top: 10rpx;
+  width: 710rpx;
+  height: 206rpx;
+  background-color: #ffffff;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-left {
+  width: 94rpx;
+  height: 94rpx;
+  margin-left: 21rpx;
+  border-radius: 50%;
+
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-right {
+  width: 596rpx;
+  height: 100%;
+  padding: 32rpx 18rpx 40rpx 35rpx;
   box-sizing: border-box;
 }
-person_choice view {
-  line-height: 115rpx;
-  font-size: 32rpx;
-  color: #666;
+
+.name {
+  font-size: 36rpx;
+  color: #323232;
 }
 
-.right {
-  text-align: center;
-  color: #b4b0b0;
-  margin-top: 32rpx;
+.certification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certification-left {
+  display: flex;
+  align-items: center;
+}
+
+.certification-title {
+  font-size: 32rpx;
+}
+
+.certification-type {
+  width: 84rpx;
+  height: 44rpx;
+  margin-left: 16rpx;
   font-size: 28rpx;
+  line-height: 44rpx;
+  text-align: center;
+  background-color: #F2F8FD;
+  border-radius: 50rpx;
+}
+
+.check-status {
+  width: 124rpx;
+  height: 44rpx;
+  color: #EC1A3D;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  text-align: center;
+  background-color: #F9E1E1;
+  border-radius: 50rpx;
+}
+
+.notification {
+  width: 710rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  border-radius: 5rpx;
+  margin-top: 18rpx;
+  background-color: #F2F8FD;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+
+.notify-icon {
+  width: 32rpx;
+  height: 28rpx;
+  margin-left: 21rpx;
+  margin-right: 30rpx;
+}
+
+.profile-button {
+  width: 710rpx;
+  height: 106rpx;
+  margin: 0 auto;
+  border-radius: 5rpx;
+  margin-top: 18rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 34rpx;
+  height: 40rpx;
+  margin-left: 27rpx;
+  margin-right: 20rpx;
+}
+
+.phone {
+  color: #B4B0B0;
+  font-size: 28rpx;
+  width: 323rpx;
+  height: 26rpx;
+  margin: 0 auto;
+  margin-top: 43rpx;
 }
