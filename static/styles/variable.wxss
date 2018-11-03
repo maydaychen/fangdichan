@@ -1,0 +1,22 @@
+/* 基础css变量：可以根据当前模块去修改 */
+page {
+  /* 颜色定义规范 */
+  --color-theme:#3C7BFE;  /* 品牌色、主题色 */
+  --color-sub-theme:#6C9CFF;  /* 控件色 */
+  --color-background: #f9f9f9;  /* 背景色 */
+  --color-price:#FF411B; /* 价格色值 */
+  --color-title: #333;  /* 用于重要及文字信息、内容标题信息 */
+  --color-sub-title: #666;  /* 用于普通级段落、用户名、icon */
+  --color-text: #888;  /* 用于辅助、次要的文字信息、icon */
+  --color-sub-text: #b2b2b2;  /* 用于辅助、次要的文字信息、icon */
+  --color-prompt: #ccc;  /* 用于刷新失败内容文字提醒 */
+  --color-split-line: #ececec;  /* 分割线色 */
+  /* 字体定义规范 */
+  --font-size-large-x: 36rpx;  /* 适用于重要标题 */
+  --font-size-large: 30rpx;  /* 适用于正文标题、内容、按钮 */
+  --font-size-medium-x: 28rpx;  /* 适用于列表名称、正文 */
+  --font-size-medium: 26rpx;  /* 适用于列表名称、正文 */
+  --font-size-small: 24rpx;  /* 适用于提示文字、次要描述文字 */
+  --font-size-small-s: 20rpx;  /* 适用于提示文字、次要描述文字 */
+}
+
