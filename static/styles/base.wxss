@@ -1,3 +1,50 @@
+@import '/static/styles/variable.wxss';
 page {
   background: #f5f5f5;
+}
+
+.wsui-input__right {
+  text-align: right;
+}
+
+.ui-input {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top {
+  background: #f2f8fd;
+  padding: 20rpx;
+  position: relative;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.view {
+  border-bottom: 1px solid #ddd;
+}
+
+.tops {
+  border-radius: 10rpx 10rpx 0 0;
+  margin-top: 15rpx;
+}
+
+.last {
+  border-radius: 0 0 10rpx 10rpx;
+}
+
+.list > view {
+  background: #fff;
+  overflow: hidden;
+  padding: 20rpx;
+  font-size: 29rpx;
+}
+
+.example {
+  color: var(--color-gold);
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
 }

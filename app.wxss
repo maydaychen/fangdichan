@@ -3,7 +3,7 @@
 @import '/static/styles/variable.wxss';
 
 .container {
-  background-color: #f5f5f5;
+  background-color: var(--color-background);
   font-size: var(--font-size-medium-x);
   line-height: 1.5;
   font-family: PingFangSC;
@@ -19,5 +19,27 @@
 }
 
 page {
-  background-color: #f5f5f5;
+  background-color: var(--color-background);
+}
+
+.left {
+  width: 200rpx;
+  height: 130rpx;
+  margin-right: 30rpx;
+  text-align: center;
+}
+
+.left_text {
+  width: 200rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  color: var(--color-sub-text);
+  font-size: var(--font-size-medium);
+}
+
+.left:last-child {
+  width: 200rpx;
+  height: 130rpx;
+  margin-right: 0;
+  text-align: center;
 }

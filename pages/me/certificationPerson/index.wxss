@@ -1,7 +1,12 @@
 /* pages/me/certificationPerson/index.wxss */
 
-.cerfitication_type {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.container{
+  padding: 15rpx;
+}
+
+.message{
+  color: #666;
+  font-size: 25rpx;
+  margin: 20rpx 0;
 }

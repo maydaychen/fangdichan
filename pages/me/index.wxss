@@ -1,6 +1,7 @@
 /* pages/me/index.wxss */
+
 .personal-center {
-  color: #666666;
+  color: #666;
 }
 
 .profile {
@@ -8,7 +9,7 @@
   margin-top: 10rpx;
   width: 710rpx;
   height: 206rpx;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 5rpx;
   display: flex;
   justify-content: center;
@@ -20,7 +21,6 @@
   height: 94rpx;
   margin-left: 21rpx;
   border-radius: 50%;
-
 }
 
 .avatar {
@@ -45,6 +45,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10rpx;
 }
 
 .certification-left {
@@ -57,24 +58,36 @@
 }
 
 .certification-type {
-  width: 84rpx;
+  width: 90rpx;
   height: 44rpx;
   margin-left: 16rpx;
   font-size: 28rpx;
   line-height: 44rpx;
   text-align: center;
-  background-color: #F2F8FD;
+  background-color: #f5f5f5;
+  border-radius: 50rpx;
+}
+
+.certification-active {
+  width: 90rpx;
+  height: 44rpx;
+  margin-left: 16rpx;
+  color: #1d86d8;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  text-align: center;
+  background-color: #f2f8fd;
   border-radius: 50rpx;
 }
 
 .check-status {
   width: 124rpx;
   height: 44rpx;
-  color: #EC1A3D;
+  color: #ec1a3d;
   font-size: 28rpx;
   line-height: 44rpx;
   text-align: center;
-  background-color: #F9E1E1;
+  background-color: #f9e1e1;
   border-radius: 50rpx;
 }
 
@@ -84,7 +97,7 @@
   margin: 0 auto;
   border-radius: 5rpx;
   margin-top: 18rpx;
-  background-color: #F2F8FD;
+  background-color: #f2f8fd;
   font-size: 26rpx;
   display: flex;
   align-items: center;
@@ -117,7 +130,7 @@
 }
 
 .phone {
-  color: #B4B0B0;
+  color: #b4b0b0;
   font-size: 28rpx;
   width: 323rpx;
   height: 26rpx;

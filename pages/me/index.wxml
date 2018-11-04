@@ -1,14 +1,16 @@
 <!--pages/me/index.wxml-->
 <view class="personal-center">
   <view class="profile">
-    <view class="profile-left"><image class="avatar" src="/image/head.jpg"></image></view>
+    <view class="profile-left">
+      <image class="avatar" src="/image/head.jpg"></image>
+    </view>
     <view class="profile-right">
-      <text class="name">张三</text>
+      <text class="name">{{name}}</text>
       <view class="certification">
         <view class="certification-left">
           <text class="certification-title">认证类型</text>
-          <view class="certification-type">个人</view>
-          <view class="certification-type">中介</view>
+          <view class='certification-type {{type==1?"":"certification-active"}}'>个人</view>
+          <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
         </view>
         <view class="check-status">审核中</view>
       </view>
@@ -18,7 +20,7 @@
     <image class="notify-icon" src="/image/notification-icon.png"></image>
     <text>房挑房给你意想不到的惊喜！</text>
   </view>
-  <view class="profile-button">
+  <view class="profile-button" bindtap='certification'>
     <image class="icon" src="/image/certification-mangement-icon.png"></image>
     <text>认证中心</text>
   </view>
@@ -26,5 +28,5 @@
     <image class="icon" src="/image/record-icon.png"></image>
     <text>带看记录</text>
   </view>
-  <view class="phone">客服电话：0510-888888</view>
+  <view class="phone">客服电话：{{tele}}</view>
 </view>

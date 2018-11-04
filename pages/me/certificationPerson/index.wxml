@@ -1,7 +1,55 @@
 <!--pages/me/certificationPerson/index.wxml-->
 <view class='container'>
-  <view class='white_block cerfitication_type'>
-    <view>个人认证</view>
-    <view>公司认证</view>
-  </view>
+
+  <form bindtap='submit'>
+    <view class='list'>
+      <view class='ui-input view tops'>
+        <view>姓名 </view>
+        <input class="wsui-input__right" maxlength="140" placeholder="请填写姓名" placeholder-class="wsui-input__placeholder" type="text">
+        </input>
+      </view>
+      <view class='ui-input view'>
+        <view>性别</view>
+        <input class="wsui-input__right" maxlength="140" placeholder="请选择性别" placeholder-class="wsui-input__placeholder" type="text">
+        </input>
+      </view>
+      <view class='ui-input view'>
+        <view>身份证号</view>
+        <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text">
+        </input>
+      </view>
+      <view class='ui-input view'>
+        <view>经纪人类型</view>
+        <input class="wsui-input__right" maxlength="140" placeholder="请选择类型" placeholder-class="wsui-input__placeholder" type="text">
+        </input>
+      </view>
+      <view class='ui-input last'>
+        <view>推荐码</view>
+        <input class="wsui-input__right" maxlength="140" placeholder="推荐码 唯一" placeholder-class="wsui-input__placeholder" type="text">
+        </input>
+      </view>
+
+      <view class='tops last'>
+        <text>个人身份证信息</text>
+        <view class='message'>请将身份证正反面上传，不能少于3张照片，第三正为手持身份证半身照</view>
+        <view class='example'>示例</view>
+        <view>
+          <block wx:for="{{example_list}}" wx:key="*this">
+            <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left'></image>
+          </block>
+        </view>
+        <view style='display:flex'>
+          <block wx:for="{{example_text}}" wx:key="*this">
+            <view class='left_text'>{{item}}</view>
+          </block>
+        </view>
+        <view class='example' style='margin-top:33rpx;'>请上传身份证</view>
+        <view>
+          <block wx:for="{{IDcard_list}}" wx:key="*this">
+            <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left' mode='aspectFit'></image>
+          </block>
+        </view>
+      </view>
+    </view>
+  </form>
 </view>
