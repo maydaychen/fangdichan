@@ -11,8 +11,21 @@ page {
   --color-text: #888; /* 用于辅助、次要的文字信息、icon */
   --color-sub-text: #8A8A8A; /* 用于辅助、次要的文字信息、icon */
   --color-prompt: #ccc; /* 用于刷新失败内容文字提醒 */
-  --color-split-line: #ececec; /* 分割线色 *//* 字体定义规范 */
+  --color-split-line: #ececec; /* 分割线色 */
+  --color-notification-background: #F2F8FD; /* 通知背景色 */
+  --color-white: #fff;
+  --color-light-green: #E6F2E6;
+  --color-deep-green: #5CB66A;
+  --color-light-blue: #E3EDFB;
+  --color-deep-blue: #1C87D8;
+  --color-certification-title: #323232;
+  --color-border-color: #DCDCDC;
+  --color-light-yellow: #F4B906;
+  --color-button-background: #298EF8;
+ 
+  /* 字体定义规范 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */
+  --font-size-large-y: 32rpx;
   --font-size-large: 30rpx; /* 适用于正文标题、内容、按钮 */
   --font-size-medium-x: 28rpx; /* 适用于列表名称、正文 */
   --font-size-medium: 26rpx; /* 适用于列表名称、正文 */
