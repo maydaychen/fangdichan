@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import '/static/styles/base.wxss';
+@import '/static/styles/variable.wxss';
 
 .container {
   background-color: #f5f5f5;
