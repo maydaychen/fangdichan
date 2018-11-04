@@ -2,6 +2,13 @@
 @import '/static/styles/base.wxss';
 @import '/static/styles/variable.wxss';
 
+
+page {
+  background-color: var(--color-background);
+  width: 100%;
+  font-size: 32rpx;
+}
+
 .container {
   background-color: var(--color-background);
   font-size: var(--font-size-medium-x);
@@ -18,16 +25,6 @@
   border-radius: 4rpx;
 }
 
-page {
-  background-color: var(--color-background);
-}
-
-.left {
-  width: 200rpx;
-  height: 130rpx;
-  margin-right: 30rpx;
-  text-align: center;
-}
 
 .left_text {
   width: 200rpx;
@@ -37,9 +34,32 @@ page {
   font-size: var(--font-size-medium);
 }
 
-.left:last-child {
-  width: 200rpx;
-  height: 130rpx;
-  margin-right: 0;
-  text-align: center;
+.container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.d {
+  color: #999;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+button::after {
+  border: none;
 }

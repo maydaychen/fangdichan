@@ -1,12 +1,26 @@
 /* pages/me/certificationPerson/index.wxss */
 
-
-.container{
+.container {
   padding: 15rpx;
 }
 
-.message{
+.message {
   color: #666;
   font-size: 25rpx;
   margin: 20rpx 0;
+}
+
+.left {
+  width: 200rpx;
+  height: 130rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  float: none;
+}
+
+.left:last-child {
+  width: 200rpx;
+  height: 130rpx;
+  margin-right: 0;
+  text-align: center;
 }
