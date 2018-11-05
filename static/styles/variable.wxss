@@ -5,24 +5,23 @@ page {
   --color-theme: #3c7bfe; /* 品牌色、主题色 */
   --color-sub-theme: #6c9cff; /* 控件色 */
   --color-background: #f5f5f5; /* 背景色 */
-  --color-gold: #F4B906; /* 金色示例色值 */
+  --color-gold: #f4b906; /* 金色示例色值 */
   --color-title: #333; /* 用于重要及文字信息、内容标题信息 */
   --color-sub-title: #666; /* 用于普通级段落、用户名、icon */
   --color-text: #888; /* 用于辅助、次要的文字信息、icon */
-  --color-sub-text: #8A8A8A; /* 用于辅助、次要的文字信息、icon */
+  --color-sub-text: #8a8a8a; /* 用于辅助、次要的文字信息、icon */
   --color-prompt: #ccc; /* 用于刷新失败内容文字提醒 */
-  --color-split-line: #ececec; /* 分割线色 */
-  --color-notification-background: #F2F8FD; /* 通知背景色 */
+  --color-split-line: #ddd; /* 分割线色 */
+  --color-notification-background: #f2f8fd; /* 通知背景色 */
   --color-white: #fff;
-  --color-light-green: #E6F2E6;
-  --color-deep-green: #5CB66A;
-  --color-light-blue: #E3EDFB;
-  --color-deep-blue: #1C87D8;
+  --color-light-green: #e6f2e6;
+  --color-deep-green: #5cb66a;
+  --color-light-blue: #e3edfb;
+  --color-deep-blue: #1c87d8;
   --color-certification-title: #323232;
-  --color-border-color: #DCDCDC;
-  --color-light-yellow: #F4B906;
-  --color-button-background: #298EF8;
- 
+  --color-border-color: #dcdcdc;
+  --color-light-yellow: #f4b906;
+  --color-button-background: #298ef8;
   /* 字体定义规范 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */
   --font-size-large-y: 32rpx;

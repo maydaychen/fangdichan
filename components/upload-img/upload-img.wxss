@@ -1,0 +1,72 @@
+@import '/static/iconfont/iconfont.wxss';
+
+.imgs-list {
+  flex: 1;
+  display: flex;
+  box-sizing: border-box;
+  padding: 24rpx 24rpx 10rpx;
+  background-color: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+  flex-wrap: wrap;
+}
+
+.imgs__item {
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+  width: calc((100% - 40rpx) / 3);
+  height: calc((100vw - 88rpx) /3);
+}
+
+.imgs__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.imgs__img {
+  width: 100%;
+  height: 100%;
+}
+
+.imgs__delete {
+  display: flex;
+  width: 100%;
+  height: 40rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: #fff;
+  font-size: 40rpx;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.add-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  border: 1rpx dashed #ccc;
+  box-sizing: border-box;
+}
+
+.add-img__icon {
+  font-size: 60rpx;
+}
+
+.add-img__text {
+  font-size: 28rpx;
+}
+
+.left {
+  width: 200rpx;
+  height: 130rpx;
+  margin-right: 30rpx;
+  text-align: center;
+  float: none;
+}

@@ -1,7 +1,4 @@
 @import '/static/styles/variable.wxss';
-page {
-  background: #f5f5f5;
-}
 
 .wsui-input__right {
   text-align: right;
@@ -24,7 +21,7 @@ page {
 }
 
 .view {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-split-line);
 }
 
 .tops {
