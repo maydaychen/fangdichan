@@ -1,4 +1,5 @@
 /* pages/me/index.wxss */
+@import '/static/iconfont/iconfont.wxss';
 
 .personal-center {
   color: #666;
@@ -89,6 +90,11 @@
   text-align: center;
   background-color: #f9e1e1;
   border-radius: 50rpx;
+}
+
+.check-status-confirmed{
+  font-size: 50rpx;
+  margin-right: 20rpx;
 }
 
 .notification {

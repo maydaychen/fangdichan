@@ -39,14 +39,14 @@
           </block>
         </view>
         <view style='display:flex'>
-          <block wx:for="{{example_text}}" wx:key="*this">
+          <block wx:for="{{example_text}}" wx:key="this">
             <view class='left_text'>{{item}}</view>
           </block>
         </view>
         <view class='example' style='margin-top:33rpx;'>请上传身份证</view>
         <view>
-          <block wx:for="{{IDcard_list}}" wx:key="*this">
-            <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left' mode='aspectFit'></image>
+          <block wx:for="{{IDcard_list}}" wx:key="this">
+            <image src="{{item}}" bindtap='add_pic' id="1" data-index="{{index}}" class='left' mode='aspectFit'></image>
           </block>
         </view>
       </view>

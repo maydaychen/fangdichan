@@ -1,4 +1,5 @@
 // pages/me/certificationPerson/index.js
+let util = require(`../../../static/js/util.js`)
 Page({
 
   /**
@@ -8,6 +9,9 @@ Page({
     example_list: ['/image/IDcard1.png', '/image/IDcard2.png', '/image/IDcard3.png'],
     example_text: ['正面', '反面', '半身照'],
     IDcard_list: ['/image/add_pic.png', '/image/add_pic.png', '/image/add_pic.png'],
+    imgs: [],
+    longPath: [],
+    shortPath: []
   },
 
   /**
@@ -64,5 +68,31 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  add_pic:function(e){
+    var dataset = e.target.dataset;
+    var Index = dataset.index; //拿到是第几个数组
+    console.log(Index);
+    const D = this.data
+    util.upload({
+      count: D.imgs.length ? D.maxCount - D.imgs.length : D.maxCount,
+      success: res => {
+        let imgList = D.imgs
+        let longPath = D.longPath
+        let shortPath = D.shortPath
+        imgList.push(res.files[0])
+        longPath.push(res.files[0].url)
+        shortPath.push(res.files[0].filename)
+        this.setData({
+          imgs: imgList,
+          shortPath: shortPath,
+          longPath: longPath
+        });
+        this.triggerEvent('imgs', D.shortPath, {})
+      },
+      progress: p => {
+        console.log(p)
+      }
+    })
   }
 })

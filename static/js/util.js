@@ -2,9 +2,8 @@ var util = {};
 
 util.upload = function(option, type = 'images') {
   var app = getApp();
-  var url = app.globalData.baseUrl + 'entry/wxapp/util.uploader.upload';
+  var url = app.globalData.baseUrl + '/common/upload';
   var openid = wx.getStorageSync("userInfo").openid;
-  url = url + "m=ws_party_const&";
   var option = option ? option : {};
   switch (type) {
     case "image":
@@ -54,6 +53,7 @@ util.upload = function(option, type = 'images') {
    * 上传文件方法
    */
   util.uploadFile = function(tempFilePath, key, option) {
+    console.log(url);
     wx.uploadFile({
       url: url,
       filePath: tempFilePath,
@@ -79,14 +79,7 @@ util.upload = function(option, type = 'images') {
           }
         }
       }
-    }).onProgressUpdate((res) => {
-      var responseProgress = {};
-      responseProgress = res;
-      responseProgress.key = key;
-      if (option.progress && typeof option.progress == "function") {
-        option.progress(responseProgress);
-      }
-    });
+    })
   };
 
   //判断是否JSON格式字符串

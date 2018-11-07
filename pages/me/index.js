@@ -8,7 +8,8 @@ Page({
   data: {
     type: 0,
     tele:"0510-88888",
-    name:"张三"
+    name:"张三",
+    isConfirmed: true
   },
 
   /**
