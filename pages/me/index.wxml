@@ -13,7 +13,7 @@
           <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
         </view>
         <block wx:if="{{isConfirmed}}">
-         <view class="check-status-confirmed iconfont icon-erweima"></view>
+         <navigator class="check-status-confirmed iconfont icon-erweima" url='code/index'></navigator>
         </block>
         <block wx:else>
             <view class="check-status">审核中</view>
