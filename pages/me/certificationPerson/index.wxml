@@ -2,6 +2,16 @@
 <view class='container'>
 
   <form bindtap='submit'>
+    <view class="notification">
+      <view class="notify-icon iconfont icon-tongzhi"></view>
+      <text>请保证资料真实有效，一旦发现虚假信息将审核失败。</text>
+      <view class="delete-icon iconfont icon-quxiao" bindtap="hide">
+      </view>
+    </view>
+    <view class="type tops last">
+      <view class="active person">个人认证</view>
+      <view class="unactive">企业认证</view>
+    </view>
     <view class='list'>
       <view class='ui-input view tops'>
         <view>姓名 </view>
@@ -28,7 +38,6 @@
         <input class="wsui-input__right" maxlength="140" placeholder="推荐码 唯一" placeholder-class="wsui-input__placeholder" type="text">
         </input>
       </view>
-
       <view class='tops last'>
         <text>个人身份证信息</text>
         <view class='message'>请将身份证正反面上传，不能少于3张照片，第三正为手持身份证半身照</view>
@@ -51,5 +60,6 @@
         </view>
       </view>
     </view>
+    <button form-type='submit'>提交</button>
   </form>
 </view>

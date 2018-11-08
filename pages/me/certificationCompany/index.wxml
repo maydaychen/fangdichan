@@ -1,9 +1,10 @@
 <!--pages/me/certificationCompany/index.wxml-->
 <view class="certification-company-form">
   <view class="notification">
-    <image class="notify-icon" src="/image/notification-icon.png"></image>
+       <view class="notify-icon iconfont icon-tongzhi"></view>
     <text>请保证资料真实有效，一旦发现虚假信息将审核失败。</text>
-    <image class="delete-icon" src="/image/delete-icon.png" bindtap="hide"></image>
+      <view class="delete-icon iconfont icon-quxiao" bindtap="hide">
+      </view>
   </view>
   <view class="type">
     <view class="unactive person">个人认证</view>

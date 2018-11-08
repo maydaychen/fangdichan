@@ -1,6 +1,3 @@
 {
-  "navigationBarTitleText": "提交认证个人",
-    "usingComponents": {
-      "picker-img": "/components/picker-img/picker-img"
-    }
+  "navigationBarTitleText": "提交认证个人"
 }

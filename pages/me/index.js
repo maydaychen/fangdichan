@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: 0,
+    type: 1,
     tele:"0510-88888",
     name:"张三",
     isConfirmed: true

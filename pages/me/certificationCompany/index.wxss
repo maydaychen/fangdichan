@@ -1,14 +1,14 @@
 /* pages/me/certificationCompany/index.wxss */
+@import '/static/iconfont/iconfont.wxss';
+
 .certification-company-form {
   color: var(--color-sub-title);
 }
 
 .notification {
-  width: 714rpx;
   height: 64rpx;
-  margin: 0 auto;
   border-radius: 4rpx;
-  margin-top: 18rpx;
+  margin: 18rpx 15rpx;
   background-color: var(--color-notification-background);
   font-size: var(--font-size-medium);
   display: flex;
@@ -17,16 +17,17 @@
 }
 
 .notify-icon {
-  width: 32rpx;
-  height: 28rpx;
-  margin-left: 23rpx;
-  margin-right: 9rpx;
+  margin: 0 9rpx 0 23rpx;
+  color: #707070;
+  text-align: center;
 }
 
 .delete-icon {
   width: 23rpx;
   height: 23rpx;
+  color: #707070;
   position: absolute;
+  font-size: 30rpx;
   top: 0;
   right: 0;
 }
@@ -113,7 +114,7 @@
 .business-licenses {
   width: 710rpx;
   height: 310rpx;
-  margin:  0 auto;
+  margin: 0 auto;
   margin-top: 20rpx;
   padding-top: 20rpx;
   padding-left: 22rpx;
@@ -155,7 +156,7 @@
 .id-card-info .title {
   height: 28rpx;
   font-size: var(--font-size-large);
-  color: var(--color-certification-title); 
+  color: var(--color-certification-title);
 }
 
 .id-card-info .notice {

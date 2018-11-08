@@ -9,10 +9,10 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
- 
-  onLoad: function () {
+
+  onLoad: function() {
     wx.login({
-      success: function (res) {
+      success: function(res) {
         console.log(res);
         if (res.code) {
           wx.request({
@@ -32,7 +32,7 @@ Page({
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         wx.showModal({
           title: '提示',
           content: res.errMsg,
