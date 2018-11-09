@@ -143,3 +143,7 @@
   margin: 0 auto;
   margin-top: 43rpx;
 }
+
+.icon-right{
+  margin-right: 30rpx;
+}

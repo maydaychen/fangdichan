@@ -26,21 +26,33 @@
     <image class="notify-icon" src="/image/notification-icon.png"></image>
     <text>房挑房给你意想不到的惊喜！</text>
   </view>
-  <view class="profile-button" bindtap='certification'>
-    <image class="icon" src="/image/certification-mangement-icon.png"></image>
-    <text>认证中心</text>
+  <view class="profile-button ui-input" bindtap='certification'>
+    <view style='display:flex;align-items:center'>
+      <image class="icon" src="/image/certification-mangement-icon.png"></image>
+      <text style='line-height:106rpx;'>认证中心</text>
+    </view>
+    <view class="icon-right iconfont icon-you"></view>
   </view>
-  <view class="profile-button">
-    <image class="icon" src="/image/record-icon.png"></image>
-    <text>带看记录</text>
-  </view>
-  <view class="profile-button">
-    <image class="icon" src="/image/grade-icon.png"></image>
-    <text>我的业绩</text>
-  </view>
-  <view class="profile-button">
-    <image class="icon" src="/image/money-icon.png"></image>
-    <text>我的钱包</text>
-  </view>
+  <navigator class="profile-button ui-input" url='record/index'>
+    <view style='display:flex;align-items:center'>
+      <image class="icon" src="/image/record-icon.png"></image>
+      <text style='line-height:106rpx;'>带看记录</text>
+    </view>
+    <view class="icon-right iconfont icon-you"></view>
+  </navigator>
+  <navigator class="profile-button ui-input" url='grade/index'>
+    <view style='display:flex;align-items:center'>
+      <image class="icon" src="/image/grade-icon.png"></image>
+      <text style='line-height:106rpx;'>我的业绩</text>
+    </view>
+    <view class="icon-right iconfont icon-you"></view>
+  </navigator>
+  <navigator class="profile-button ui-input" url='purse/index'>
+    <view style='display:flex;align-items:center'>
+      <image class="icon" src="/image/money-icon.png"></image>
+      <text style='line-height:106rpx;'>我的钱包</text>
+    </view>
+    <view class="icon-right iconfont icon-you"></view>
+  </navigator>
   <view class="phone">客服电话：{{tele}}</view>
 </view>
