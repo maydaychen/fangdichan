@@ -17,7 +17,9 @@
     "pages/me/index",
     "pages/me/code/index",
     "pages/me/certificationPerson/index",
-    "pages/me/certificationCompany/index"
+    "pages/me/certificationCompany/index",
+    "pages/me/purse/index",
+    "pages/me/purse/record/index"
   ],
   "tabBar": {
     "color": "#666666",

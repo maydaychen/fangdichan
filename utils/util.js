@@ -10,18 +10,6 @@ util.request = function(option) {
   if (url.indexOf("http://") == -1 && url.indexOf("https://") == -1) {
     url = util.url(url);
   }
-  if (option.m) {
-    url = url + "m=" + url.m + "&";
-  } else {
-    url = url + "m=ws_party_const&";
-  }
-  var sign = getSign(url, option.data);
-  if (sign) {
-    url = url + "sign=" + sign;
-  }
-  if (!url) {
-    return false;
-  }
   wx.showNavigationBarLoading();
   if (option.showLoading) {
     util.showLoading();
@@ -59,20 +47,20 @@ util.request = function(option) {
       wx.hideNavigationBarLoading();
       wx.hideLoading();
       if (response.data.errno !== 0) {
-          if (option.fail && typeof option.fail == 'function') {
-            option.fail(response.data);
-          } else {
-            if (response.data.message) {
-              if (response.data.data != null && response.data.data.redirect) {
-                var redirect = response.data.data.redirect;
-              } else {
-                var redirect = "";
-              }
-              util.message(response.data.message, redirect, "error");
+        if (option.fail && typeof option.fail == 'function') {
+          option.fail(response.data);
+        } else {
+          if (response.data.message) {
+            if (response.data.data != null && response.data.data.redirect) {
+              var redirect = response.data.data.redirect;
+            } else {
+              var redirect = "";
             }
+            util.message(response.data.message, redirect, "error");
           }
-          return;
-        
+        }
+        return;
+
       } else {
         if (response.data.message) {
           util.message(response.data.message, "", "success");
@@ -113,4 +101,41 @@ util.request = function(option) {
       }
     }
   });
+};
+
+/**
+	构造地址,
+	@params action 格式为 'wxapp/home/navs'
+	@params querystring 格式为 {参数名1 : 值1, 参数名2 : 值2}
+*/
+util.url = function(action, querystring) {
+  var app = getApp();
+  var url = app.siteInfo.siteroot + action;
+
+  if (action) {
+    action = action.split('/');
+    if (action[0]) {
+      url += 'c=' + action[0] + '&';
+    }
+    if (action[1]) {
+      url += 'a=' + action[1] + '&';
+    }
+    if (action[2]) {
+      url += 'do=' + action[2] + '&';
+    }
+  }
+  var sessionid = wx.getStorageSync("userInfo").sessionid;
+  var state = getUrlParam(url, 'state');
+  if (!state && sessionid) {
+    url = url + 'state=v8uuid-' + sessionid + "&";
+  }
+
+  if (querystring && typeof querystring === "object") {
+    for (let param in querystring) {
+      if (param && querystring.hasOwnProperty(param) && querystring[param]) {
+        url += param + "=" + querystring[param] + "&";
+      }
+    }
+  }
+  return url;
 };

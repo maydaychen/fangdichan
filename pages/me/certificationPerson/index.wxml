@@ -30,8 +30,10 @@
       </view>
       <view class='ui-input view'>
         <view>经纪人类型</view>
-        <input class="wsui-input__right" maxlength="140" placeholder="请选择类型" placeholder-class="wsui-input__placeholder" type="text">
-        </input>
+        <view style='display:flex'>
+          <input class="wsui-input__right" maxlength="140" placeholder="请选择类型" placeholder-class="wsui-input__placeholder" type="text"> </input>
+          <view class="iconfont icon-icon--"></view>
+        </view>
       </view>
       <view class='ui-input last'>
         <view>推荐码</view>

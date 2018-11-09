@@ -13,12 +13,12 @@
           <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
         </view>
         <block wx:if="{{isConfirmed}}">
-         <navigator class="check-status-confirmed iconfont icon-erweima" url='code/index'></navigator>
+          <navigator class="check-status-confirmed iconfont icon-erweima" url='code/index'></navigator>
         </block>
         <block wx:else>
-            <view class="check-status">审核中</view>
+          <view class="check-status">审核中</view>
         </block>
-    
+
       </view>
     </view>
   </view>
@@ -33,6 +33,14 @@
   <view class="profile-button">
     <image class="icon" src="/image/record-icon.png"></image>
     <text>带看记录</text>
+  </view>
+  <view class="profile-button">
+    <image class="icon" src="/image/grade-icon.png"></image>
+    <text>我的业绩</text>
+  </view>
+  <view class="profile-button">
+    <image class="icon" src="/image/money-icon.png"></image>
+    <text>我的钱包</text>
   </view>
   <view class="phone">客服电话：{{tele}}</view>
 </view>
