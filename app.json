@@ -22,7 +22,8 @@
     "pages/me/purse/record/index",
     "pages/me/record/index",
     "pages/me/grade/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/login/welcome/index"
   ],
   "tabBar": {
     "color": "#666666",

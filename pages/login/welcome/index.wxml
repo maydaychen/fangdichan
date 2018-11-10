@@ -1,0 +1,4 @@
+<!--pages/login/welcome/index.wxml-->
+<view>
+  <image class='loginbg' mode='widthFix' src='/image/welcome-pic.png'> </image>
+</view>
