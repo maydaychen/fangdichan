@@ -15,6 +15,30 @@ Page({
 
   },
 
+  go () {
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+        } else {
+          wx.redirectTo({
+            url: '/pages/login/index',
+          })
+        }
+      },
+      fail: function (res) {
+        wx.showModal({
+          title: '提示',
+          content: res.errMsg,
+          showCancel: false
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,2 +1,14 @@
 <!--pages/login/index.wxml-->
-<text>pages/login/index.wxml</text>
+<view class="login-page">
+  <view class="avatar">
+    <open-data class="icon" mode="aspectFit" type="userAvatarUrl"></open-data>
+  </view>
+  <view class="title">登录房挑房</view>
+  <view class="line"></view>
+  <view class="notice">
+    <view class="notice-1">以便给您提供更好的服务，需您同意授权微信登录
+</view>
+    <view class="notice-2">将获得您的公开信息（昵称、头像等）</view>
+  </view>
+  <button class="login" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">微信授权登录</button>
+</view>

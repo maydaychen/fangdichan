@@ -22,7 +22,11 @@ page {
   --color-border-color: #dcdcdc;
   --color-light-yellow: #f4b906;
   --color-button-background: #298ef8;
+  --color-login-notice: #8A8A8A;
+  --color-go-button-white: #F0F2F5;
+  --color-go-text: #0F5AD5;
   /* 字体定义规范 */
+  --font-size-large-z: 40rpx; /* 适用于按钮字体 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */
   --font-size-large-y: 32rpx;
   --font-size-large: 30rpx; /* 适用于正文标题、内容、按钮 */
