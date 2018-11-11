@@ -1,9 +1,11 @@
 <!--pages/me/purse/index.wxml-->
 <view class='container'>
   <view class='top'>
-    <view class='right'>
+    <navigator url='/pages/me/billingRecord/index' class='right'>
       <image src='/image/money-record-icon.png' mode='aspectFit' style='width:29rpx;height:27rpx;margin:0 10rpx;'></image>
-      <navigator url='record/index'>小账本</navigator>
-    </view>
+      <view>小账本</view>
+    </navigator>
+
+    <view class='money_hint'>账户余额（元）</view>
   </view>
 </view>

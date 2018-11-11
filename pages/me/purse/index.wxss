@@ -13,3 +13,10 @@
   color: white;
   align-items: center;
 }
+
+.money_hint {
+  margin-top: 52rpx;
+  margin-left: 80rpx;
+  color: white;
+  font-size: 34rpx;
+}
