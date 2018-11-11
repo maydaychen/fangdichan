@@ -1,2 +1,9 @@
 <!--pages/me/purse/index.wxml-->
-<text>pages/me/purse/index.wxml</text>
+<view class='container'>
+  <view class='top'>
+    <view class='right'>
+      <image src='/image/money-record-icon.png' mode='aspectFit' style='width:29rpx;height:27rpx;margin:0 10rpx;'></image>
+      <navigator url='record/index'>小账本</navigator>
+    </view>
+  </view>
+</view>

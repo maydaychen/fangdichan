@@ -45,9 +45,9 @@
 					"query": ""
 				},
 				{
-					"id": 1,
-					"name": "欢迎页",
-					"pathName": "pages/login/welcome/index",
+					"id": -1,
+					"name": "钱包页",
+					"pathName": "pages/me/purse/index",
 					"query": ""
 				}
 			]

@@ -1,1 +1,15 @@
 /* pages/me/purse/index.wxss */
+
+.top {
+  height: 400rpx;
+  background: #2c99ee;
+}
+
+.right {
+  position: absolute;
+  top: 10rpx;
+  right: 52rpx;
+  display: flex;
+  color: white;
+  align-items: center;
+}
