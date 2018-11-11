@@ -1,0 +1,21 @@
+/* pages/me/selectDate/index.wxss */
+page {
+  background-color: var(--color-white);
+}
+
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.selectedDate {
+  width: 730rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+  padding: 26rpx 26rpx 4rpx 0rpx;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: var(--font-size-large-y);
+  color: var(--color-certification-title);
+  border-bottom: 2rpx solid var(--color-border-color);
+}

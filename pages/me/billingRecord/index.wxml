@@ -1,0 +1,51 @@
+<!--pages/me/record/index.wxml-->
+<view class='billing-reocrd'>
+  <view class='menu'>
+    <text>收款记录</text>
+    <text class='split'>|</text>
+    <text class='unactive'>付款记录</text>
+  </view>
+  <view class='total-record'>
+    <view class='left'>
+      <view wx:if="{{selectedDateForamt == ''}}" class="time">本月</view>
+      <view wx:else class="time">{{selectedDateForamt}}</view>
+      <view>
+        <text class='pay-total'>支出：¥2200.50</text>
+        <text>佣金：¥800.00</text>
+      </view>
+    </view>
+    <view class='right'>
+      <image class='calendar-icon' src='/image/calendar.png' bindtap='selectDate'></image>
+    </view>
+  </view>
+  <view class='detail-item'>
+    <view class='left'>
+      <image class='icon' src='/image/money-icon.png'></image>
+      <view class='mode-time'>
+        <view class='mode'>扫二维码付款</view>
+        <view class='time'>11月20日 19:16</view>
+      </view>
+    </view>
+    <view class='right'>+5000.00</view>
+  </view>
+  <view class='detail-item'>
+    <view class='left'>
+      <image class='icon' src='/image/money-icon.png'></image>
+      <view class='mode-time'>
+        <view class='mode'>扫二维码付款</view>
+        <view class='time'>11月20日 19:16</view>
+      </view>
+    </view>
+    <view class='right'>+5000.00</view>
+  </view>
+  <view class='detail-item'>
+    <view class='left'>
+      <image class='icon' src='/image/money-icon.png'></image>
+      <view class='mode-time'>
+        <view class='mode'>扫二维码付款</view>
+        <view class='time'>11月20日 19:16</view>
+      </view>
+    </view>
+    <view class='right'>+5000.00</view>
+  </view>
+</view>

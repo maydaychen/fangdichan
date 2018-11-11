@@ -1,0 +1,101 @@
+/* pages/me/record/index.wxss */
+page {
+  background-color: var(--color-white);
+}
+
+.billing-reocrd {
+  color: var(--color-sub-title);
+}
+
+.menu {
+  width: 100%;
+  padding: 60rpx 228rpx 40rpx 228rpx;
+  box-sizing: border-box;
+  font-size: var(--font-size-large-y);
+  display: felx;
+  align-items: center;
+}
+
+.unactive {
+  color: var(--color-unactive-color);
+}
+
+.split {
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  color: var(--color-unactive-color);
+}
+
+.total-record {
+  width: 100%;
+  height: 109rpx;
+  padding: 4rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-go-button-white);
+}
+
+.pay-total {
+  margin-right: 40rpx;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.detail-item {
+  width: 710rpx;
+  height: 185rpx;
+  margin-left: 40rpx;
+  border-bottom: 2rpx solid var(--color-border-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 41rpx 40rpx 41rpx 0rpx;
+  box-sizing: border-box;
+}
+
+.detail-item .left {
+  height: 103rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.detail-item .left .icon {
+  width: 55rpx;
+  height: 55rpx;
+  margin-right: 20rpx;
+}
+
+.detail-item .left .mode-time {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mode-time .mode {
+  font-size: var(--font-size-large-y);
+}
+
+.mode-time .time {
+  font-size: var(--font-size-small);
+  color: var(--color-unactive-color);
+}
+
+.detail-item .right {
+  margin-top: 3rpx;
+  color: var(-color-certification-title);
+  font-size: var(--font-size-large-y);
+}
