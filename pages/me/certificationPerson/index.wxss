@@ -1,5 +1,6 @@
 /* pages/me/certificationPerson/index.wxss */
 @import '/static/iconfont/iconfont.wxss';
+@import '/static/styles/base.wxss';
 
 .container {
   padding: 15rpx;

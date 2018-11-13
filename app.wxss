@@ -1,5 +1,4 @@
 /**app.wxss**/
-@import '/static/styles/base.wxss';
 @import '/static/styles/variable.wxss';
 
 

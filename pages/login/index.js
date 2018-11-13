@@ -1,18 +1,18 @@
 // pages/login/index.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.login({
-      success: function (res) {
+      success: function(res) {
         if (res.code) {
           wx.request({
             url: 'https://apis.vitlf.com/user/getOpenId',
@@ -31,7 +31,7 @@ Page({
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         wx.showModal({
           title: '提示',
           content: res.errMsg,
@@ -41,21 +41,26 @@ Page({
     })
   },
 
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
       wx.getUserInfo({
-        success: function (res) {
+        success: function(res) {
+          app.globalData.userInfo = res.userInfo;
           wx.request({
-            url: 'https://apis.vitlf.com/user/insertUser',
-            data: {
-              params: res.userInfo
-            },
             header: {
               'content-type': 'application/json'
             },
-            success: function (res) {
+            url: app.globalData.baseUrl + '/user/login',
+            data: {
+              encrytedData: res.encryptedData,
+              iv: res.iv,
+            },
+            success: function(res) {
               console.log(res.data);
-              // getApp().globalData.userInfo = res.data;
+              wx.switchTab({
+                url: '/pages/index/index',
+              })
+
             }
           })
           console.log(res)
@@ -74,14 +79,13 @@ Page({
         title: '提示',
         content: '您点击了拒绝授权，将无法进入小程序，请授权之后再进入',
         showCancel: false,
-        success: function (res) {
-        }
+        success: function(res) {}
       })
     }
   },
 
   // 获取用户信息
-  queryUserInfo: function () {
+  queryUserInfo: function() {
     wx.request({
       url: 'https://apis.vitlf.com/user/getUserInfo',
       data: {
@@ -90,7 +94,7 @@ Page({
       header: {
         'content-type': 'application/json'
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data);
         // getApp().globalData.userInfo = res.data;
       }
@@ -100,49 +104,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

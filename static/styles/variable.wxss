@@ -12,6 +12,7 @@ page {
   --color-sub-text: #8a8a8a; /* 用于辅助、次要的文字信息、icon */
   --color-prompt: #ccc; /* 用于刷新失败内容文字提醒 */
   --color-split-line: #ddd; /* 分割线色 */
+  --color-split-line-sub: #d2d2d2; /* 浅色分割线色 */
   --color-notification-background: #f2f8fd; /* 通知背景色 */
   --color-white: #fff;
   --color-light-green: #e6f2e6;
@@ -22,11 +23,11 @@ page {
   --color-border-color: #dcdcdc;
   --color-light-yellow: #f4b906;
   --color-button-background: #298ef8;
-  --color-login-notice: #8A8A8A;
-  --color-go-button-white: #F0F2F5;
-  --color-go-text: #0F5AD5;
-  --color-unactive-color: #A8A8A8;
-  --color-border-color: #D2D2D2;
+  --color-login-notice: #8a8a8a;
+  --color-go-button-white: #f0f2f5;
+  --color-go-text: #0f5ad5;
+  --color-unactive-color: #a8a8a8;
+  --color-border-color: #d2d2d2;
   /* 字体定义规范 */
   --font-size-large-z: 40rpx; /* 适用于按钮字体 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */

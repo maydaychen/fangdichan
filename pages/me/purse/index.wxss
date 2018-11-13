@@ -1,8 +1,12 @@
 /* pages/me/purse/index.wxss */
+@import '/static/styles/base.wxss';
+@import '/static/iconfont/iconfont.wxss';
 
 .top {
   height: 400rpx;
   background: #2c99ee;
+  padding: 20rpx 20rpx 20rpx 0;
+  position: relative;
 }
 
 .right {
@@ -15,8 +19,62 @@
 }
 
 .money_hint {
-  margin-top: 52rpx;
+  margin-top: 32rpx;
   margin-left: 80rpx;
   color: white;
   font-size: 34rpx;
+}
+
+.money {
+  font-weight: bold;
+  color: white;
+  margin-top: 35rpx;
+  margin-left: 75rpx;
+  font-size: 100rpx;
+}
+
+.money_bottom {
+  position: absolute;
+  bottom: 0;
+  height: 88rpx;
+  width: 100%;
+  background: #238aea;
+  font-size: 30rpx;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.money_bottom_left {
+  margin-left: 50rpx;
+}
+
+.money_bottom_right {
+  padding: 5rpx 10rpx;
+  border: solid 1rpx #fff;
+  margin-right: 50rpx;
+}
+
+.icon {
+  width: 34rpx;
+  height: 25rpx;
+  margin-left: 27rpx;
+  margin-right: 20rpx;
+}
+
+.bottom {
+  padding: 0 20rpx;
+}
+
+.view {
+  border-bottom: 1rpx solid var( --color-split-line-sub);
+}
+
+.bottom > view {
+  background: white;
+}
+
+.icon-right {
+  margin-right: 30rpx;
 }

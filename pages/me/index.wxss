@@ -1,5 +1,6 @@
 /* pages/me/index.wxss */
 @import '/static/iconfont/iconfont.wxss';
+@import '/static/styles/base.wxss';
 
 .personal-center {
   color: #666;
@@ -129,8 +130,8 @@
 }
 
 .icon {
-  width: 34rpx;
-  height: 40rpx;
+  width: 29rpx;
+  height: 33rpx;
   margin-left: 27rpx;
   margin-right: 20rpx;
 }

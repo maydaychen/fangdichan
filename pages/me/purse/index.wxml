@@ -7,5 +7,27 @@
     </navigator>
 
     <view class='money_hint'>账户余额（元）</view>
+    <view class='money'>1000.00</view>
+    <view class='money_bottom'>
+      <view class='money_bottom_left'>今日提现到银行卡1000元</view>
+      <view class='money_bottom_right'>去查看</view>
+    </view>
+  </view>
+
+  <view class='bottom'>
+    <view class='ui-input view tops'>
+      <view style='display:flex;align-items:center'>
+        <image class="icon" src="/image/recharge-icon.png"></image>
+        <text style='line-height:106rpx;'>充值</text>
+      </view>
+      <view class="icon-right iconfont icon-you"></view>
+    </view>
+    <view class='ui-input last'>
+      <view style='display:flex;align-items:center'>
+        <image class="icon" src="/image/withdraw-icon.png"></image>
+        <text style='line-height:106rpx;'>提现</text>
+      </view>
+      <view class="icon-right iconfont icon-you"></view>
+    </view>
   </view>
 </view>
