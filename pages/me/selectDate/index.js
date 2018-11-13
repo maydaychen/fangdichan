@@ -3,8 +3,9 @@ const date = new Date()
 const years = []
 const months = []
 const days = []
+const bigMonth = [1, 3, 5, 7, 8, 10, 12]
 
-for (let i = 1990; i <= date.getFullYear(); i++) {
+for (let i = 2000; i <= date.getFullYear(); i++) {
   years.push(i)
 }
 
@@ -25,10 +26,10 @@ Page({
     years: years,
     year: date.getFullYear(),
     months: months,
-    month: 2,
+    month: date.getMonth() + 1,
     days: days,
-    day: 2,
-    value: [9999, 1, 1],
+    day: date.getDate(),
+    value: [date.getFullYear(), date.getMonth(), date.getDate() - 1],
   },
 
   /**
@@ -37,13 +38,58 @@ Page({
   onLoad: function (options) {
   },
 
-  //  点击日期组件确定事件  
-  bindChange: function (e) {
-    const val = e.detail.value
+  //判断元素是否在一个数组
+  contains (arr, obj) {
+    let i = arr.length;
+    while (i--) {
+      if (arr[i] === obj) {
+        return true;
+      }
+    }
+    return false;
+  },
+
+  setDays: function (day) {
+    const temp = [];
+    for (let i = 1; i <= day; i++) {
+      temp.push(i)
+    }
     this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]],
-      day: this.data.days[val[2]]
+      days: temp,
+    })
+  },
+
+  //选择滚动器改变触发事件
+  bindChange (e) {
+    const val = e.detail.value;
+    //判断月的天数
+    const setYear =
+      this.data.years[val[0]];
+    const setMonth =
+      this.data.months[val[1]];
+    const setDay =
+      this.data.days[val[2]]
+
+    if (setMonth === 2) {
+      // 闰年
+      if ((setYear % 4 === 0 && setYear % 100 !== 0) || setYear % 400 === 0) {
+        this.setDays(29);
+      } else {
+        this.setDays(28);
+      }
+    } else {
+      //大月
+      if (this.contains(bigMonth, setMonth)) {
+        this.setDays(31)
+      } else {
+        this.setDays(30)
+      }
+    }
+
+    this.setData({
+      year: setYear,
+      month: setMonth,
+      day: setDay
     })
   },
 
@@ -59,7 +105,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
@@ -79,7 +124,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    this.showTime = false;
   },
 
   /**
