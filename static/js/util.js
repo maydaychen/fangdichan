@@ -93,5 +93,41 @@ util.upload = function(option, type = 'images') {
       }
     }
   }
-};
+}
+
+util.getInfo = function(fun) {
+  const that = this;
+  wx.login({
+    success: function(res) {
+      if (res.code) {
+        wx.request({
+          url: 'https://apis.vitlf.com/user/getOpenId',
+          data: {
+            code: res.code
+          },
+          success(res) {
+            console.log(res)
+            // getApp().globalData.openid = res.data.data.openid;
+            getApp().globalData.openInfo['openid'] = res.data.data.openid;
+            getApp().globalData.openInfo['session_key'] = res.data.data.session_key;
+            console.log(getApp().globalData.openInfo['openid']);
+          },
+        })
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: res.errMsg,
+          showCancel: false
+        })
+      }
+    },
+    fail: function(res) {
+      wx.showModal({
+        title: '提示',
+        content: res.errMsg,
+        showCancel: false
+      })
+    }
+  })
+}
 module.exports = util;

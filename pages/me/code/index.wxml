@@ -1,8 +1,12 @@
 <!--pages/me/code/index.wxml-->
 <view class='container'>
-  <image class='logo'></image>
-  <view class='name'>张三</view>
-  <view class='company'>维特置业</view>
-  <image class='code'></image>
-  <view class='remark'>使用维系扫码进入我的小程序店铺</view>
+
+  <image class='loginbg'  src='../../../image/code-background.png'> </image>
+  <view class='content'>
+    <image class='logo'></image>
+    <view class='name'>张三</view>
+    <view class='company'>维特置业</view>
+    <image class='code'></image>
+    <view class='remark'>使用维系扫码进入我的小程序店铺</view>
+  </view>
 </view>

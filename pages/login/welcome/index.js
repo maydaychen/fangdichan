@@ -35,25 +35,19 @@ Page({
                 },
                 url: app.globalData.baseUrl + '/user/login',
                 data: {
+                  openId: app.globalData.openInfo.openid,
                   encrytedData: res.encryptedData,
                   iv: res.iv,
                 },
                 success: function(res) {
-                  console.log(res.data);
-                  wx.switchTab({
-                    url: '/pages/index/index',
-                  })
-
+                  console.log(res);
+                  if (res.data.code == 1) {
+                    wx.switchTab({
+                      url: '/pages/index/index',
+                    })
+                  }
                 }
               })
-              console.log(res)
-              res.userInfo
-              //从数据库获取用户信息
-              // this.queryUserInfo();
-              //用户已经授权过
-              //       wx.switchTab({
-              //         url: '/pages/index/index'
-              //       })
             }
           });
         } else {

@@ -11,37 +11,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.login({
-      success: function(res) {
-        if (res.code) {
-          wx.request({
-            url: 'https://apis.vitlf.com/user/getOpenId',
-            data: {
-              code: res.code
-            },
-            success(res) {
-              getApp().globalData.openid = res.data.data.openid;
-            },
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: res.errMsg,
-            showCancel: false
-          })
-        }
-      },
-      fail: function(res) {
-        wx.showModal({
-          title: '提示',
-          content: res.errMsg,
-          showCancel: false
-        })
-      }
-    })
+   
   },
 
   bindGetUserInfo: function(e) {
+    console.log(e.detail.userInfo);
     if (e.detail.userInfo) {
       wx.getUserInfo({
         success: function(res) {
@@ -52,25 +26,19 @@ Page({
             },
             url: app.globalData.baseUrl + '/user/login',
             data: {
+              openId: app.globalData.openInfo.openid,
               encrytedData: res.encryptedData,
               iv: res.iv,
             },
             success: function(res) {
-              console.log(res.data);
-              wx.switchTab({
-                url: '/pages/index/index',
-              })
-
+              console.log(res);
+              if (res.data.code == 1) {
+                wx.switchTab({
+                  url: '/pages/index/index',
+                })
+              }
             }
           })
-          console.log(res)
-          res.userInfo
-          //从数据库获取用户信息
-          // this.queryUserInfo();
-          //用户已经授权过
-          //       wx.switchTab({
-          //         url: '/pages/index/index'
-          //       })
         }
       });
     } else {

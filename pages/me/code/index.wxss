@@ -1,5 +1,22 @@
 /* pages/me/code/index.wxss */
 
+
+.loginbg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .logo {
   width: 109rpx;
   height: 109rpx;
