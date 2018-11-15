@@ -2,10 +2,10 @@
 <view class="personal-center">
   <view class="profile">
     <view class="profile-left">
-      <image class="avatar" src="/image/head.jpg"></image>
+      <image class="avatar" src="{{userInfo.avatar}}"></image>
     </view>
     <view class="profile-right">
-      <text class="name">{{name}}</text>
+      <text class="name">{{userInfo.nickname}}</text>
       <view class="certification">
         <view class="certification-left">
           <text class="certification-title">认证类型</text>

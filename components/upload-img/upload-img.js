@@ -1,4 +1,4 @@
-let util = require(`../../static/js/util.js`)
+let util = require(`../../utils/util.js`)
 Component({
   externalClasses: ['cover-class'],
   properties: {

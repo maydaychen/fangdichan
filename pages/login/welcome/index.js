@@ -1,5 +1,6 @@
 // pages/login/welcome/index.js
 const app = getApp()
+let util = require(`../../../utils/util.js`)
 Page({
 
   /**
@@ -27,25 +28,19 @@ Page({
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: function(res) {
-              app.globalData.userInfo = res.userInfo;
-              console.log(app.globalData.userInfo);
-              wx.request({
-                header: {
-                  'content-type': 'application/json'
-                },
-                url: app.globalData.baseUrl + '/user/login',
+              util.request({
+                url: '/user/login',
                 data: {
                   openId: app.globalData.openInfo.openid,
+                  sessionKey: app.globalData.openInfo.session_key,
                   encrytedData: res.encryptedData,
                   iv: res.iv,
                 },
-                success: function(res) {
-                  console.log(res);
-                  if (res.data.code == 1) {
-                    wx.switchTab({
-                      url: '/pages/index/index',
-                    })
-                  }
+                success(res) {
+                  app.globalData.userInfo = res.data;
+                  wx.switchTab({
+                    url: '/pages/index/index',
+                  })
                 }
               })
             }

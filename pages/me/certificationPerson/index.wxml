@@ -57,7 +57,8 @@
         <view class='example' style='margin-top:33rpx;'>请上传身份证</view>
         <view>
           <block wx:for="{{IDcard_list}}" wx:key="this">
-            <image src="{{item}}" bindtap='add_pic' id="1" data-index="{{index}}" class='left' mode='aspectFit'></image>
+            <image wx:if='{{imgs[index]==""}}' src="{{item}}" bindtap='add_pic' data-index="{{index}}" class='left' mode='aspectFit'></image>
+            <image wx:else src="{{imgs[index]}}" bindtap='add_pic' data-index="{{index}}" class='left' mode='aspectFit'></image>
           </block>
         </view>
       </view>

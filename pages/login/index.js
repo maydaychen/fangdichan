@@ -1,5 +1,6 @@
 // pages/login/index.js
-const app = getApp()
+const app = getApp();
+let util = require(`../../utils/util.js`)
 Page({
 
   /**
@@ -11,32 +12,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
+
   },
 
   bindGetUserInfo: function(e) {
-    console.log(e.detail.userInfo);
     if (e.detail.userInfo) {
       wx.getUserInfo({
         success: function(res) {
-          app.globalData.userInfo = res.userInfo;
-          wx.request({
-            header: {
-              'content-type': 'application/json'
-            },
-            url: app.globalData.baseUrl + '/user/login',
+          util.request({
+            url: '/user/login',
             data: {
               openId: app.globalData.openInfo.openid,
+              sessionKey: app.globalData.openInfo.session_key,
               encrytedData: res.encryptedData,
               iv: res.iv,
             },
-            success: function(res) {
+            success(res) {
               console.log(res);
-              if (res.data.code == 1) {
-                wx.switchTab({
-                  url: '/pages/index/index',
-                })
-              }
+              app.globalData.userInfo = res.data;              
+              // if (res.data.code == 1) {
+              wx.switchTab({
+                url: '/pages/index/index',
+              })
+              // }
             }
           })
         }
