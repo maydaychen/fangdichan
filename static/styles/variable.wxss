@@ -28,7 +28,10 @@ page {
   --color-go-text: #0f5ad5;
   --color-unactive-color: #a8a8a8;
   --color-border-color: #d2d2d2;
+  --color-qrcode-title: #EFEFEF;
+  --color-qrcode-bg-color: #1C84D5;
   /* 字体定义规范 */
+  --font-size-large-h: 48rpx;
   --font-size-large-z: 40rpx; /* 适用于按钮字体 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */
   --font-size-large-y: 32rpx;

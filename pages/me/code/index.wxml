@@ -1,17 +1,32 @@
 <!-- pages/me/code/index.wxml -->
-<view class='container'>
+<view class='my-qrcode'>
   <image class='loginbg' src='/image/code-background.png'></image>
-  <view class='content'>
-    <view class="title">欢迎使用房挑房</view>
-    <view class="detail">
-      <image class="code_img" src="/image/code-detail.png" />
-      <view>
-        <image class='logo' src="{{userInfo.avatar}}"></image>
-        <view class='name'>{{userInfo.nickname}}</view>
-        <view class='company'>维特置业</view>
-        <image class='code'></image>
-        <view class='remark'>请将二维码对准摄像头</view>
-      </view>
+  <view class="title">欢迎使用房挑房</view>
+  <view class="qrcode-detail-up">
+    <!-- <image class='avatar' src="{{userInfo.avatar}}"></image> -->
+    <view class='avatar'><image class="avatar-icon" src="/image/head.jpg"></image></view>
+    <!-- <view class='name'>{{userInfo.nickname}}</view> -->
+    <view class='nickname'>张一名</view>
+    <view class='qrcode'><image class="qrcode-icon" src="/image/code.png"></image></view>
+    <view class='remark'>请将二维码对准摄像头</view>
+  </view>
+  <view class="split-line">
+    <view class="left-semi-arc"></view>
+    <view class="middle"></view>
+    <view class="right-semi-arc"></view>
+  </view>
+  <view class="qrcode-type">
+    <view class="item">
+      <image class="code-icon" src="/image/collection-code.png"></image>
+      <view>收款码</view>
+    </view>
+    <view class="item">
+      <image class="code-icon" src="/image/payment-code.png"></image>
+      <view>付款码</view>
+    </view>
+    <view class="item">
+      <image class="code-icon" src="/image/promotion-code.png"></image>
+      <view>推广码</view>
     </view>
   </view>
 </view>
