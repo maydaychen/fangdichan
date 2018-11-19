@@ -5,23 +5,53 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:['','','']
+    list:['','',''],
+    bian:false
   },
   goto:function(){//add
-    wx.navigateTo({
-      url: '/pages/house/rent/hezu/new/index',
-    })
+    if(this.data.id == 1){
+      wx.navigateTo({
+        url: '/pages/house/rent/hezu/new/index',
+      })
+    }
+    if(this.data.id == 2){
+      wx.navigateTo({
+        url: '/pages/house/twohand/new/index',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }
+    if(this.data.id == 3){
+      wx.navigateTo({
+        url: '/pages/house/rent/zhengzu/new/index',
+      })
+    }
+   
   },
   detail:function(){//详情
     wx.navigateTo({
       url: '/pages/house/twohand/detail/index',
     })
   },
+  bian:function(){
+    this.setData({
+      bian:!this.data.bian
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.setData({
+      id:options.id
+    })
+    if(options.id == 1){  
+      wx.setNavigationBarTitle({
+        title: '房源列表',
+      })
+    } 
   },
 
   /**

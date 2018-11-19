@@ -1,6 +1,6 @@
 <!--pages/house/index.wxml-->
 <view class='container'>
-  <navigator class='house_index' url='/pages/house/twohand/index'>
+  <navigator class='house_index' url='/pages/house/twohand/index?id=1'>
     <text class='iconfont icon-fangyuanguanli'></text>
     <view class='right'>
       <view class='house_title'>二手房管理</view>

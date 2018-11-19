@@ -10,6 +10,9 @@ Page({
     outside:[],
     inside:[],
     house:[],
+    housetype:['住宅','公寓','商铺','别墅','联排'],
+    only:['不满两年','满二','满五'],
+    zhuang:['毛胚','简装','精装','豪装'],
     check:false, //是否同意协议
     id:2,//展示的模块id
     search:[]//搜索结果
@@ -17,6 +20,12 @@ Page({
   22:function(){
     this.setData({
       show:!this.data.show
+    })
+  },
+  show:function(e){
+    this.setData({
+      show:!this.data.show,
+      id:e.currentTarget.id
     })
   },
   message:function(e){

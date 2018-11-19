@@ -44,6 +44,7 @@
 
 .avatar-icon {
   width: 109rpx;
+  border-radius: 50%;
   height: 109rpx;
 }
 
@@ -53,7 +54,7 @@
   font-weight: bold;
   color: var(--color-certification-title);
   font-size: 36rpx;
-  margin: 0 auto;
+  margin: 20rpx auto 0;
 }
 
 .qrcode {
@@ -96,7 +97,7 @@
 
 .middle {
   width: 606rpx;
-  height: 38rpx;
+  height: 2rpx;
 }
 
 .right-semi-arc {

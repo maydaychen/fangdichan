@@ -1,2 +1,167 @@
 <!--pages/house/twohand/new/index.wxml-->
-<text>pages/house/twohand/new/index.wxml</text>
+<view class='container'>
+  <view class='top'>
+    <text class='iconfont icon-yinlianglabashengyin'></text> 保证房源真实有效，一旦发现虚假立即删除...
+    <text class='iconfont icon-LC_icon_close_fill_circle'></text>
+  </view>
+  <form bindtap='submit'>
+    <view class='fixed' hidden='{{show}}'>
+      <view wx:if="{{id == 0}}" class="see"><!--协议-->
+      <text class='iconfont icon-LC_icon_close_fill_circle' bindtap='22'></text>
+        <view></view>
+      </view>
+      <!--填写信息-->
+      <view wx:if="{{id != 0}}"> <!--承载盒子，不可删-->
+        <view wx:if="{{id == 1}}" class='search'>
+          <view>
+            <text class='iconfont icon-search'></text>
+            <input type='search' bindinput='search' bindconfirm='searchenter'></input>
+            <text class='iconfont icon-LC_icon_close_fill_circle'></text>
+          </view>
+          <text bindtap='searchenter'>搜索</text>
+        </view>
+        <view wx:if="{{id == 2}}" class="scroll">
+          <scroll-view scroll-y>
+            <text>一室</text>
+            <text>两室</text>
+            <text>三室</text>
+            <text>四室</text>
+          </scroll-view>
+          <scroll-view scroll-y>
+            <text>0厅</text>
+            <text>一厅</text>
+            <text>两厅</text>
+          </scroll-view>
+          <scroll-view scroll-y>
+            <text>一卫</text>
+            <text>两卫</text>
+          </scroll-view>
+        </view>
+        <view class='center' wx:for="{{search}}" wx:key="*this">
+          {{item}}
+        </view>
+        <view wx:if="{{id == 3}}">
+          <view class='bottom' wx:for="{{housetype}}" wx:key="*this" bindtap='choose'>{{item}}</view>
+        </view>
+        <view wx:if="{{id == 4}}">
+          <view class='bottom' wx:for="{{only}}" wx:key="*this" bindtap='choose'>{{item}}</view>
+        </view>
+        <view wx:if="{{id == 5}}">
+          <view class='bottom' bindtap='choose' data-index="南">南</view>
+          <view class='bottom' bindtap='choose' data-index="北">北</view>
+        </view>
+        <view wx:if="{{id == 6}}">
+          <view class='bottom' wx:for="{{zhuang}}" wx:key="*this" bindtap='choose' data-index="{{item}}">{{item}}</view>
+        </view>
+        <view wx:if="{{id == 7}}">
+          <view class='bottom' bindtap='choose' data-index="1">是</view>
+          <view class='bottom' bindtap='choose' data-index="0">否</view>
+        </view>
+        <view wx:if="{{id == 8}}">
+          <radio-group>
+            <radio id='1'></radio><label for=''>40年</label>
+            <radio id='2'></radio><label for=''>50年</label>
+            <radio id='3'></radio><label for=''>70年</label>
+          </radio-group>
+        </view>
+        <view wx:if="{{id == 9}}">
+          <radio-group>
+            <radio id='1'></radio><label for=''>4年</label>
+            <radio id='2'></radio><label for=''>10年</label>
+            <radio id='3'></radio><label for=''>20年</label>
+          </radio-group>
+        </view>
+        <view wx:if="{{id == 10}}">
+          <input name="title" placeholder='请输入标题' ></input>
+        </view>
+        <view wx:if="{{id == 11}}">
+          <textarea name="message" bindinput='message'></textarea>
+        </view>
+      </view>
+      <button catchtap='22' wx:if="{{id != 0}}">确定</button>
+    </view>
+    <view class='list'>
+      <!--显示部分-->
+      <view class='tops view' bindtap='show' id="1">小区名称
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='view' >租金方式
+        <view class='right'>
+          <input name="money"></input>元/月</view>
+      </view>
+      <view class='last' bindtap='show' id="4">付款方式
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='tops view'>房屋面积
+        <view class='right'>
+          <input placeholder='真实面积'></input>平米</view>
+      </view>
+      <view class='view' bindtap='show' id="3">房屋类型
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='view' bindtap='show' id="2">户型
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='view'>楼层
+        <view class='right'>
+          <input></input>所在楼层
+          <input></input>总楼层</view>
+      </view>
+      <view class='view' bindtap='show' id="5">朝向
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='last' bindtap='show' id="6">装修
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='tops view' bindtap='show' id="10">标题
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='last' bindtap='show' id="11">描述介绍
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='tops last'>
+        <text>室内图</text>
+        <view class='message'>图片不能发布非法、不能出现文字、数字、联系方式(微信、QQ、电话、网址、二维码),至少上传2张</view>
+        <view>
+          <block wx:for="{{inside}}" wx:key="*this">
+            <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left'></image>
+          </block>
+          <view class='left' bindtap='img' id="1">
+            <text class='iconfont icon-xiangji'></text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='tops last'>
+        <text>室外图</text>
+        <view class='message'>图片不能发布非法、不能出现文字、数字、联系方式(微信、QQ、电话、网址、二维码),至少上传2张</view>
+        <view>
+          <block wx:for="{{outside}}" wx:key="*this">
+            <image src="{{item}}" bindtap='delete' id="2" data-index="{{index}}" class='left'></image>
+          </block>
+          <view class='left' bindtap='img' id="2">
+            <text class='iconfont icon-xiangji'></text>
+          </view>
+        </view>
+      </view> -->
+      <view class='tops last'>
+        <text>户型图</text>
+        <view class='message'>图片不能发布非法、不能出现文字、数字、联系方式(微信、QQ、电话、网址、二维码),至少上传2张</view>
+        <view>
+          <block wx:for="{{house}}" wx:key="*this">
+            <image src="{{item}}" bindtap='delete' id="3" data-index="{{index}}" class='left'></image>
+          </block>
+          <view class='left' bindtap='img' id="3">
+            <text class='iconfont icon-xiangji'></text>
+          </view>
+        </view>
+      </view>
+      <view class='tops last'>
+        <text>房源承诺</text>
+        <view class='message'>本人承诺房源真实，遵守
+          <text bindtap='show' id="0">平台协议</text>！</view>
+        <checkbox class='right' bindtap='check'></checkbox>
+      </view>
+    </view>
+    <button form-type='submit'>发布房源</button>
+  </form>
+</view>

@@ -116,6 +116,9 @@ page{background:#fff;}
   background: #eee;
   padding: 10rpx;
   line-height: 2;
+}
+
+.bians{
   margin-left: 15%;
 }
 

@@ -1,6 +1,6 @@
 <!--pages/house/rent/index.wxml-->
 <view class='container'>
-  <navigator class='house_index' url='/pages/house/twohand/index'>
+  <navigator class='house_index' url='/pages/house/twohand/index?id=2'>
     <text class='iconfont icon-fangyuanguanli'></text>
     <view class='right'>
       <view class='house_title'>整租</view>
@@ -8,7 +8,7 @@
       <text class='iconfont icon-right right'></text>
     </view>
   </navigator>
-  <navigator class='house_index' url='/pages/house/rent/index'>
+  <navigator class='house_index' url='/pages/house/twohand/index?id=3'>
     <text class='iconfont icon-fangyuanguanli_chuzu two'></text>
     <view class='right'>
       <view class='house_title'>合租</view>

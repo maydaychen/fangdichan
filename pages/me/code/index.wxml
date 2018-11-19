@@ -3,16 +3,18 @@
   <image class='loginbg' src='/image/code-background.png'></image>
   <view class="title">欢迎使用房挑房</view>
   <view class="qrcode-detail-up">
-    <!-- <image class='avatar' src="{{userInfo.avatar}}"></image> -->
-    <view class='avatar'><image class="avatar-icon" src="/image/head.jpg"></image></view>
-    <!-- <view class='name'>{{userInfo.nickname}}</view> -->
-    <view class='nickname'>张一名</view>
-    <view class='qrcode'><image class="qrcode-icon" src="/image/code.png"></image></view>
+    <view class='avatar'>
+      <image class="avatar-icon" src="{{userInfo.avatar}}"></image>
+    </view>
+    <view class='nickname'>{{userInfo.nickname}}</view>
+    <view class='qrcode'>
+      <image class="qrcode-icon" src="/image/code.png"></image>
+    </view>
     <view class='remark'>请将二维码对准摄像头</view>
   </view>
   <view class="split-line">
     <view class="left-semi-arc"></view>
-    <view class="middle"></view>
+    <image class="middle" src='/image/dashed-line.png'/>
     <view class="right-semi-arc"></view>
   </view>
   <view class="qrcode-type">
