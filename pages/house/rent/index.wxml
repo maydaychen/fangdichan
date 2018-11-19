@@ -1,15 +1,19 @@
 <!--pages/house/rent/index.wxml-->
-<view>
+<view class='container'>
   <navigator class='house_index' url='/pages/house/twohand/index'>
-    <image></image>
-    <view></view>
-    <view class='house_title'>整租</view>
-    <view class='house_sub'>畅想随心所欲</view>
+    <text class='iconfont icon-fangyuanguanli'></text>
+    <view class='right'>
+      <view class='house_title'>整租</view>
+      <view class='house_sub'>畅想随心所欲</view>
+      <text class='iconfont icon-right right'></text>
+    </view>
   </navigator>
   <navigator class='house_index' url='/pages/house/rent/index'>
-    <image></image>
-    <view></view>
-    <view class='house_title'>合租</view>
-    <view class='house_sub'>合租的乐趣</view>
+    <text class='iconfont icon-fangyuanguanli_chuzu two'></text>
+    <view class='right'>
+      <view class='house_title'>合租</view>
+      <view class='house_sub'>合租的乐趣</view>
+      <text class='iconfont icon-right right'></text>
+    </view>
   </navigator>
 </view>

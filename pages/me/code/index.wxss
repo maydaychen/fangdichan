@@ -17,6 +17,25 @@
   height: 100%;
 }
 
+.title{
+  color: #EFEFEF;
+  font-weight: bold;
+  font-size: 48rpx;
+  margin-left: 67rpx;
+  margin-top: 20rpx;
+  
+}
+.detail{
+  width: 644rpx;
+  height: 920rpx;
+  margin: 0 67rpx;
+  box-sizing: border-box;
+}
+.code_img{
+  width: 100%;
+  height: 100%;
+}
+
 .logo {
   width: 109rpx;
   height: 109rpx;

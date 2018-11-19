@@ -11,9 +11,9 @@ Page({
     example_text: ['正面', '反面', '半身照'],
     IDcard_list: ['/image/add_pic.png', '/image/add_pic.png', '/image/add_pic.png'],
     imgs: {
-      0: "https://apis.vitlf.com/uploads/20181115/89ce2c8936621a21803c7b3049017efb.jpg",
-      1: "",
-      2: ""
+      0: "/image/add_pic.png",
+      1: "/image/add_pic.png",
+      2: "/image/add_pic.png"
     },
   },
 
@@ -82,7 +82,11 @@ Page({
       count: 1,
       success: res => {
         console.log(res);
-        that.data.imgs[Index] = app.globalData.baseUrl + res.url;
+        var images = that.data.imgs;
+        images[Index] = app.globalData.baseUrl + res.url;
+        that.setData({
+          imgs: images
+        })
         // let imgList = D.imgs
         // let longPath = D.longPath
         // let shortPath = D.shortPath

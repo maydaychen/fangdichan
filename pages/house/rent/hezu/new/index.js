@@ -6,10 +6,29 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show:true,
     outside:[],
     inside:[],
     house:[],
-    check:false //是否同意协议
+    check:false, //是否同意协议
+    id:2,//展示的模块id
+    search:[]//搜索结果
+  },
+  22:function(){
+    this.setData({
+      show:!this.data.show
+    })
+  },
+  message:function(e){
+    console.log(e.detail.value);
+  },
+  search:function(e){//搜索结果
+    this.setData({
+      key:e.detail.value
+    })
+  },
+  searchenter:function(e){//回车事件
+    console.log(e.detail.value);
   },
   img:function(e){//选择图片
     if(e.currentTarget.id == 1){

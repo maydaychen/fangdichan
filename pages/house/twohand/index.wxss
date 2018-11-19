@@ -1,5 +1,5 @@
 /* pages/house/twohand/index.wxss */
-
+page{background:#fff;}
 @font-face {
   font-family: "iconfont";
   src: url('iconfont.eot?t=1541061234374'); /* IE9*/

@@ -1,1 +1,2 @@
 /* pages/house/rent/index.wxss */
+@import "../index.wxss"

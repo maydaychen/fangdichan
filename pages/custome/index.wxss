@@ -50,4 +50,4 @@ page{padding:10rpx;background:#F5F5F5;}
 .type view{text-align:center;padding:25rpx;border-bottom:1px solid #DCDCDC;margin:0rpx 20rpx;}
 .fixed button{background:#1D87D9;width:95%;color:#fff;box-shadow:0px 1px 1px 0px #1D87D9;position:absolute;bottom:10rpx;left:2.5%;}
 .type .active{color:#1D87D9;}
-.fixed .san{width:50rpx;height:20rpx;position:absolute;top:-19rpx;}
+.fixed .san{width:50rpx;height:22rpx;position:absolute;top:-19rpx;}

@@ -1,12 +1,17 @@
-<!--pages/me/code/index.wxml-->
+<!-- pages/me/code/index.wxml -->
 <view class='container'>
-
-  <image class='loginbg'  src='../../../image/code-background.png'> </image>
+  <image class='loginbg' src='/image/code-background.png'></image>
   <view class='content'>
-    <image class='logo'></image>
-    <view class='name'>张三</view>
-    <view class='company'>维特置业</view>
-    <image class='code'></image>
-    <view class='remark'>使用维系扫码进入我的小程序店铺</view>
+    <view class="title">欢迎使用房挑房</view>
+    <view class="detail">
+      <image class="code_img" src="/image/code-detail.png" />
+      <view>
+        <image class='logo' src="{{userInfo.avatar}}"></image>
+        <view class='name'>{{userInfo.nickname}}</view>
+        <view class='company'>维特置业</view>
+        <image class='code'></image>
+        <view class='remark'>请将二维码对准摄像头</view>
+      </view>
+    </view>
   </view>
 </view>
