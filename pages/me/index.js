@@ -10,7 +10,8 @@ Page({
     type: 1,
     tele: "0510-88888",
     isConfirmed: true,
-    userInfo: null
+    userInfo: null,
+    showBindPhoneModal: false
   },
 
   /**
@@ -31,10 +32,14 @@ Page({
         confirmText: "确定", //默认是“确定”
         confirmColor: '#1A84D5', //确定文字的颜色
         success: function(res) {
-          if (res.cancel) {
-            //点击取消,默认隐藏弹框
-          } else {
-
+          if (res.confirm) {
+            console.log(res)
+            console.log('用户点击确定')
+            that.setData({
+              showBindPhoneModal: true
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
           }
         },
         fail: function(res) {}, //接口调用失败的回调函数

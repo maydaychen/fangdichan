@@ -55,4 +55,17 @@
     <view class="icon-right iconfont icon-you"></view>
   </navigator>
   <view class="phone">客服电话：{{tele}}</view>
+  <view wx:if="{{showBindPhoneModal}}" class="mask">
+    <view class="bindPhoneModal">
+      <view class="title">微信手机号登录</view>
+      <view class="company-name">无锡维特置业有限公司</view>
+      <view class="message">申请获取您微信绑定的手机号：
+</view>
+      <view class="phone-number">131****1281</view>
+      <view class="rbs-btn">
+        <view class="cancel-btn">取消</view>
+        <view class="sure-btn">确认授权</view>
+      </view>
+    </view>
+  </view>
 </view>

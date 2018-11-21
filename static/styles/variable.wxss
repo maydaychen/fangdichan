@@ -30,10 +30,12 @@ page {
   --color-border-color: #d2d2d2;
   --color-qrcode-title: #EFEFEF;
   --color-qrcode-bg-color: #1C84D5;
+  --color-sure-btn: #1A84D5;
   /* 字体定义规范 */
   --font-size-large-h: 48rpx;
   --font-size-large-z: 40rpx; /* 适用于按钮字体 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */
+  --font-size-large-a: 34rpx;
   --font-size-large-y: 32rpx;
   --font-size-large: 30rpx; /* 适用于正文标题、内容、按钮 */
   --font-size-medium-x: 28rpx; /* 适用于列表名称、正文 */
