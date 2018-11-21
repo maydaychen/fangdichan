@@ -1,14 +1,16 @@
 /* pages/me/certificationCompany/index.wxss */
 @import '/static/iconfont/iconfont.wxss';
+@import '/static/styles/base.wxss';
 
-.certification-company-form {
-  color: var(--color-sub-title);
+.container {
+  padding: 20rpx;
 }
 
 .notification {
+  width: 100%;
   height: 64rpx;
   border-radius: 4rpx;
-  margin: 18rpx 15rpx;
+  margin-bottom: 18rpx;
   background-color: var(--color-notification-background);
   font-size: var(--font-size-medium);
   display: flex;
@@ -33,10 +35,9 @@
 }
 
 .type {
-  width: 710rpx;
+  width: 100%;
   height: 124rpx;
-  margin: 0 auto;
-  margin-top: 4rpx;
+  padding: 0;
   background-color: var(--color-white);
   font-size: var(--font-size-large-y);
   border-radius: 4rpx;
@@ -65,50 +66,6 @@
 .person {
   margin-left: 103rpx;
   margin-right: 108rpx;
-}
-
-.company-info {
-  width: 710rpx;
-  height: 240rpx;
-}
-
-.info {
-  margin: 0 auto;
-  margin-top: 20rpx;
-  border-radius: 4rpx;
-  background-color: var(--color-white);
-}
-
-.info .title {
-  font-size: var(--font-size-large-y);
-  color: var(--color-certification-title);
-  font-weight: bold;
-}
-
-.info .item {
-  width: 100%;
-  height: 80rpx;
-  padding: 23rpx 20rpx;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: var(--font-size-medium-x);
-  color: var(--color-certification-title);
-  border-bottom: 1rpx solid var(--color-border-color);
-}
-
-.info .item:last-child {
-  border-bottom: none;
-}
-
-.info .item .value {
-  color: var(--color-sub-title);
-}
-
-.personal-info {
-  width: 710rpx;
-  height: 320rpx;
 }
 
 .business-licenses {
@@ -151,6 +108,13 @@
   box-sizing: border-box;
   border-radius: 4rpx;
   background-color: var(--color-white);
+}
+
+.certification-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #323232;
+  height: 1.4rem;
 }
 
 .id-card-info .title {

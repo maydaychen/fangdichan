@@ -10,7 +10,7 @@ function initChart(canvas, width, height) {
   canvas.setChart(chart);
 
   var option = {
-    color: ["#ee9058", "#67E0E3", "#9FE6B8"],
+    color: ["#9bd4ff", "#67E0E3", "#9FE6B8"],
     grid: {
       containLabel: true
     },
@@ -30,6 +30,7 @@ function initChart(canvas, width, height) {
       // show: false
     },
     yAxis: {
+      name: '（单）',
       x: 'center',
       type: 'value',
       splitLine: {

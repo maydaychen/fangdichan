@@ -33,7 +33,7 @@
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </view>
-  <navigator class="profile-button ui-input" url='record/index'>
+  <navigator class="profile-button ui-input" url='certificationPerson/index'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/record-icon.png"></image>
       <text style='line-height:106rpx;'>带看记录</text>

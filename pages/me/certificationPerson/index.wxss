@@ -3,7 +3,7 @@
 @import '/static/styles/base.wxss';
 
 .container {
-  padding: 15rpx;
+  padding: 20rpx;
 }
 
 .notification {
