@@ -6,7 +6,7 @@
     <view class="delete-icon iconfont icon-quxiao" bindtap="hide"></view>
   </view>
   <view class="type">
-    <view class="unactive person">个人认证</view>
+    <view class="unactive person" bindtap="toCertificationPerson">个人认证</view>
     <view class="active">企业认证</view>
   </view>
   <view class='list'>

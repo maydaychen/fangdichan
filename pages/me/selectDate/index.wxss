@@ -9,13 +9,25 @@ page {
 }
 
 .selectedDate {
-  width: 730rpx;
+  width: 710rpx;
   height: 100rpx;
   margin-left: 20rpx;
-  padding: 26rpx 26rpx 4rpx 0rpx;
+  padding: 20rpx 20rpx 4rpx 0rpx;
   box-sizing: border-box;
   text-align: right;
   font-size: var(--font-size-large-y);
   color: var(--color-certification-title);
   border-bottom: 2rpx solid var(--color-border-color);
+}
+
+picker-view {
+  width: 100%;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+
+picker-view-column {
+  width: 100rpx;
+  text-align: center;
 }

@@ -31,6 +31,8 @@ page {
   --color-qrcode-title: #EFEFEF;
   --color-qrcode-bg-color: #1C84D5;
   --color-sure-btn: #1A84D5;
+  --color-date-bolor: #818181;
+  --color-placeholder-color: #7D8794;
   /* 字体定义规范 */
   --font-size-large-h: 48rpx;
   --font-size-large-z: 40rpx; /* 适用于按钮字体 */
@@ -41,5 +43,6 @@ page {
   --font-size-medium-x: 28rpx; /* 适用于列表名称、正文 */
   --font-size-medium: 26rpx; /* 适用于列表名称、正文 */
   --font-size-small: 24rpx; /* 适用于提示文字、次要描述文字 */
+  --font-size-small-a: 22rpx;
   --font-size-small-s: 20rpx; /* 适用于提示文字、次要描述文字 */
 }

@@ -1,13 +1,46 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='chat-list'>
+  <view class='search'>
+    <text class='iconfont icon-cx'></text>
+    <input type='text' class='search-input' placeholder='请输入姓名'></input>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='item'>
+    <view class='left'>
+      <view class='avatar'><image src='/image/head.jpg'></image></view>
+      <view class='content'>
+        <view class='name'>张先生</view>
+        <view class='message'>时间ok，一会见...</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view class='time-icon'><image src='/image/time.png'></image></view>
+      <view class='time'>14:00</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='avatar'><image src='/image/head.jpg'></image></view>
+      <view class='content'>
+        <view class='name'>张先生</view>
+        <view class='message'>时间ok，一会见...</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view class='time-icon'><image src='/image/time.png'></image></view>
+      <view class='time'>14:00</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='avatar'><image src='/image/head.jpg'></image></view>
+      <view class='content'>
+        <view class='name'>张先生</view>
+        <view class='message'>时间ok，一会见...</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view class='time-icon'><image src='/image/time.png'></image></view>
+      <view class='time'>14:00</view>
+    </view>
   </view>
 </view>

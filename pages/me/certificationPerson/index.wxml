@@ -7,7 +7,7 @@
     </view>
     <view class="type tops last">
       <view class="active person">个人认证</view>
-      <view class="unactive">企业认证</view>
+      <view class="unactive" bindtap="toCertificationCompany">企业认证</view>
     </view>
     <view class='list'>
       <view class='ui-input view tops'>
