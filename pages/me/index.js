@@ -1,6 +1,7 @@
 // pages/me/index.js
 var that = this;
 var app = getApp();
+let util = require(`../../utils/util.js`)
 Page({
 
   /**
@@ -22,30 +23,40 @@ Page({
     that.setData({
       userInfo: app.globalData.userInfo
     })
-    if (app.globalData.userInfo.verification == "") {
-      wx.showModal({
-        title: '绑定手机号',
-        content: '您当前尚未绑定手机号，建议您绑定以获取更多优惠信息',
-        showCancel: true, //是否显示取消按钮
-        cancelText: "取消", //默认是“取消”
-        cancelColor: '#323232', //取消文字的颜色
-        confirmText: "确定", //默认是“确定”
-        confirmColor: '#1A84D5', //确定文字的颜色
-        success: function(res) {
-          if (res.confirm) {
-            console.log(res)
-            console.log('用户点击确定')
-            that.setData({
-              showBindPhoneModal: true
-            })
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        },
-        fail: function(res) {}, //接口调用失败的回调函数
-        complete: function(res) {}, //接口调用结束的回调函数（调用成功、失败都会执行）
+    if (app.globalData.userInfo.phone == "") {
+      that.setData({
+        showBindPhoneModal: true
       })
     }
+  },
+
+  getPhoneNumber(e) {
+    this.setData({
+      showBindPhoneModal: false
+    })
+    util.request({
+      url: '/user/bindPhone',
+      data: {
+        openId: app.globalData.openInfo.openid,
+        sessionKey: app.globalData.openInfo.session_key,
+        iv: e.detail.iv,
+        encryptedData: e.detail.encryptedData,
+      },
+      success(res) {
+        app.globalData.userInfo.phone = res.data.phone
+        wx.showToast({
+          title: '绑定成功',
+          icon: 'success',
+          duration: 1500
+        })
+      }
+    })
+  },
+
+  cancel() {
+    this.setData({
+      showBindPhoneModal: false  
+    })
   },
 
   /**

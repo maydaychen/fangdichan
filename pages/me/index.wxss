@@ -160,58 +160,54 @@
 
 .bindPhoneModal {
   width: 580rpx;
-  height: 490rpx;
-  padding-top: 60rpx;
+  height: 350rpx;
+  padding-top: 40rpx;
   box-sizing: border-box;
   background-color: var(--color-go-button-white);
   border-radius: 5rpx;
   margin: 0 auto;
-  margin-top: 264rpx;
+  margin-top: 379rpx;
   color: var(--color-certification-title);
 }
 
 .bindPhoneModal .title {
-  margin-left: 65rpx;
+  width: 100%;
+  text-align: center;
   font-size: var(--font-size-large-z);
 }
 
-.bindPhoneModal .company-name {
-  width: 100%;
-  margin-top: 55rpx;
-  text-align: center;
-  font-size: var(--font-size-large-y);
-}
-
 .bindPhoneModal .message {
-  margin-top: 55rpx;
-  margin-left: 65rpx;
+  width: 512rpx;
+  margin: 0 auto;
+  margin-top: 35rpx;
   font-size: var(--font-size-large-y);
-  color: var(--color-sub-title);
-}
-
-.bindPhoneModal .phone-number {
-  margin-left: 65rpx;
-  margin-top: 15rpx;
-  font-size: var(--font-size-large-x);
-  color: var(--color-certification-title);
+  color: var(--color-unactive-color);
 }
 
 .rbs-btn {
   width: 100%;
-  margin-top: 30rpx;
-  padding-left: 265rpx;
-  padding-right: 45rpx;
-  box-sizing: border-box;
+  height: 80rpx;
+  margin-top: 51rpx;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-size: var(--font-size-large-a);
+  border-top: 2rpx solid var(--color-unactive-color);
 }
 
 .rbs-btn .cancel-btn {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  border-right: 2rpx solid var(--color-unactive-color);
   color: var(--color-sub-title);
 }
 
 .rbs-btn .sure-btn {
+  background-color: var(--color-go-button-white);
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
   color: var(--color-sure-btn);
 }
