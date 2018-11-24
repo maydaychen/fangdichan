@@ -7,6 +7,7 @@
     <view class="profile-right">
       <text class="name">{{userInfo.nickname}}</text>
       <view class="certification">
+      
         <view class="certification-left">
           <text class="certification-title">认证类型</text>
           <view class='certification-type {{type==1?"":"certification-active"}}'>个人</view>
@@ -33,7 +34,7 @@
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </view>
-  <navigator class="profile-button ui-input" url='certificationPerson/index'>
+  <navigator class="profile-button ui-input" url='record/index'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/record-icon.png"></image>
       <text style='line-height:106rpx;'>带看记录</text>
