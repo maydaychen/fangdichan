@@ -1,6 +1,6 @@
 @import '/static/iconfont/iconfont.wxss';
 
-.imgs-list {
+/* .imgs-list {
   flex: 1;
   display: flex;
   box-sizing: border-box;
@@ -8,19 +8,16 @@
   background-color: #fff;
   border-radius: 0 0 10rpx 10rpx;
   flex-wrap: wrap;
-}
+} */
 
-.imgs__item {
-  position: relative;
-  margin-bottom: 20rpx;
-  margin-right: 20rpx;
-  overflow: hidden;
-  width: calc((100% - 40rpx) / 3);
-  height: calc((100vw - 88rpx) /3);
-}
-
-.imgs__item:nth-child(3n) {
-  margin-right: 0;
+.imgs-list {
+  flex: 1;
+  display: flex;
+  margin-top: 60rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+  flex-wrap: wrap;
 }
 
 .imgs__img {
@@ -63,10 +60,20 @@
   font-size: 28rpx;
 }
 
-.left {
-  width: 200rpx;
-  height: 130rpx;
+.imgs__item {
+  position: relative;
+  margin-bottom: 20rpx;
   margin-right: 30rpx;
-  text-align: center;
-  float: none;
+  overflow: hidden;
+  width: calc((100% - 70rpx) / 3);
+  height: 133rpx;
+}
+
+.imgs__item:last-child {
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-right: 0;
+  overflow: hidden;
+  width: calc((100% - 70rpx) / 3);
+  height: 133rpx;
 }

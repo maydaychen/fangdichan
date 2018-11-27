@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "提交认证公司"
+  "navigationBarTitleText": "提交认证公司",
+    "usingComponents": {
+      "upload-img": "/components/upload-img/upload-img"
+    }
 }

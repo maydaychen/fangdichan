@@ -3,7 +3,7 @@
     <image catchtap='_prevImg' data-idx='{{index}}' class='imgs__img' src='{{item}}' mode='aspectFill' lazy-load></image>
     <view wx:if='{{!isPrev}}' class='imgs__delete iconfont icon-delete' catchtap='_deleteImg' data-idx='{{index}}'></view>
   </view>
-  <view wx:if='{{!isPrev && imgs.length < maxCount}}' catchtap='_addImg'>
-    <image src="/image/add_pic.png" bindtap='delete' id="1" data-index="{{index}}" class='left' mode='aspectFit'></image>
+  <view wx:if='{{!isPrev && imgs.length < maxCount}}' catchtap='_addImg' class='imgs__item cover-class'>
+    <image src="/image/upload-icon.png" bindtap='delete' id="1" class='imgs__img' mode='aspectFit'></image>
   </view>
 </view>

@@ -1,68 +1,103 @@
 <!-- pages/me/certificationPerson/index.wxml -->
 <view class='container'>
-    <view class="notification">
-      <view class="notify-icon iconfont icon-tongzhi"></view>
-      <text>请保证资料真实有效，一旦发现虚假信息将审核失败。</text>
-      <view class="delete-icon iconfont icon-quxiao" bindtap="hide"></view>
-    </view>
-    <view class="type tops last">
-      <view class="active person">个人认证</view>
-      <view class="unactive" bindtap="toCertificationCompany">企业认证</view>
-    </view>
-    <view class='list'>
-      <view class='ui-input view tops'>
-        <view>姓名</view>
-        <input class="wsui-input__right" maxlength="140" placeholder="请填写姓名" placeholder-class="wsui-input__placeholder" type="text" bindinput='setName'></input>
+  <view class='fixed' hidden='{{show}}'>
+    <!-- 填写信息 -->
+    <view wx:if="{{id != 0}}">
+      <!-- 承载盒子，不可删 -->
+      <view wx:if="{{id == 1}}">
+        <block wx:for="{{personSex}}">
+          <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{sex == item ? "choose-active" :"" }}'>
+            {{item}}
+          </view>
+        </block>
       </view>
-      <view class='ui-input view'>
-        <view>性别</view>
-        <input class="wsui-input__right" maxlength="140" placeholder="请选择性别" placeholder-class="wsui-input__placeholder" type="text" bindinput='setSex'></input>
-      </view>
-      <view class='ui-input view'>
-        <view>身份证号</view>
-        <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text" bindinput='setID'></input>
-      </view>
-      <view class='ui-input view'>
-        <view>经纪人类型</view>
-        <view style='display:flex'>
-          <input class="wsui-input__right" maxlength="140" placeholder="请选择类型" placeholder-class="wsui-input__placeholder" type="text" bindinput='setType'></input>
-          <view class="iconfont icon-icon--"></view>
-        </view>
-      </view>
-      <view class='ui-input last'>
-        <view>推荐码</view>
-        <input class="wsui-input__right" maxlength="140" placeholder="推荐码 唯一" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCode'></input>
-      </view>
-      <view class='tops last'>
-        <text>个人身份证信息</text>
-        <view class='message'>请将身份证正反面上传，不能少于3张照片，第三正为手持身份证半身照</view>
-        <view class='example'>示例</view>
-        <view>
-          <block wx:for="{{example_list}}" wx:key="*this">
-            <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left'></image>
-          </block>
-        </view>
-        <view style='display:flex'>
-          <block wx:for="{{example_text}}" wx:key="this">
-            <view class='left_text'>{{item}}</view>
-          </block>
-        </view>
-        <view class='example' style='margin-top:33rpx;'>请上传身份证</view>
-        <view class='imgs-list'>
-          <block wx:for="{{IDcard_list}}" wx:key="this">
-            <view class='imgs__item cover-class'>
-              <block wx:if="{{imgs[index]}}">
-                <image src='{{imgs[index]}}' bindtap='_prevImg' data-index="{{index}}" class='imgs__img' mode='aspectFit' lazy-load></image>
-              </block>
-              <block wx:else>
-                <image src='{{item}}' bindtap='add_pic' data-index="{{index}}" class='imgs__img' mode='aspectFit' lazy-load></image>
-              </block>
-              <view wx:if='{{imgs[index]}}' class='imgs__delete iconfont icon-delete' catchtap='_deleteImg' data-idx='{{index}}'></view>
-              <!-- <image wx:else src="{{imgs[index]}}" bindtap='add_pic' data-index="{{index}}" class='left' mode='aspectFit'></image> -->
-            </view>
-          </block>
-        </view>
+      <view wx:if="{{id == 2}}">
+        <block wx:for="{{personType}}">
+          <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{type == item ? "choose-active" :"" }}'>
+            {{item}}
+          </view>
+        </block>
       </view>
     </view>
-    <button bindtap='submit'>提交</button>
+    <button catchtap='22' wx:if="{{id != 0}}" class="fix-button">确定</button>
+  </view>
+  <view class="notification">
+    <view class="notify-icon iconfont icon-tongzhi"></view>
+    <text>请保证资料真实有效，一旦发现虚假信息将审核失败。</text>
+    <view class="delete-icon iconfont icon-quxiao" bindtap="hide"></view>
+  </view>
+  <view class="type tops last">
+    <view class="active person">个人认证</view>
+    <view class="unactive" bindtap="toCertificationCompany">企业认证</view>
+  </view>
+  <view class='list'>
+    <view class='ui-input view tops'>
+      <view>姓名</view>
+      <input class="wsui-input__right" maxlength="140" placeholder="请填写姓名" placeholder-class="wsui-input__placeholder" type="text" bindinput='setName'></input>
+    </view>
+    <view class='ui-input view'>
+      <view>性别</view>
+      <view style='display:flex;color:#666;line-height:100%'>
+        <block wx:if="{{sex}}">
+          <view class="wsui-input__right" bindtap='show' id="1">{{sex}}</view>
+        </block>
+        <block wx:else>
+          <view class="wsui-input__right" bindtap='show' id="1">请选择性别</view>
+        </block>
+        <view class="iconfont icon-icon--"></view>
+      </view>
+      <!-- <input class="wsui-input__right" maxlength="140" placeholder="请选择性别" placeholder-class="wsui-input__placeholder" type="text" bindinput='setSex'></input> -->
+    </view>
+    <view class='ui-input view'>
+      <view>身份证号</view>
+      <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text" bindinput='setID'></input>
+    </view>
+    <view class='ui-input view'>
+      <view>经纪人类型</view>
+      <view style='display:flex;color:#666;line-height:100%'>
+        <block wx:if="{{type}}">
+          <view class="wsui-input__right" bindtap='show' id="2">{{type}}</view>
+        </block>
+        <block wx:else>
+          <view class="wsui-input__right" bindtap='show' id="2">请选择类型</view>
+        </block>
+        <view class="iconfont icon-icon--"></view>
+      </view>
+    </view>
+    <view class='ui-input last'>
+      <view>推荐码</view>
+      <input class="wsui-input__right" maxlength="140" placeholder="推荐码 唯一" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCode'></input>
+    </view>
+    <view class='tops last'>
+      <text>个人身份证信息</text>
+      <view class='message'>请将身份证正反面上传，不能少于3张照片，第三正为手持身份证半身照</view>
+      <view class='example'>示例</view>
+      <view class="imgs-list">
+        <block wx:for="{{example_list}}" wx:key="*this">
+          <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='imgs__item'></image>
+        </block>
+      </view>
+      <view style='display:flex'>
+        <block wx:for="{{example_text}}" wx:key="this">
+          <view class='left_text'>{{item}}</view>
+        </block>
+      </view>
+      <view class='example' style='margin-top:33rpx;'>请上传身份证</view>
+      <view class='imgs-list'>
+        <block wx:for="{{IDcard_list}}" wx:key="this">
+          <view class='imgs__item cover-class'>
+            <block wx:if="{{imgs[index]}}">
+              <image src='{{imgs[index]}}' bindtap='_prevImg' data-index="{{index}}" class='imgs__img' mode='aspectFit' lazy-load></image>
+            </block>
+            <block wx:else>
+              <image src='{{item}}' bindtap='add_pic' data-index="{{index}}" class='imgs__img' mode='aspectFit' lazy-load></image>
+            </block>
+            <view wx:if='{{imgs[index]}}' class='imgs__delete iconfont icon-delete' catchtap='_deleteImg' data-idx='{{index}}'></view>
+            <!-- <image wx:else src="{{imgs[index]}}" bindtap='add_pic' data-index="{{index}}" class='left' mode='aspectFit'></image> -->
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <button bindtap='submit' class="button-submit">提交</button>
 </view>

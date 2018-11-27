@@ -1,4 +1,6 @@
-let util = require(`../../utils/util.js`)
+let util = require(`../../utils/util.js`);
+
+var app = getApp();
 Component({
   externalClasses: ['cover-class'],
   properties: {
@@ -9,7 +11,7 @@ Component({
     imgList: Array,
     maxCount: {
       type: Number,
-      value: 9
+      value: 2
     }
   },
   data: {
@@ -27,17 +29,15 @@ Component({
         count: D.imgs.length ? D.maxCount - D.imgs.length : D.maxCount,
         success: res => {
           let imgList = D.imgs
-          let longPath = D.longPath
-          let shortPath = D.shortPath
-          imgList.push(res.files[0])
-          longPath.push(res.files[0].url)
-          shortPath.push(res.files[0].filename)
+          console.log(res)
+          imgList.push(app.globalData.baseUrl + res.url)
+
           this.setData({
             imgs: imgList,
-            shortPath: shortPath,
-            longPath: longPath
+            longPath: imgList,
+            shortPath: imgList,
           });
-          this.triggerEvent('imgs', D.shortPath, {})
+          this.triggerEvent('imgs', D.imgs, {})
         },
         progress: p => {
           console.log(p)
@@ -92,7 +92,7 @@ Component({
       this.triggerEvent('prevImg', {}, {})
       const idx = e.currentTarget.dataset.idx
       const D = this.data
-      let urls = D.imgList
+      let urls = D.imgs
       wx.previewImage({
         urls,
         current: urls[idx]

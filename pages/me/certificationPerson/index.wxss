@@ -24,6 +24,60 @@
   text-align: center;
 }
 
+.fixed {
+  height: 100%;
+  z-index: 10;
+  left: 0rpx;
+}
+
+.fixed>view {
+  background: #fff;
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 140rpx;
+}
+
+.fixed .bottom {
+  padding: 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.fixed>button {
+  position: absolute;
+  bottom: 20rpx;
+  left: 2.5%;
+  background: #1d87d9;
+  width: 95%;
+  height: 94rpx;
+  color: #fff;
+  box-shadow: 0px 1px 1px 0px #1d87d9;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.fixed view label:last-child {
+  margin-right: 0rpx;
+}
+
+.fixed .see {
+  margin: 10%;
+  width: 80%;
+  border-radius: 10rpx;
+  top: 0rpx;
+}
+
+.fixed .see text {
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+
+.choose-active {
+  color: #1D87D9;
+}
+
 .delete-icon {
   width: 23rpx;
   height: 23rpx;
@@ -74,14 +128,14 @@
   margin: 20rpx 0;
 }
 
-button {
+.button-submit {
   background: #1d87d9;
   width: 100%;
-  height: 100rpx;
+  height: 94rpx;
   color: #fff;
+  font-size: var(--font-size-large-x);
   box-shadow: 0px 1px 1px 0px #1d87d9;
-  margin: 0 auto;
-  margin-top: 20rpx;
+  margin: 40rpx auto 46rpx;
 }
 
 .left {
@@ -114,7 +168,7 @@ button {
   margin-right: 30rpx;
   overflow: hidden;
   width: calc((100% - 70rpx) / 3);
-  height: calc((100vw - 88rpx) /3);
+  height: 133rpx;
 }
 
 .imgs__item:last-child {
@@ -123,7 +177,7 @@ button {
   margin-right: 0;
   overflow: hidden;
   width: calc((100% - 70rpx) / 3);
-  height: calc((100vw - 88rpx) /3);
+  height: 133rpx;
 }
 
 .imgs__img {

@@ -28,7 +28,7 @@ Page({
               iv: res.iv,
             },
             success(res) {
-              console.log(res);
+              console.log(res)
               app.globalData.userInfo = res.data;              
               // if (res.data.code == 1) {
               wx.switchTab({

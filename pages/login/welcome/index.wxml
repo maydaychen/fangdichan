@@ -1,5 +1,5 @@
 <!--pages/login/welcome/index.wxml-->
-<view>
+<view style='height="100%"'>
   <image class='loginbg' mode='widthFix' src='/image/welcome-pic.png'> </image>
   <view class='go' bindtap='go'>立即体验</view>
 </view>

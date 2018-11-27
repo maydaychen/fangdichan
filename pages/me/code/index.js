@@ -1,5 +1,6 @@
 // pages/me/code/index.js
 var app = getApp();
+let util = require(`../../../utils/util.js`);
 Page({
 
   /**
@@ -16,6 +17,15 @@ Page({
     var that = this;
     that.setData({
       userInfo: app.globalData.userInfo
+    })
+    util.request({
+      url: '/user/userCode',
+      data: {
+        openId: app.globalData.openInfo.openid,
+      },
+      success: res => {
+        console.log(res)
+      }
     })
   },
 

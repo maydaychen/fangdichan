@@ -1,5 +1,19 @@
 <!-- pages/me/certificationCompany/index.wxml -->
 <view class="container">
+  <view class='fixed' hidden='{{show}}'>
+    <!-- 填写信息 -->
+    <view wx:if="{{id != 0}}">
+      <!-- 承载盒子，不可删 -->
+      <view wx:if="{{id == 1}}">
+        <block wx:for="{{personSex}}">
+          <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{sex == item ? "choose-active" :"" }}'>
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+    <button catchtap='22' wx:if="{{id != 0}}" class="fix-button">确定</button>
+  </view>
   <view class="notification">
     <view class="notify-icon iconfont icon-tongzhi"></view>
     <text>请保证资料真实有效，一旦发现虚假信息将审核失败。</text>
@@ -10,44 +24,77 @@
     <view class="active">企业认证</view>
   </view>
   <view class='list'>
-
     <view class='ui-input view tops'>
       <view class="certification-title">公司信息</view>
     </view>
     <view class='ui-input view'>
       <view>公司名称</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="房挑房公司" placeholder-class="wsui-input__placeholder" type="text"></input>
+      <input class="wsui-input__right" maxlength="140" placeholder="请输入公司名称" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCompName'></input>
     </view>
     <view class='ui-input last'>
       <view>统一社会信用代码</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="123456789" placeholder-class="wsui-input__placeholder" type="text"></input>
+      <input class="wsui-input__right" maxlength="140" placeholder="请输入统一社会信用代码" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCreditCode'></input>
     </view>
-        <view class='ui-input view tops'>
+    <view class='ui-input view tops'>
       <view class="certification-title">法人信息</view>
     </view>
     <view class='ui-input view'>
       <view>姓名</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入姓名" placeholder-class="wsui-input__placeholder" type="text"></input>
+      <input class="wsui-input__right" maxlength="140" placeholder="请输入姓名" placeholder-class="wsui-input__placeholder" type="text" bindinput='setName'></input>
     </view>
-        <view class='ui-input view'>
+    <view class='ui-input view'>
       <view>性别</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请选择性别" placeholder-class="wsui-input__placeholder" type="text"></input>
+      <view style='display:flex;color:#666;line-height:100%'>
+        <block wx:if="{{sex}}">
+          <view class="wsui-input__right" bindtap='show' id="1">{{sex}}</view>
+        </block>
+        <block wx:else>
+          <view class="wsui-input__right" bindtap='show' id="1">请选择性别</view>
+        </block>
+        <view class="iconfont icon-icon--"></view>
+      </view>
+      <!-- <input class="wsui-input__right" maxlength="140" placeholder="请选择性别" placeholder-class="wsui-input__placeholder" type="text" bindinput='setSex'></input> -->
     </view>
     <view class='ui-input last'>
       <view>身份证</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text"></input>
+      <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCode'></input>
     </view>
     <view class="business-licenses">
       <view class="title">公司营业执照</view>
       <view class="notice">请上传三证合一营业执照，不能低于1张照片</view>
-      <image class="upload-licenses-icon" src="/image/upload-icon.png"></image>
+      <!-- <image class="upload-licenses-icon" src="/image/upload-icon.png"></image> -->
+      <upload-img bind:imgs='imgsOnChange' maxCount='2' cover-class='imgs__item--cover'></upload-img>
     </view>
-    <view class="id-card-info">
-      <view class="title">法人身份证信息</view>
-      <view class="notice">请将身份证正反面上传，不能低于3张照片，第3张为手持身份证
-半身照。</view>
-      <view class="example-title">示例</view>
+    <view class='tops last'>
+      <text>法人身份证信息</text>
+      <view class='message'>请将身份证正反面上传，不能低于3张照片，第3张为手持身份证</view>
+      <view class='example'>示例</view>
+      <view class="imgs-list">
+        <block wx:for="{{example_list}}" wx:key="*this">
+          <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='imgs__item'></image>
+        </block>
+      </view>
+      <view style='display:flex'>
+        <block wx:for="{{example_text}}" wx:key="this">
+          <view class='left_text'>{{item}}</view>
+        </block>
+      </view>
+      <view class='example' style='margin-top:33rpx;'>请上传身份证</view>
+      <view class='imgs-list'>
+        <block wx:for="{{IDcard_list}}" wx:key="this">
+          <view class='imgs__item cover-class'>
+            <block wx:if="{{imgs[index]}}">
+              <image src='{{imgs[index]}}' bindtap='_prevImg' data-index="{{index}}" class='imgs__img' mode='aspectFit' lazy-load></image>
+            </block>
+            <block wx:else>
+              <image src='{{item}}' bindtap='add_pic' data-index="{{index}}" class='imgs__img' mode='aspectFit' lazy-load></image>
+            </block>
+            <view wx:if='{{imgs[index]}}' class='imgs__delete iconfont icon-delete' catchtap='_deleteImg' data-idx='{{index}}'></view>
+            <!-- <image wx:else src="{{imgs[index]}}" bindtap='add_pic' data-index="{{index}}" class='left' mode='aspectFit'></image> -->
+          </view>
+        </block>
+      </view>
     </view>
   </view>
-  <button class="submit">提交</button>
+  <button bindtap="submit">提交</button>
 </view>
