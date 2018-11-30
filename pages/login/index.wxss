@@ -34,7 +34,7 @@ page {
   height: 0rpx;
   margin: 0 auto;
   margin-top: 80rpx;
-  border-bottom: var(--color-sub-title) 4rpx dashed;
+  border-bottom: var(--color-background) 4rpx solid;
 }
 
 .notice {

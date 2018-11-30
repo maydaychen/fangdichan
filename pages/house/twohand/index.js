@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:['','',''],
+    list:[{bian:false},{bian:false},{bian:false}],
     bian:false
   },
   goto:function(){//add
@@ -34,9 +34,18 @@ Page({
       url: '/pages/house/twohand/detail/index',
     })
   },
-  bian:function(){
+  bian:function(e){
+    console.log(e);
+    var up = 'list[' + parseInt(e.currentTarget.id)+'].bian';
     this.setData({
-      bian:!this.data.bian
+      [up]:true
+    })
+  },
+  close: function (e) {
+    console.log(e);
+    var up = 'list[' + parseInt(e.currentTarget.id) + '].bian';
+    this.setData({
+      [up]: false
     })
   },
   /**

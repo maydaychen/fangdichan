@@ -1,11 +1,39 @@
 //app.js
 let util = require(`./utils/util.js`)
 App({
-  onLaunch: function() {
-    util.getInfo((data) => {})
+  onLaunch: function () {
+    util.getInfo({
+      success: res => {
+        console.log("check")
+        this.getUser();
+      }
+    })
+  },
+  getUser() {
+    let that = this
+    util.request({
+      url: '/user/checkOpenid',
+      data: {
+        openId: this.globalData.openInfo.openid
+      },
+      success(res) {
+        console.log("check")
+        if (res.data.isNum < 1) {
+          wx.redirectTo({
+            url: '/pages/login/welcome/index',
+          })
+        }
+      },
+      fail(res) {
+        console.log("check1")
+        wx.redirectTo({
+          url: '/pages/login/welcome/index',
+        })
+      }
+    })
   },
   //选择图片
-  chooseImg: function (imgUrl, callback) {//i:选择图片个数，[]对应的图片数组
+  chooseImg: function (imgUrl, callback) { //i:选择图片个数，[]对应的图片数组
     wx.showActionSheet({
       itemList: ['相机', '相册'],
       success: res => {
@@ -28,8 +56,8 @@ App({
                 }
               }
               callback(imgUrl)
-            }, fail: function (res) {
-            }
+            },
+            fail: function (res) {}
           })
         }
       }
@@ -44,7 +72,8 @@ App({
       success: function (res) {
         var json = JSON.parse(res.data);
         callback(json)
-      }, faile: function (res) {
+      },
+      faile: function (res) {
         console.log(res);
       }
     })

@@ -45,7 +45,6 @@ page {
   display: flex;
   margin: 25rpx;
   width: 88%;
-  height: 175rpx;
   padding: 20rpx;
   overflow: hidden;
 }
@@ -54,18 +53,16 @@ page {
   font-size: 60rpx;
   color: #fff;
   background: #13e6cd;
-  border-radius: 50%;
-  width: 87rpx;
-  height: 87rpx;
+  border-radius: 100%;
+  width: 112rpx;
+  height: 102rpx;
   text-align: center;
-  margin: auto 30rpx;
-  margin-right: 15rpx;
+  line-height: 100rpx;
 }
 
 .house_index > view {
   width: 88%;
   padding: 0rpx 20rpx;
-  margin: auto 0;
 }
 
 .house_index .two {
@@ -73,8 +70,8 @@ page {
 }
 
 .house_index image {
-  width: 80px;
-  height: 80px;
+  width: 100rpx;
+  height: 100rpx;
 }
 
 .house_title {
@@ -94,13 +91,13 @@ page {
   font-weight: 400;
   color: #666;
   line-height: 24px;
-  background: #ddd;
+  background: #eee;
   text-align: center;
+  border-radius: 5rpx;
 }
 
 .right .right {
-  margin-top: -18%;
+  margin-top: -15%;
   font-size: 32rpx;
-  color: #666;
   font-weight: bold;
 }

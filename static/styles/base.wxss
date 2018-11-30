@@ -1,7 +1,15 @@
 @import '/static/styles/variable.wxss';
 
+page {
+  background-color: var(--color-background);
+  width: 100%;
+  font-size: 32rpx;
+  font-family: PingFangSC;
+}
+
 .wsui-input__right {
   text-align: right;
+  color: var(--color-sub-title);
 }
 
 .ui-input {
@@ -33,11 +41,11 @@
   border-radius: 0 0 10rpx 10rpx;
 }
 
-.list > view {
+.list>view {
   background: #fff;
   overflow: hidden;
   padding: 20rpx;
- font-size: var(--font-size-medium-x);
+  font-size: var(--font-size-medium-x);
 }
 
 .example {

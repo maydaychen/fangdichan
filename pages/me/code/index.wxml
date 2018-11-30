@@ -14,21 +14,21 @@
   </view>
   <view class="split-line">
     <view class="left-semi-arc"></view>
-    <image class="middle" src='/image/dashed-line.png'/>
+    <image class="middle" src='/image/dashed-line.png' />
     <view class="right-semi-arc"></view>
   </view>
   <view class="qrcode-type">
     <view class="item">
       <image class="code-icon" src="/image/collection-code.png"></image>
-      <view>收款码</view>
+      <view style='margin-top:10rpx'>收款码</view>
     </view>
     <view class="item">
       <image class="code-icon" src="/image/payment-code.png"></image>
-      <view>付款码</view>
+      <view style='margin-top:10rpx'>付款码</view>
     </view>
     <view class="item">
       <image class="code-icon" src="/image/promotion-code.png"></image>
-      <view>推广码</view>
+      <view style='margin-top:10rpx'>推广码</view>
     </view>
   </view>
 </view>

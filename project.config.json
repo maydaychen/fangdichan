@@ -51,15 +51,16 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "个人中心",
-					"pathName": "pages/me/index",
+					"pathName": "pages/me/code/index",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "gongsi",
-					"pathName": "pages/me/certificationCompany/index"
+					"id": 3,
+					"name": "业绩",
+					"pathName": "pages/me/grade/index",
+					"query": ""
 				}
 			]
 		}

@@ -1,5 +1,9 @@
 /* pages/house/twohand/index.wxss */
-page{background:#fff;}
+
+page {
+  background: #fff;
+}
+
 @font-face {
   font-family: "iconfont";
   src: url('iconfont.eot?t=1541061234374'); /* IE9*/
@@ -59,7 +63,7 @@ page{background:#fff;}
 }
 
 .sale text {
-  font-size: 26rpx;
+  font-size: 28rpx;
   padding: 5rpx 10rpx;
   border-radius: 5rpx;
   margin-right: 10rpx;
@@ -67,17 +71,17 @@ page{background:#fff;}
 
 .sale text:first-child {
   color: #e40c01;
-  background: #fff0b8;
+  background: #fff8e0;
 }
 
 .sale text:nth-child(2), .sale text:last-child {
   color: #1c87d8;
-  background: #bfdcf2;
+  background: rgba(191, 220, 242, 0.5);
 }
 
 .sale text:nth-child(3) {
   color: #5cb66a;
-  background: #d2ecb4;
+  background: rgba(202, 240, 158, 0.5);
 }
 
 .left {
@@ -87,7 +91,7 @@ page{background:#fff;}
 }
 
 .left > text {
-  color: #666;
+  color: #b4bdc6;
 }
 
 .list > view .right {
@@ -116,9 +120,10 @@ page{background:#fff;}
   background: #eee;
   padding: 10rpx;
   line-height: 2;
+  border-radius: 0px 4px 4px 0px;
 }
 
-.bians{
+.bians {
   margin-left: 15%;
 }
 
@@ -149,7 +154,13 @@ input {
 
 .search text {
   font-size: 35rpx;
-  vertical-align:middle;
-  color:#777;
-  font-weight:bold;
+  vertical-align: middle;
+  color: #777;
+  font-weight: bold;
+}
+
+.list .left .down {
+  color: #fff;
+  background: #1e87d9;
+  border-radius: 4px 0px 0px 4px;
 }

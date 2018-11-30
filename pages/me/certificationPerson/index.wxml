@@ -32,8 +32,10 @@
   </view>
   <view class='list'>
     <view class='ui-input view tops'>
-      <view>姓名</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请填写姓名" placeholder-class="wsui-input__placeholder" type="text" bindinput='setName'></input>
+      姓名
+      <view class='right' style='display:flex;color:#666;line-height:100%'>
+        <input placeholder="请填写姓名" bindinput='setName' maxlength="4">请填写姓名</input>
+      </view>
     </view>
     <view class='ui-input view'>
       <view>性别</view>
@@ -50,7 +52,7 @@
     </view>
     <view class='ui-input view'>
       <view>身份证号</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text" bindinput='setID'></input>
+      <input class="wsui-input__right" maxlength="18" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="idcard" bindinput='setID'></input>
     </view>
     <view class='ui-input view'>
       <view>经纪人类型</view>

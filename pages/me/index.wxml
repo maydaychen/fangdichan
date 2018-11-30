@@ -1,4 +1,4 @@
-<!--pages/me/index.wxml-->
+<!-- pages/me/index.wxml -->
 <view class="personal-center">
   <view class="profile">
     <view class="profile-left">
@@ -7,11 +7,12 @@
     <view class="profile-right">
       <text class="name">{{userInfo.nickname}}</text>
       <view class="certification">
-      
         <view class="certification-left">
           <text class="certification-title">认证类型</text>
-          <view class='certification-type {{type==1?"":"certification-active"}}'>个人</view>
-          <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
+          <view wx:if="{{isConfirmed}}">
+            <view class='certification-type {{type==1?"":"certification-active"}}'>个人</view>
+            <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
+          </view>
         </view>
         <block wx:if="{{isConfirmed}}">
           <navigator class="check-status-confirmed iconfont icon-erweima" url='code/index'></navigator>
@@ -19,39 +20,38 @@
         <block wx:else>
           <view class="check-status">审核中</view>
         </block>
-
       </view>
     </view>
   </view>
   <view class="notification">
     <image class="notify-icon" src="/image/notification-icon.png"></image>
-    <text>房挑房给你意想不到的惊喜！</text>
+    <text >房挑房给你意想不到的惊喜！</text>
   </view>
   <view class="profile-button ui-input" bindtap='certification'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/certification-mangement-icon.png"></image>
-      <text style='line-height:106rpx;'>认证中心</text>
+      <text class="person_choice">认证中心</text>
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </view>
   <navigator class="profile-button ui-input" url='record/index'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/record-icon.png"></image>
-      <text style='line-height:106rpx;'>带看记录</text>
+      <text class="person_choice">带看记录</text>
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </navigator>
   <navigator class="profile-button ui-input" url='grade/index'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/grade-icon.png"></image>
-      <text style='line-height:106rpx;'>我的业绩</text>
+      <text class="person_choice">我的业绩</text>
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </navigator>
   <navigator class="profile-button ui-input" url='purse/index'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/money-icon.png"></image>
-      <text style='line-height:106rpx;'>我的钱包</text>
+      <text class="person_choice">我的钱包</text>
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </navigator>
@@ -60,11 +60,12 @@
     <view class="bindPhoneModal">
       <view class="title">绑定手机号</view>
       <view class="message">您当前尚未绑定手机号，建议您绑定
-以获取更多优惠信息。
-</view>
+以获取更多优惠信息。</view>
       <view class="rbs-btn">
         <view class="cancel-btn" bindtap="cancel">取消</view>
-        <button class="sure-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确认</button>
+        <button class="sure-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+          确认
+        </button>
       </view>
     </view>
   </view>

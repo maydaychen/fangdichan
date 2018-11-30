@@ -18,14 +18,14 @@
     <view class='ui-input view tops'>
       <view style='display:flex;align-items:center'>
         <image class="icon" src="/image/recharge-icon.png"></image>
-        <text style='line-height:106rpx;'>充值</text>
+        <text class="person_choice">充值</text>
       </view>
       <view class="icon-right iconfont icon-you"></view>
     </view>
     <view class='ui-input last'>
       <view style='display:flex;align-items:center'>
         <image class="icon" src="/image/withdraw-icon.png"></image>
-        <text style='line-height:106rpx;'>提现</text>
+        <text class="person_choice">提现</text>
       </view>
       <view class="icon-right iconfont icon-you"></view>
     </view>

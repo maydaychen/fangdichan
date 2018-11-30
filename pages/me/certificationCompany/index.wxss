@@ -18,6 +18,14 @@
   position: relative;
 }
 
+input {
+  display: inline-block;
+  vertical-align: middle;
+  width: 350rpx;
+  background: #fff;
+  margin: 0 10rpx;
+}
+
 .notify-icon {
   margin: 0 9rpx 0 23rpx;
   color: #707070;

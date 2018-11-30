@@ -30,8 +30,8 @@
 
 .icon-right:before { content: "\e7eb"; color:#999;}
 
-page{
-  background:#fff;
+page,.container{
+  background:#fff!important;
   height:100%;
 }
 .sale{padding:40rpx;text-align:center;}

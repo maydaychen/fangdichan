@@ -8,11 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: 1,
+    type: 0,
     tele: "0510-88888",
-    isConfirmed: true,
+    isConfirmed: false,
     userInfo: null,
-    showBindPhoneModal: false
+    showBindPhoneModal: false,
+    isRefresh: false
   },
 
   /**
@@ -23,16 +24,7 @@ Page({
     that.setData({
       userInfo: app.globalData.userInfo
     })
-    if (app.globalData.userInfo.mobile == "") {
-      that.setData({
-        showBindPhoneModal: true
-      })
-    }
-    if (app.globalData.userInfo.verification == "company") {
-      that.setData({
-        type: 1
-      })
-    }
+
   },
 
   getPhoneNumber(e) {
@@ -64,6 +56,43 @@ Page({
     })
   },
 
+  getUserInfo: function () {
+    util.request({
+      url: '/user/info',
+      data: {
+        openId: app.globalData.openInfo.openid,
+      },
+      success: res => {
+        wx.hideNavigationBarLoading();
+        wx.stopPullDownRefresh();
+        app.globalData.userInfo = res.data.info;
+        that.setData({
+          userInfo: res.data.info
+        })
+        if (app.globalData.userInfo.mobile == "") {
+          that.setData({
+            showBindPhoneModal: true
+          })
+        }
+        if (app.globalData.userInfo.verification == "company") {
+          that.setData({
+            type: 1
+          })
+        }
+        if (!app.globalData.userInfo.company.status == "审核中") {
+          that.setData({
+            isConfirmed: true
+          })
+        }
+      },
+      fail: function () {
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -75,15 +104,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    util.request({
-      url: '/user/info',
-      data: {
-        openId: app.globalData.openInfo.openid,
-      },
-      success: res => {
-        app.globalData.userInfo = res.data.info;
-      }
-    })
+    that = this;
+    that.getUserInfo();
   },
 
   /**
@@ -131,6 +153,15 @@ Page({
         url: 'certificationCompany/index',
       })
     }
-
-  }
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    that = this;
+    that.setData({
+      isRefresh: true,
+    })
+    that.getUserInfo();
+  },
 })

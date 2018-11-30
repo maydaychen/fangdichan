@@ -1,6 +1,6 @@
 var util = {};
 
-util.upload = function(option, type = 'images') {
+util.upload = function (option, type = 'images') {
   var app = getApp();
   var url = app.globalData.baseUrl + '/common/upload';
   var openid = wx.getStorageSync("userInfo").openid;
@@ -12,7 +12,7 @@ util.upload = function(option, type = 'images') {
         count: option.count ? option.count : 1, // 默认1
         sizeType: option.sizeType ? option.sizeType : ["compressed"], // 可以指定是原图还是压缩图，默认压缩图
         sourceType: option.sourceType ? option.sourceType : ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
-        success: function(files) {
+        success: function (files) {
           //返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           var responsePath = {};
           var tempFilePaths = files.tempFilePaths;
@@ -35,7 +35,7 @@ util.upload = function(option, type = 'images') {
         maxDuration: option.maxDuration ? option.maxDuration : 60, // 默认最长60s
         compressed: option.compressed != null ? option.compressed : true, // 是否压缩所选的视频源文件，默认值为true
         sourceType: option.sourceType ? option.sourceType : ["album", "camera"], // 可以指定来源是相册还是相机，默认二者都有
-        success: function(files) {
+        success: function (files) {
           //返回选定视频的本地文件路径
           var responsePath = {};
 
@@ -52,13 +52,13 @@ util.upload = function(option, type = 'images') {
   /**
    * 上传文件方法
    */
-  util.uploadFile = function(tempFilePath, key, option) {
+  util.uploadFile = function (tempFilePath, key, option) {
     console.log(url);
     wx.uploadFile({
       url: url,
       filePath: tempFilePath,
       name: "file",
-      success: function(result) {
+      success: function (result) {
         var data = JSON.parse(result.data);
         console.log(data);
         if (data.code != 1) {
@@ -95,10 +95,10 @@ util.upload = function(option, type = 'images') {
   }
 }
 
-util.getInfo = function(fun) {
+util.getInfo = function (option) {
   const that = this;
   wx.login({
-    success: function(res) {
+    success: function (res) {
       if (res.code) {
         wx.request({
           url: 'https://apis.vitlf.com/user/getOpenId',
@@ -109,6 +109,9 @@ util.getInfo = function(fun) {
             // getApp().globalData.openid = res.data.data.openid;
             getApp().globalData.openInfo['openid'] = res.data.data.openid;
             getApp().globalData.openInfo['session_key'] = res.data.data.session_key;
+            if (option.success && typeof option.success == "function") {
+              option.success();
+            }
           },
         })
       } else {
@@ -119,7 +122,7 @@ util.getInfo = function(fun) {
         })
       }
     },
-    fail: function(res) {
+    fail: function (res) {
       wx.showModal({
         title: '提示',
         content: res.errMsg,
@@ -129,7 +132,7 @@ util.getInfo = function(fun) {
   })
 }
 
-util.request = function(opt) {
+util.request = function (opt) {
   var app = getApp();
   wx.request({
     url: app.globalData.baseUrl + opt.url,
@@ -140,7 +143,7 @@ util.request = function(opt) {
     method: opt.method || 'GET',
     dataType: opt.dataType || 'json',
     responseType: opt.responseType || 'text',
-    success: function(response) {
+    success: function (response) {
       wx.hideNavigationBarLoading();
       wx.hideLoading();
       if (response.data.code !== 1) {
@@ -154,12 +157,12 @@ util.request = function(opt) {
         }
       }
     },
-    fail: function(res) {
+    fail: function (res) {
       if (typeof opt.fail === 'function') {
         opt.fail(res.data)
       }
     },
-    complete: function(res) {
+    complete: function (res) {
       //   wx.hideLoading()
       if (typeof opt.complete === 'function') {
         opt.complete(res.data)

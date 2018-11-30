@@ -1,20 +1,17 @@
-<!-- pages/house/rent/hezu/new/index.wxml -->
+<!--pages/house/rent/hezu/new/index.wxml-->
 <view class='container'>
   <view class='top'>
-    <text class='iconfont icon-yinlianglabashengyin'></text>
-    保证房源真实有效，一旦发现虚假立即删除...
+    <text class='iconfont icon-yinlianglabashengyin'></text> 保证房源真实有效，一旦发现虚假立即删除...
     <text class='iconfont icon-LC_icon_close_fill_circle'></text>
   </view>
   <form bindtap='submit'>
     <view class='fixed' hidden='{{show}}'>
-      <view wx:if="{{id == 0}}" class="see">
-        <!-- 协议 -->
-        <text class='iconfont icon-LC_icon_close_fill_circle' bindtap='22'></text>
+      <view wx:if="{{id == 0}}" class="see"><!--协议-->
+      <text class='iconfont icon-LC_icon_close_fill_circle' bindtap='22'></text>
         <view></view>
       </view>
-      <!-- 填写信息 -->
-      <view wx:if="{{id != 0}}">
-        <!-- 承载盒子，不可删 -->
+      <!--填写信息-->
+      <view wx:if="{{id != 0}}"> <!--承载盒子，不可删-->
         <view wx:if="{{id == 1}}" class='search'>
           <view>
             <text class='iconfont icon-search'></text>
@@ -40,11 +37,11 @@
             <text>两卫</text>
           </scroll-view>
         </view>
-        <view class='center' wx:for="{{search}}" wx:key="*this">{{item}}</view>
+        <view class='center' wx:for="{{search}}" wx:key="*this">
+          {{item}}
+        </view>
         <view wx:if="{{id == 3}}">
-          <view class='bottom' wx:for="{{housetype}}" wx:key="*this" bindtap='choose'>
-            {{item}}
-          </view>
+          <view class='bottom' wx:for="{{housetype}}" wx:key="*this" bindtap='choose'>{{item}}</view>
         </view>
         <view wx:if="{{id == 4}}">
           <view class='bottom' wx:for="{{only}}" wx:key="*this" bindtap='choose'>{{item}}</view>
@@ -54,9 +51,7 @@
           <view class='bottom' bindtap='choose' data-index="北">北</view>
         </view>
         <view wx:if="{{id == 6}}">
-          <view class='bottom' wx:for="{{zhuang}}" wx:key="*this" bindtap='choose' data-index="{{item}}">
-            {{item}}
-          </view>
+          <view class='bottom' wx:for="{{zhuang}}" wx:key="*this" bindtap='choose' data-index="{{item}}">{{item}}</view>
         </view>
         <view wx:if="{{id == 7}}">
           <view class='bottom' bindtap='choose' data-index="1">是</view>
@@ -64,26 +59,20 @@
         </view>
         <view wx:if="{{id == 8}}">
           <radio-group>
-            <radio id='1'></radio>
-            <label for=''>40年</label>
-            <radio id='2'></radio>
-            <label for=''>50年</label>
-            <radio id='3'></radio>
-            <label for=''>70年</label>
+            <radio id='1'></radio><label for=''>40年</label>
+            <radio id='2'></radio><label for=''>50年</label>
+            <radio id='3'></radio><label for=''>70年</label>
           </radio-group>
         </view>
         <view wx:if="{{id == 9}}">
           <radio-group>
-            <radio id='1'></radio>
-            <label for=''>4年</label>
-            <radio id='2'></radio>
-            <label for=''>10年</label>
-            <radio id='3'></radio>
-            <label for=''>20年</label>
+            <radio id='1'></radio><label for=''>4年</label>
+            <radio id='2'></radio><label for=''>10年</label>
+            <radio id='3'></radio><label for=''>20年</label>
           </radio-group>
         </view>
         <view wx:if="{{id == 10}}">
-          <input name="title" placeholder='请输入标题'></input>
+          <input name="title" placeholder='请输入标题' style='width:90%;'></input>
         </view>
         <view wx:if="{{id == 11}}">
           <textarea name="message" bindinput='message'></textarea>
@@ -92,76 +81,54 @@
       <button catchtap='22' wx:if="{{id != 0}}">确定</button>
     </view>
     <view class='list'>
-      <!-- 显示部分 -->
-      <view class='tops view' bindtap='show' id="1">
-        小区名称
+      <!--显示部分-->
+      <view class='tops view' bindtap='show' id="1">小区名称
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='last' bindtap='show' id="2">
-        房屋户型
+      <view class='last' bindtap='show' id="2">房屋户型
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='tops view'>
-        售价
+      <view class='tops view'>售价
         <view class='right'>
-          <input placeholder='真实价格'></input>
-          万元
-        </view>
+          <input placeholder='真实价格'></input>万元</view>
       </view>
-      <view class='view'>
-        产权面积
+      <view class='view'>产权面积
         <view class='right'>
-          <input placeholder='真实面积'></input>
-          平米
-        </view>
+          <input placeholder='真实面积'></input>平米</view>
       </view>
-      <view class='view' bindtap='show' id="3">
-        房屋类型
+      <view class='view' bindtap='show' id="3">房屋类型
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='last' bindtap='show' id="4">
-        唯一住房
+      <view class='last' bindtap='show' id="4">唯一住房
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='tops view' bindtap='show' id="5">
-        朝向
+      <view class='tops view' bindtap='show' id="5">朝向
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='view' bindtap='show' id="6">
-        装修
+      <view class='view' bindtap='show' id="6">装修
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='view' bindtap='show' id="7">
-        电梯
+      <view class='view' bindtap='show' id="7">电梯
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='last'>
-        楼层
+      <view class='last'>楼层
         <view class='right'>
-          <input></input>
-          所在楼层
-          <input></input>
-          总楼层
-        </view>
+          <input></input>所在楼层
+          <input></input>总楼层</view>
       </view>
-      <view class='tops view' bindtap='show' id="8">
-        产权类型
+      <view class='tops view' bindtap='show' id="8">产权类型
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='last' bindtap='show' id="9">
-        房屋年限
+      <view class='last' bindtap='show' id="9">房屋年限
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='tops view' bindtap='show' id="10">
-        标题
+      <view class='tops view' bindtap='show' id="10">标题
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='view' bindtap='show' id="11">
-        描述介绍
+      <view class='view' bindtap='show' id="11">描述介绍
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='last' bindtap='show' id="12">
-        小区配套
+      <view class='last' bindtap='show' id="12">小区配套
         <text class='right iconfont icon-right'></text>
       </view>
       <view class='tops last'>
@@ -202,11 +169,8 @@
       </view>
       <view class='tops last'>
         <text>房源承诺</text>
-        <view class='message'>
-          本人承诺房源真实，遵守
-          <text bindtap='show' id="0">平台协议</text>
-          ！
-        </view>
+        <view class='message'>本人承诺房源真实，遵守
+          <text bindtap='show' id="0">平台协议</text>！</view>
         <checkbox class='right' bindtap='check'></checkbox>
       </view>
     </view>

@@ -29,18 +29,18 @@
     </view>
     <view class='ui-input view'>
       <view>公司名称</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入公司名称" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCompName'></input>
+      <input class="wsui-input__right" maxlength="20" placeholder="请输入公司名称" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCompName'></input>
     </view>
     <view class='ui-input last'>
       <view>统一社会信用代码</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入统一社会信用代码" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCreditCode'></input>
+      <input class="wsui-input__right" maxlength="20"  placeholder="请输入统一社会信用代码" placeholder-class="wsui-input__placeholder" type="digit" bindinput='setCreditCode'></input>
     </view>
     <view class='ui-input view tops'>
       <view class="certification-title">法人信息</view>
     </view>
     <view class='ui-input view'>
       <view>姓名</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入姓名" placeholder-class="wsui-input__placeholder" type="text" bindinput='setName'></input>
+      <input class="wsui-input__right" maxlength="4" placeholder="请输入姓名" placeholder-class="wsui-input__placeholder" type="text" bindinput='setName'></input>
     </view>
     <view class='ui-input view'>
       <view>性别</view>
@@ -57,7 +57,7 @@
     </view>
     <view class='ui-input last'>
       <view>身份证</view>
-      <input class="wsui-input__right" maxlength="140" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="text" bindinput='setCode'></input>
+      <input class="wsui-input__right" maxlength="18" placeholder="请输入身份证号" placeholder-class="wsui-input__placeholder" type="idcard" bindinput='setCode'></input>
     </view>
     <view class="business-licenses">
       <view class="title">公司营业执照</view>
