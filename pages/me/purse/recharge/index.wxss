@@ -1,0 +1,82 @@
+/* pages/me/purse/recharge/index.wxss */
+@import '/static/styles/variable.wxss';
+@import '/static/iconfont/iconfont.wxss';
+
+.head {
+    background: var(--color-white);
+    height: 280rpx;
+}
+
+.title {
+    padding: 59rpx 0 0 70rpx;
+    font-size: var(--font-size-large-y);
+    color: var(--color-sub-title);
+}
+
+.bottom {
+    display: flex;
+    margin: 53rpx 0 0 70rpx;
+}
+
+.hint {
+    font-size: 60rpx;
+    color: var(--color-certification-title);
+}
+
+input {
+    margin: auto 0;
+    margin-left: 20rpx;
+    font-size: 60rpx;
+    color: var(--color-certification-title);
+    width: 40%;
+}
+
+button {
+    background: #298ef8;
+    width: 705rpx;
+    margin: 99rpx auto 0;
+    color: var(--color-white);
+    font-size: var(--font-size-large-x);
+}
+
+.cancel {
+    height: 35rpx;
+    width: 35rpx;
+    margin: auto 0;
+    margin-right: 30rpx;
+    text-align: center;
+
+}
+
+.fixed {
+    height: 100%;
+    z-index: 10;
+    left: 0rpx;
+}
+
+.fixed>view {
+    background: #fff;
+    position: absolute;
+    bottom: 0rpx;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 140rpx;
+}
+
+.fixed .bottom {
+    padding: 20rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.fixed>button {
+    position: absolute;
+    bottom: 20rpx;
+    left: 2.5%;
+    background: #1d87d9;
+    width: 95%;
+    height: 94rpx;
+    color: #fff;
+    box-shadow: 0px 1px 1px 0px #1d87d9;
+    margin: 0 auto;
+    margin-top: 20rpx;
+}

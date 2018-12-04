@@ -1,0 +1,24 @@
+<!-- pages/me/purse/recharge/index.wxml -->
+<view class="container">
+    <view class='fixed'>
+        <!-- 填写信息 -->
+        <view>
+            <view>
+                确认付款
+                <view class="iconfont icon-quxiao"></view>
+            </view>
+        </view>
+        <button catchtap='22' wx:if="{{id != 0}}" class="fix-button">立即付款</button>
+    </view>
+    <view class="head">
+        <view class="title">充值金额</view>
+        <view class="bottom">
+            <view style="display:flex">
+                <view class="hint">￥</view>
+                <input type="digit" bindinput="change" value="{{money}}" />
+            </view>
+            <view class="iconfont icon-quxiao cancel" hidden="{{hide}}" bind:tap="cancel"></view>
+        </view>
+    </view>
+    <button>下一步</button>
+</view>

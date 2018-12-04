@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/index/index",
     "pages/index/chat/index",
     "pages/custome/index",
@@ -23,6 +22,8 @@
     "pages/me/billingRecord/index",
     "pages/me/selectDate/index",
     "pages/me/purse/index",
+    "pages/me/purse/recharge/index",
+    "pages/me/purse/withdraw/index",
     "pages/me/record/index",
     "pages/me/grade/index",
     "pages/login/index"
@@ -30,7 +31,8 @@
   "tabBar": {
     "color": "#666666",
     "selectedColor": "#1B71CC",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "微聊",
         "iconPath": "image/wechat.png",

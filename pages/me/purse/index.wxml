@@ -15,19 +15,19 @@
   </view>
 
   <view class='bottom'>
-    <view class='ui-input view tops'>
+    <navigator class='ui-input view tops' url="./recharge/index" style="background:white">
       <view style='display:flex;align-items:center'>
         <image class="icon" src="/image/recharge-icon.png"></image>
         <text class="person_choice">充值</text>
       </view>
       <view class="icon-right iconfont icon-you"></view>
-    </view>
-    <view class='ui-input last'>
-      <view style='display:flex;align-items:center'>
+    </navigator>
+    <navigator class='ui-input last' url="./withdraw/index" style="background:white">
+      <view style='display:flex;align-items:center' >
         <image class="icon" src="/image/withdraw-icon.png"></image>
         <text class="person_choice">提现</text>
       </view>
       <view class="icon-right iconfont icon-you"></view>
-    </view>
+    </navigator>
   </view>
 </view>

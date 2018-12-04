@@ -1,6 +1,6 @@
 // pages/me/certificationPerson/index.js
-let util = require(`../../../utils/util.js`);
 var app = getApp();
+let util = app.requirejs();
 Page({
 
   /**
@@ -57,7 +57,7 @@ Page({
    */
   onLoad: function (options) {
     util.request({
-      url: '/brokerage/getType',
+      url: '/general/getType',
       success: res => {
         console.log(res);
         var types = new Array;

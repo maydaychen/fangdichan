@@ -78,6 +78,9 @@ App({
       }
     })
   },
+  requirejs: function (e) {
+    return require("utils/util.js")
+  },
   globalData: {
     userInfo: null,
     baseUrl: "https://apis.vitlf.com",
