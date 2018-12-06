@@ -1,6 +1,6 @@
 // pages/login/index.js
-const app = getApp();
-let util = require(`../../utils/util.js`)
+var app = getApp();
+let util = app.requirejs();
 Page({
 
   /**

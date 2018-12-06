@@ -1,2 +1,20 @@
-<!--pages/me/purse/withdraw/index.wxml-->
-<text>pages/me/purse/withdraw/index.wxml</text>
+<!-- pages/me/purse/withdraw/index.wxml -->
+<view class="container">
+    <view class="head">
+        <view class="title">提现金额</view>
+        <view class="bottom">
+            <view style="display:flex;margin-left:33rpx;">
+                <view class="hint">￥</view>
+                <input type="digit" bindinput="change" value="{{money}}" />
+            </view>
+            <view class="iconfont icon-quxiao cancel" hidden="{{hide}}" bind:tap="cancel"></view>
+        </view>
+        <block wx:if="{{hide}}">
+            <view class="leftMoney">可用余额：0.00</view>
+        </block>
+        <block wx:else>
+            <view class="leftMoney" style="color:#E81D1D">可用余额不足</view>
+        </block>
+    </view>
+    <button class="{{hide?'':'active'}}">确定提现</button>
+</view>

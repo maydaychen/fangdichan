@@ -8,13 +8,15 @@
   <view class='list'>
     <view>
       <image src='../../image/head.jpg' class='left'></image>
-      <view class='left'>张三丰
+      <view class='left'>
+         <text style="font-weight:bold">张三丰</text>
         <view class='sale'>
           <text>185万</text>
           <text>3室2厅</text>
           <text>128㎡</text>
         </view>
-       <text> 最后沟通时间 2018-01-05 16:42:06 </text>
+       <text class="time-text"> 最后沟通时间 </text>
+        <text class="time">2018-01-05 16:42:06 </text>
       </view>
     </view>
     <view>

@@ -1,6 +1,6 @@
 // pages/me/code/index.js
 var app = getApp();
-let util = require(`../../../utils/util.js`);
+let util = app.requirejs();
 Page({
 
   /**

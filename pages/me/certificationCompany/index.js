@@ -1,7 +1,7 @@
 // pages/me/certificationCompany/index.js
 
-let util = require(`../../../utils/util.js`);
 var app = getApp();
+let util = app.requirejs();
 Page({
 
   /**
@@ -9,6 +9,7 @@ Page({
    */
   data: {
     show: true,
+    company: null,
     example_list: ['/image/IDcard1.png', '/image/IDcard2.png', '/image/IDcard3.png'],
     example_text: ['正面', '反面', '半身照'],
     personSex: ['男', '女'],
@@ -51,7 +52,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      company: app.globalData.userInfo.company,
+      // IDcard_list: app.globalData.userInfo.company.smallimages.splite[',']
+    })
   },
 
   toCertificationPerson() {

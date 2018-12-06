@@ -2,16 +2,20 @@
 
 @font-face {
   font-family: "iconfont";
-  src: url('iconfont.eot?t=1540956036290'); /* IE9*/
+  src: url('iconfont.eot?t=1540956036290');
+  /* IE9*/
   src: url('iconfont.eot?t=1540956036290#iefix') format('embedded-opentype'),
-         /* IE6-IE8 */ url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAWcAAsAAAAACBwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8lUi7Y21hcAAAAYAAAABhAAABnLSOHgtnbHlmAAAB5AAAAaoAAAHYdB92tGhlYWQAAAOQAAAAMQAAADYTDMT0aGhlYQAAA8QAAAAgAAAAJAfOA39obXR4AAAD5AAAABAAAAAQEAL/5WxvY2EAAAP0AAAACgAAAAoBcADMbWF4cAAABAAAAAAfAAAAIAERAF5uYW1lAAAEIAAAAUUAAAJtPlT+fXBvc3QAAAVoAAAANAAAAEUqm3iveJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWScwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByesTzbx9zwv4EhhrmLYTZQmBEkBwDtRwzLeJztkLENgDAMBM84oAgxCiViICpmyVAZx2sEx6FgCN466/2KUjwwA+rsTgK5EbouTyVyZY08cfqdfSawZMVqa18XkniR3U3u/WdZ+LXFPt5Le2uD6LIMet9WB+gD1xUWWgAAAHicTZDPbtNAEMZn1hu7id1mndhrIK4TArWJU6E2rtcRVBGthJJCpYpb1T9SLlVPVfGtb1C1D9Bzj63yAPRWFA7ApdwQN0CU17DZFCExGo1Gn36fNN+Akv/O92hJOQUHIngDgB4mPXS4qqmPA5/823nVn0HL8XDRQzkdizu808Pg6aSlIAkpSDoQvlS0pvRM8ERwPOkfN1vbw62VqJt9eH+VxmG6sd5YcHduiFdnJas2aAWztFA0Q5fgVNRu7X15vaojmTbbZklDfTk9+tpDbpTLrIEvz1Eb7LqL9VcbaRgfvrvG5W68uj3cCRvHeIBKPWTFAnWfhGs1tIqs7mG8Pz+/9Gj9vE8aZcZ0B3vfjtLnhloyw8o0QX0FZCkA+ZXySRmADvegBVDwIRCQcHBUSEQic86gJoMLJepwS21j04/NJdHhNoFxllOKOB4jUprlm28p/Xkx+kHp99Fo9NFgzPhlmOw+6/8HjaXpMr2j/rJ4KgnTQHfCA94dNSQvoAwwh75IRPRw8ncN1SbeZLdVYldrpDvrYyW7tZ+dYcKFXUHfe2Bln+0/i6NfdwAAeJxjYGRgYABiVqX6lfH8Nl8ZuFkYQOD6f4cWGP3/6f9UFi7mLiCXg4EJJAoAO9cMIQAAAHicY2BkYGBu+N/AEMPC9P/p/x8sXAxAERTAAgCetwZUBAAAAAQC/+UEAAAABAAAAAAAAAAAhADMAOwAAHicY2BkYGBgYQhiYGYAASYg5gJCBob/YD4DABD9AXAAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicY2BigAAuBuyAhZGJkZmRhZGVgT0lMzEvozSRpSQzN5WrIjOxODEvKzMxn4EBAH+MCOg=') format('woff'),
-         url('iconfont.ttf?t=1540956036290') format('truetype'),
-         /* chrome,
+    /* IE6-IE8 */
+    url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAWcAAsAAAAACBwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY8lUi7Y21hcAAAAYAAAABhAAABnLSOHgtnbHlmAAAB5AAAAaoAAAHYdB92tGhlYWQAAAOQAAAAMQAAADYTDMT0aGhlYQAAA8QAAAAgAAAAJAfOA39obXR4AAAD5AAAABAAAAAQEAL/5WxvY2EAAAP0AAAACgAAAAoBcADMbWF4cAAABAAAAAAfAAAAIAERAF5uYW1lAAAEIAAAAUUAAAJtPlT+fXBvc3QAAAVoAAAANAAAAEUqm3iveJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWScwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByesTzbx9zwv4EhhrmLYTZQmBEkBwDtRwzLeJztkLENgDAMBM84oAgxCiViICpmyVAZx2sEx6FgCN466/2KUjwwA+rsTgK5EbouTyVyZY08cfqdfSawZMVqa18XkniR3U3u/WdZ+LXFPt5Le2uD6LIMet9WB+gD1xUWWgAAAHicTZDPbtNAEMZn1hu7id1mndhrIK4TArWJU6E2rtcRVBGthJJCpYpb1T9SLlVPVfGtb1C1D9Bzj63yAPRWFA7ApdwQN0CU17DZFCExGo1Gn36fNN+Akv/O92hJOQUHIngDgB4mPXS4qqmPA5/823nVn0HL8XDRQzkdizu808Pg6aSlIAkpSDoQvlS0pvRM8ERwPOkfN1vbw62VqJt9eH+VxmG6sd5YcHduiFdnJas2aAWztFA0Q5fgVNRu7X15vaojmTbbZklDfTk9+tpDbpTLrIEvz1Eb7LqL9VcbaRgfvrvG5W68uj3cCRvHeIBKPWTFAnWfhGs1tIqs7mG8Pz+/9Gj9vE8aZcZ0B3vfjtLnhloyw8o0QX0FZCkA+ZXySRmADvegBVDwIRCQcHBUSEQic86gJoMLJepwS21j04/NJdHhNoFxllOKOB4jUprlm28p/Xkx+kHp99Fo9NFgzPhlmOw+6/8HjaXpMr2j/rJ4KgnTQHfCA94dNSQvoAwwh75IRPRw8ncN1SbeZLdVYldrpDvrYyW7tZ+dYcKFXUHfe2Bln+0/i6NfdwAAeJxjYGRgYABiVqX6lfH8Nl8ZuFkYQOD6f4cWGP3/6f9UFi7mLiCXg4EJJAoAO9cMIQAAAHicY2BkYGBu+N/AEMPC9P/p/x8sXAxAERTAAgCetwZUBAAAAAQC/+UEAAAABAAAAAAAAAAAhADMAOwAAHicY2BkYGBgYQhiYGYAASYg5gJCBob/YD4DABD9AXAAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicY2BigAAuBuyAhZGJkZmRhZGVgT0lMzEvozSRpSQzN5WrIjOxODEvKzMxn4EBAH+MCOg=') format('woff'),
+    url('iconfont.ttf?t=1540956036290') format('truetype'),
+    /* chrome,
          firefox,
          opera,
          Safari,
          Android,
-         iOS 4.2+*/ url('iconfont.svg?t=1540956036290#iconfont') format('svg'); /* iOS 4.1- */
+         iOS 4.2+*/
+    url('iconfont.svg?t=1540956036290#iconfont') format('svg');
+  /* iOS 4.1- */
 }
 
 .iconfont {
@@ -70,11 +74,11 @@ page {
   width: 94%;
 }
 
-.list > view {
+.list>view {
   overflow: hidden;
 }
 
-.list > view .left:first-child {
+.list>view .left:first-child {
   width: 150rpx;
   height: 150rpx;
   border-radius: 100%;
@@ -112,27 +116,27 @@ page {
   color: #323232;
 }
 
-.left > text {
+.left>text {
   color: #666;
 }
 
-.list > view .right {
+.list>view .right {
   width: 60rpx;
   height: 45rpx;
   margin-left: 8%;
 }
 
-.list > view:last-child {
+.list>view:last-child {
   border-top: 1px solid #eee;
   padding-top: 15rpx;
   margin-top: 35rpx;
 }
 
-.list > view:last-child text {
+.list>view:last-child text {
   color: #ddd;
 }
 
-.list > view:last-child .d {
+.list>view:last-child .d {
   color: #999;
   font-size: 26rpx;
   margin-left: 10rpx;
@@ -145,7 +149,7 @@ page {
   padding: 20rpx 10rpx;
 }
 
-.bottom > view {
+.bottom>view {
   text-align: center;
   background: #fff;
   padding: 50rpx 20rpx;
@@ -157,14 +161,14 @@ page {
   margin-top: -5rpx;
 }
 
-.bottom > view view:first-child {
+.bottom>view view:first-child {
   margin-bottom: -20rpx;
   font-size: 36rpx;
   font-weight: bold;
   color: #666;
 }
 
-.bottom > view view {
+.bottom>view view {
   font-size: 32rpx;
   color: #7c7c7c;
 }
@@ -175,7 +179,7 @@ page {
   left: 0rpx;
 }
 
-.fixed > view {
+.fixed>view {
   position: absolute;
   bottom: 0rpx;
   background: #fff;
@@ -214,4 +218,15 @@ page {
   height: 22rpx;
   position: absolute;
   top: -19rpx;
+}
+
+.time-text {
+  color: #666;
+  font-size: 26rpx;
+}
+
+.time {
+  color: #666;
+  font-size: 24rpx;
+  margin-left: 31rpx;
 }

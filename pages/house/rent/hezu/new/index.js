@@ -13,7 +13,7 @@ Page({
     house: [],
     housetype: [],
     only: ['不满两年', '满二', '满五'],
-    zhuang: ['毛胚', '简装', '精装', '豪装'],
+    zhuang: [],
     check: false, //是否同意协议
     id: 2, //展示的模块id
     search: [] //搜索结果
@@ -156,6 +156,19 @@ Page({
           }
           this.setData({
             wei: types
+          })
+        }
+      }),
+      util.request({
+        url: '/general/renovation',
+        success: res => {
+          console.log(res);
+          var types = new Array;
+          for (var i in res.data) {
+            types.push(res.data[i].name);
+          }
+          this.setData({
+            zhuang: types
           })
         }
       }),

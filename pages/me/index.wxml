@@ -17,6 +17,9 @@
         <block wx:if="{{isConfirmed}}">
           <navigator class="check-status-confirmed iconfont icon-erweima" url='code/index'></navigator>
         </block>
+        <block wx:elif="{{failure}}">
+          <view class="check-status" bindtap="checkConfirm">审核失败</view>
+        </block>
         <block wx:else>
           <view class="check-status">审核中</view>
         </block>
@@ -25,7 +28,7 @@
   </view>
   <view class="notification">
     <image class="notify-icon" src="/image/notification-icon.png"></image>
-    <text >房挑房给你意想不到的惊喜！</text>
+    <text>房挑房给你意想不到的惊喜！</text>
   </view>
   <view class="profile-button ui-input" bindtap='certification'>
     <view style='display:flex;align-items:center'>

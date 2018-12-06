@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.2",
+	"libVersion": "2.4.1",
 	"appid": "wxf5efb623b7c2e4d7",
 	"projectname": "%E6%88%BF%E6%8C%91%E6%88%BF",
 	"debugOptions": {
@@ -36,12 +36,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
-					"name": "认证个人",
-					"pathName": "pages/me/certificationPerson/index",
+					"name": "认证个人失败",
+					"pathName": "pages/me/certificationCompany/fail",
 					"query": ""
 				},
 				{

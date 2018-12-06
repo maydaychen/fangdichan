@@ -5,10 +5,10 @@
         <view>
             <view>
                 确认付款
-                <view class="iconfont icon-quxiao"></view>
+                <view class="iconfont icon-quxiao right"></view>
             </view>
         </view>
-        <button catchtap='22' wx:if="{{id != 0}}" class="fix-button">立即付款</button>
+        <button catchtap='22' class="fix-button">立即付款</button>
     </view>
     <view class="head">
         <view class="title">充值金额</view>

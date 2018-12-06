@@ -1,38 +1,24 @@
-// pages/me/purse/withdraw/index.js
+// pages/me/certificationPerson/fail.js
+var app = getApp();
+let util = app.requirejs();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    money: "0",
-    hide: true
+    IDcard_list: ['/image/IDcard1.png', '/image/IDcard2.png', '/image/IDcard3.png'],
+    example_text: ['正面', '反面', '半身照'],
   },
-  change: function (e) {
-    if (e.detail.value) {
-      this.setData({
-        hide: false
-      })
-    } else {
-      this.setData({
-        hide: true
-      })
-    }
-    this.setData({
-      money: e.detail.value
-    })
-  },
-  cancel: function () {
-    this.setData({
-      money: "",
-      hide: true
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
 
   /**

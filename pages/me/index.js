@@ -8,12 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: 0,
+    type: 0, //0:个人
     tele: "0510-88888",
     isConfirmed: false,
     userInfo: null,
     showBindPhoneModal: false,
-    isRefresh: false
+    isRefresh: false,
+    failure: false
   },
 
   /**
@@ -49,7 +50,17 @@ Page({
       }
     })
   },
-
+  checkConfirm: function () {
+    if (that.data.type == 0) {
+      wx.navigateTo({
+        url: 'certificationPerson/fail?id=0',
+      })
+    } else {
+      wx.navigateTo({
+        url: 'certificationCompany/fail?id=0',
+      })
+    }
+  },
   cancel() {
     this.setData({
       showBindPhoneModal: false
@@ -82,6 +93,11 @@ Page({
         if (!app.globalData.userInfo.company.status == "审核中") {
           that.setData({
             isConfirmed: true
+          })
+        }
+        if (app.globalData.userInfo.company.status == "审核失败") {
+          that.setData({
+            failure: true
           })
         }
       },
@@ -144,13 +160,22 @@ Page({
   },
   certification: function () {
     that = this;
+    // if (that.data.type == 0) {
+    //   wx.navigateTo({
+    //     url: 'certificationPerson/index',
+    //   })
+    // } else {
+    //   wx.navigateTo({
+    //     url: 'certificationCompany/index',
+    //   })
+    // }
     if (that.data.type == 0) {
       wx.navigateTo({
-        url: 'certificationPerson/index',
+        url: 'certificationPerson/fail?id=1',
       })
     } else {
       wx.navigateTo({
-        url: 'certificationCompany/index',
+        url: 'certificationCompany/fail?id=1',
       })
     }
   },
