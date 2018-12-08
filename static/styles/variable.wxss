@@ -34,6 +34,7 @@ page {
   --color-date-bolor: #818181;
   --color-placeholder-color: #7D8794;
   /* 字体定义规范 */
+  --font-size-price: 60rpx;
   --font-size-large-h: 48rpx;
   --font-size-large-z: 40rpx; /* 适用于按钮字体 */
   --font-size-large-x: 36rpx; /* 适用于重要标题 */

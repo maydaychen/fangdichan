@@ -6,7 +6,24 @@ Page({
    */
   data: {
     money: "0",
-    hide: true
+    hide: true,
+    showPop: false
+  },
+  showPopup () {
+    this.setData({
+      showPop: true
+    })
+  },
+  hidePopup () {
+    this.setData({
+      showPop: false
+    })
+  },
+  controlInput (value) {
+    value = parseFloat(value).toFixed(2)
+    if (isNaN(value)) {
+      value = 0.00
+    }
   },
   change: function (e) {
     if (e.detail.value) {
@@ -18,8 +35,23 @@ Page({
         hide: true
       })
     }
+    let valueWrapper = e.detail.value
+    let value = ''
+    if (/^\d+\.?\d{0,1}$/.test(valueWrapper)) {
+      value = valueWrapper
+    } else {
+      if ((valueWrapper.split('.')[1] + '').length == 1 || (valueWrapper.split('.')[1] + '').length == 2) {
+        value = valueWrapper
+      } else {
+        if (isNaN(parseInt(valueWrapper))) {
+          value = ''
+        } else {
+          value = parseFloat(e.detail.value).toFixed(2)
+        }
+      }
+    }
     this.setData({
-      money: e.detail.value
+      money: value
     })
   },
   cancel: function () {
@@ -27,6 +59,9 @@ Page({
       money: "",
       hide: true
     })
+  },
+  paySubmit () {
+    console.log('立即付款')
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,24 +1,32 @@
 <!-- pages/me/purse/recharge/index.wxml -->
 <view class="container">
-    <view class='fixed'>
-        <!-- 填写信息 -->
-        <view>
-            <view>
-                确认付款
-                <view class="iconfont icon-quxiao right"></view>
-            </view>
-        </view>
-        <button catchtap='22' class="fix-button">立即付款</button>
+  <view class="head">
+    <view class="title">充值金额</view>
+    <view class="bottom">
+      <view style="display:flex">
+        <view class="hint">￥</view>
+        <input type="digit" bindinput="change" value="{{money}}" />
+      </view>
+      <view class="iconfont icon-quxiao cancel" hidden="{{hide}}" bind:tap="cancel"></view>
     </view>
-    <view class="head">
-        <view class="title">充值金额</view>
-        <view class="bottom">
-            <view style="display:flex">
-                <view class="hint">￥</view>
-                <input type="digit" bindinput="change" value="{{money}}" />
-            </view>
-            <view class="iconfont icon-quxiao cancel" hidden="{{hide}}" bind:tap="cancel"></view>
-        </view>
+  </view>
+  <button bindtap='showPopup'>下一步</button>
+  <view class='pop' wx:if="{{showPop}}">
+    <view class='pay-group'>
+      <view class='pay-title'>
+        确认付款
+        <view class="iconfont icon-quxiao right" bindtap='hidePopup'></view>
+      </view>
+      <text>¥ {{money}}</text>
+      <view class='order-info'>
+        <text>订单信息</text>
+        <text>充值</text>
+      </view>
+      <view class='pay-type'>
+        <text>付款方式</text>
+        <text>微信钱包</text>
+      </view>
+      <button catchtap='22' class='pay-submit' bindtap='paySubmit'>立即付款</button>
     </view>
-    <button>下一步</button>
+  </view>
 </view>
