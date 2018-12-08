@@ -9,6 +9,7 @@ Page({
   data: {
     IDcard_list: ['/image/IDcard1.png', '/image/IDcard2.png', '/image/IDcard3.png'],
     example_text: ['正面', '反面', '半身照'],
+    type: 0 //0:审核失败，1：审核成功
   },
 
   /**
@@ -16,11 +17,24 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var IDcard_list = new Array();
+    IDcard_list = app.globalData.userInfo.personal.smallimages.split(',');
     that.setData({
-      userInfo: app.globalData.userInfo
+      personal: app.globalData.userInfo.personal,
+      type: options.id,
+      IDcard_list: IDcard_list
+    })
+    if (options.id == 1) {
+      wx.setNavigationBarTitle({
+        title: '审核成功',
+      })
+    }
+  },
+  submit: function () {
+    wx.navigateTo({
+      url: 'index',
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -67,6 +81,27 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  _prevImg: function (e) {
+    var that = this;
+    var id = e.currentTarget.id;
+    const idx = e.currentTarget.dataset.index
+    if (id == 1) {
+      var list = new Array;
+      var images = that.data.example_list;
+      list.push(images[idx]);
+      wx.previewImage({
+        urls: list
+      })
+    } else {
+      var list = new Array;
+      var images = that.data.IDcard_list;
+      list.push(images[idx]);
+      wx.previewImage({
+        urls: list
+      })
+    }
 
   }
 })

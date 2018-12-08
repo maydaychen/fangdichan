@@ -149,7 +149,7 @@ util.request = function (opt) {
       if (response.data.code !== 1) {
         wx.showToast({
           title: response.data.msg,
-          icon: ""
+          icon: "none"
         })
       } else {
         if (opt.success && typeof opt.success == "function") {

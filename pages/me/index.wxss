@@ -76,6 +76,7 @@
   height: 44rpx;
   margin-left: 16rpx;
   color: #1d86d8;
+  border: 1rpx solid #1D86D8;
   font-size: 28rpx;
   line-height: 44rpx;
   text-align: center;
@@ -108,7 +109,7 @@
   background-color: #f2f8fd;
   font-size: 26rpx;
   color: var(--color-sub-title);
-    border: 1rpx solid rgba(162, 213, 252, 0.2);
+  border: 1rpx solid rgba(162, 213, 252, 0.2);
   display: flex;
   align-items: center;
 }

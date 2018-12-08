@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    selectedDateForamt: ''
+    selectedDateForamt: '',
+    isGather: true //收款记录
   },
 
   /**
@@ -15,7 +16,7 @@ Page({
     wx.clearStorageSync('selectedDate')
   },
 
-  selectDate () {
+  selectDate() {
     wx.navigateTo({
       url: '/pages/me/selectDate/index',
     })
@@ -24,8 +25,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -43,14 +43,12 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  },
+  onUnload: function () {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -71,5 +69,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  changeRecord: function () {
+    this.setData({
+      isGather: !this.data.isGather
+    })
   }
 })

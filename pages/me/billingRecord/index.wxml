@@ -1,9 +1,9 @@
-<!--pages/me/record/index.wxml-->
+<!-- pages/me/record/index.wxml -->
 <view class='billing-reocrd'>
   <view class='menu'>
-    <text>收款记录</text>
+    <text class="{{isGather?'':'unactive'}}" bindtap="changeRecord">收款记录</text>
     <text class='split'>|</text>
-    <text class='unactive'>付款记录</text>
+    <text class='{{isGather?"unactive":""}}' bindtap="changeRecord">付款记录</text>
   </view>
   <view class='total-record'>
     <view class='left'>

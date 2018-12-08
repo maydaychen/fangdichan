@@ -8,13 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: 0, //0:个人
+    type: 0, //默认0:个人 1：公司
     tele: "0510-88888",
-    isConfirmed: false,
+    isConfirmed: 3, //0通过 1审核中 2失败 默认3:未认证
     userInfo: null,
     showBindPhoneModal: false,
     isRefresh: false,
-    failure: false
+
   },
 
   /**
@@ -50,17 +50,6 @@ Page({
       }
     })
   },
-  checkConfirm: function () {
-    if (that.data.type == 0) {
-      wx.navigateTo({
-        url: 'certificationPerson/fail?id=0',
-      })
-    } else {
-      wx.navigateTo({
-        url: 'certificationCompany/fail?id=0',
-      })
-    }
-  },
   cancel() {
     this.setData({
       showBindPhoneModal: false
@@ -88,17 +77,42 @@ Page({
         if (app.globalData.userInfo.verification == "company") {
           that.setData({
             type: 1
-          })
-        }
-        if (!app.globalData.userInfo.company.status == "审核中") {
+          });
+          if (app.globalData.userInfo.company.status == "通过") {
+            that.setData({
+              isConfirmed: 0
+            })
+          }
+          if (app.globalData.userInfo.company.status == "审核中") {
+            that.setData({
+              isConfirmed: 1
+            })
+          }
+          if (app.globalData.userInfo.company.status == "拒绝") {
+            that.setData({
+              isConfirmed: 2
+            })
+          }
+
+        } else if (app.globalData.userInfo.verification == "personal") {
           that.setData({
-            isConfirmed: true
-          })
-        }
-        if (app.globalData.userInfo.company.status == "审核失败") {
-          that.setData({
-            failure: true
-          })
+            type: 0
+          });
+          if (app.globalData.userInfo.personal.status == "通过") {
+            that.setData({
+              isConfirmed: 0
+            })
+          }
+          if (app.globalData.userInfo.personal.status == "审核中") {
+            that.setData({
+              isConfirmed: 1
+            })
+          }
+          if (app.globalData.userInfo.personal.status == "审核失败") {
+            that.setData({
+              isConfirmed: 2
+            })
+          }
         }
       },
       fail: function () {
@@ -160,23 +174,52 @@ Page({
   },
   certification: function () {
     that = this;
-    // if (that.data.type == 0) {
-    //   wx.navigateTo({
-    //     url: 'certificationPerson/index',
-    //   })
-    // } else {
-    //   wx.navigateTo({
-    //     url: 'certificationCompany/index',
-    //   })
-    // }
-    if (that.data.type == 0) {
-      wx.navigateTo({
-        url: 'certificationPerson/fail?id=1',
-      })
-    } else {
-      wx.navigateTo({
-        url: 'certificationCompany/fail?id=1',
-      })
+
+    switch (this.data.isConfirmed) {
+      case 0:
+        if (that.data.type == 0) {
+          wx.navigateTo({
+            url: 'certificationPerson/fail?id=1',
+          })
+        } else {
+          wx.navigateTo({
+            url: 'certificationCompany/fail?id=1',
+          })
+        }
+        break;
+      case 1:
+        if (that.data.type == 0) {
+          wx.navigateTo({
+            url: 'certificationPerson/index',
+          })
+        } else {
+          wx.navigateTo({
+            url: 'certificationCompany/index',
+          })
+        }
+        break;
+      case 2:
+        if (that.data.type == 0) {
+          wx.navigateTo({
+            url: 'certificationPerson/fail?id=0',
+          })
+        } else {
+          wx.navigateTo({
+            url: 'certificationCompany/fail?id=0',
+          })
+        }
+        break;
+      case 3:
+        // if (that.data.type == 0) {
+        wx.navigateTo({
+          url: 'certificationPerson/index',
+        })
+        // } else {
+        //   wx.navigateTo({
+        //     url: 'certificationCompany/index',
+        //   })
+        // }
+        break;
     }
   },
   /**
@@ -186,6 +229,7 @@ Page({
     that = this;
     that.setData({
       isRefresh: true,
+      isConfirmed: 3
     })
     that.getUserInfo();
   },

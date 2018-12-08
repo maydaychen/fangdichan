@@ -9,23 +9,23 @@
     <view class='list'>
         <view class='ui-input view tops'>
             姓名
-            <view class="wsui-input__right">张三</view>
+            <view class="wsui-input__right">{{personal.name}}</view>
         </view>
         <view class='ui-input view'>
             <view>性别</view>
-            <view class="wsui-input__right">男</view>
+            <view class="wsui-input__right">{{personal.sex}}</view>
         </view>
         <view class='ui-input view'>
             <view>身份证号</view>
-            <view class="wsui-input__right">123465</view>
+            <view class="wsui-input__right">{{personal.card}}</view>
         </view>
         <view class='ui-input view'>
             <view>经纪人类型</view>
-            <view class="wsui-input__right">案场对接</view>
+            <view class="wsui-input__right">{{personal.level}}</view>
         </view>
         <view class='ui-input last'>
             <view>推荐码</view>
-            <view class="wsui-input__right">123465</view>
+            <view class="wsui-input__right">{{personal.code}}</view>
         </view>
         <view class='tops last'>
             <text>个人身份证信息</text>
