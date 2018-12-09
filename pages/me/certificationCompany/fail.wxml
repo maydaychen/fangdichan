@@ -55,5 +55,5 @@
             </view>
         </view>
     </view>
-    <button bindtap="submit">重新提交</button>
+    <button bindtap="submit" wx:if="{{type==0}}">重新提交</button>
 </view>

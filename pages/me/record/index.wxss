@@ -1,1 +1,37 @@
 /* pages/me/record/index.wxss */
+@import '/static/iconfont/iconfont.wxss';
+
+.search-input {
+  width: 627rpx;
+  margin: 13rpx 0;
+  margin-left: 20rpx;
+  height: 77rpx;
+  background: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50rpx;
+}
+
+.text {
+  color: #EDA425;
+  font-size: var(--font-size-medium-x);
+  margin: auto 0;
+  margin-left: 25rpx;
+}
+
+.search-icon {
+  color: #707070;
+  margin-left: 33rpx;
+  margin-right: 20rpx;
+}
+
+.date-icon {
+  color: #707070;
+  margin-right: 33rpx;
+}
+
+.input-placeholder {
+  font-size: var(--font-size-medium-x);
+  color: var(--color-unactive-color);
+}

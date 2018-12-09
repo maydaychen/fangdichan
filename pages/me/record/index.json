@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "带看记录"
+  "navigationBarTitleText": "带看记录",
+      "usingComponents": {
+        "house-list": "/components/house-list/house-list"
+      }
 }

@@ -71,6 +71,14 @@
   border-radius: 50rpx;
 }
 
+.refuse {
+  height: 44rpx;
+  margin-left: 16rpx;
+  width: 10rpx;
+  font-size: 28rpx;
+  line-height: 44rpx;
+}
+
 .certification-active {
   width: 90rpx;
   height: 44rpx;

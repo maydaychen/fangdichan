@@ -8,11 +8,17 @@
       <text class="name">{{userInfo.nickname}}</text>
       <view class="certification">
         <view class="certification-left">
-          <text class="certification-title">认证类型</text>
-          <view wx:if="{{isConfirmed==0}}" style="display:flex">
-            <view class='certification-type {{type==1?"":"certification-active"}}'>个人</view>
-            <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
-          </view>
+          <block wx:if="{{isConfirmed==2}}">
+            <text class="certification-title">拒绝原因：</text>
+            <view class="refuse">{{userInfo.personal.eason}}</view>
+          </block>
+          <block wx:else>
+            <text class="certification-title">认证类型</text>
+            <view wx:if="{{isConfirmed==0}}" style="display:flex">
+              <view class='certification-type {{type==1?"":"certification-active"}}'>个人</view>
+              <view class='certification-type {{type==1?"certification-active":""}}'>中介</view>
+            </view>
+          </block>
         </view>
         <block wx:if="{{isConfirmed==0}}">
           <navigator class="check-status-confirmed iconfont icon-erweima" url='code/index'></navigator>

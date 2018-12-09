@@ -1,2 +1,16 @@
-<!--pages/me/record/index.wxml-->
-<text>pages/me/record/index.wxml</text>
+<!-- pages/me/record/index.wxml -->
+<view class="container">
+  <view class="search" style="display:flex">
+    <view class="search-input">
+      <view style="display:flex">
+        <view class="iconfont icon-sousuo search-icon"></view>
+        <input placeholder="请输入小区名" placeholder-class="input-placeholder" />
+      </view>
+      <picker mode="date" bindchange="bindTimeChange" class="date-icon">
+        <view class="iconfont icon-rili"></view>
+      </picker>
+    </view>
+    <view class="text">搜索</view>
+  </view>
+  <house-list list="{{list}}" bind:detail="show"></house-list>
+</view>

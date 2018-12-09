@@ -108,7 +108,7 @@ Page({
               isConfirmed: 1
             })
           }
-          if (app.globalData.userInfo.personal.status == "审核失败") {
+          if (app.globalData.userInfo.personal.status == "拒绝") {
             that.setData({
               isConfirmed: 2
             })
