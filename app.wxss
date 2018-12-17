@@ -71,3 +71,14 @@ page {
 button::after {
   border: none;
 }
+
+.title-left {
+  color: var(--color-certification-title);
+  font-size: var(--font-size-medium-x);
+}
+
+.title-left-big {
+  color: var(--color-certification-title);
+  font-size: var(--font-size-large);
+  font-weight:500;
+}

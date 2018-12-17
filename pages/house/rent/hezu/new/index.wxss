@@ -1,5 +1,4 @@
-/* pages/house/rent/hezu/new/index.wxss */
-
+/* pages/house/rent/zhengzu/new/index.wxss */
 @font-face {font-family: "iconfont";
   src: url('iconfont.eot?t=1542181585629'); /* IE9*/
   src: url('iconfont.eot?t=1542181585629#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -126,7 +125,6 @@ button {
   height:100%;
   z-index:10;
   left:0rpx;
-  top:0rpx;
 }
 .fixed > view{
   background:#fff;

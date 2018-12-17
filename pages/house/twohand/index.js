@@ -19,12 +19,13 @@ Page({
   goto: function() { //add
     if (this.data.id == 1) {
       wx.navigateTo({
-        url: '/pages/house/rent/hezu/new/index',
+
+        url: '/pages/house/twohand/new/index',
       })
     }
     if (this.data.id == 2) {
       wx.navigateTo({
-        url: '/pages/house/twohand/new/index',
+        url: '/pages/house/rent/zhengzu/new/index',
         success: function(res) {},
         fail: function(res) {},
         complete: function(res) {},
@@ -32,7 +33,7 @@ Page({
     }
     if (this.data.id == 3) {
       wx.navigateTo({
-        url: '/pages/house/rent/zhengzu/new/index',
+        url: '/pages/house/rent/hezu/new/index',
       })
     }
 

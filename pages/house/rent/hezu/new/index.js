@@ -1,4 +1,4 @@
-// pages/house/rent/hezu/new/index.js
+// pages/house/rent/zhengzu/new/index.js
 const app = getApp();
 let util = app.requirejs();
 Page({
@@ -11,12 +11,12 @@ Page({
     outside: [],
     inside: [],
     house: [],
-    housetype: [],
-    only: ['不满两年', '满二', '满五'],
-    zhuang: [],
+    housetype: ['住宅', '公寓', '商铺', '别墅', '联排'],
+    only: ['现金', '转账', '支付宝', '微信'],
+    zhuang: ['毛胚', '简装', '精装', '豪装'],
     check: false, //是否同意协议
-    id: 2, //展示的模块id
-    search: [] //搜索结果
+    id: 2,//展示的模块id
+    search: []//搜索结果
   },
   22: function () {
     this.setData({
@@ -32,15 +32,15 @@ Page({
   message: function (e) {
     console.log(e.detail.value);
   },
-  search: function (e) { //搜索结果
+  search: function (e) {//搜索结果
     this.setData({
       key: e.detail.value
     })
   },
-  searchenter: function (e) { //回车事件
+  searchenter: function (e) {//回车事件
     console.log(e.detail.value);
   },
-  img: function (e) { //选择图片
+  img: function (e) {//选择图片
     if (e.currentTarget.id == 1) {
       app.chooseImg(this.data.inside, res => {
         this.setData({
@@ -63,7 +63,7 @@ Page({
       })
     }
   },
-  delete: function (e) { //删除图片
+  delete: function (e) {//删除图片
     var that = this;
     var index = e.currentTarget.dataset.index;
     if (e.currentTarget.id == 1) {
@@ -85,7 +85,7 @@ Page({
       })
     }
   },
-  check: function () { //是否同意协议 true/false
+  check: function () {//是否同意协议 true/false
     this.setData({
       check: !this.data.check
     })
@@ -94,92 +94,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    util.request({
-        url: '/general/typeHousing',
-        success: res => {
-          console.log(res);
-          var types = new Array;
-          for (var i in res.data) {
-            types.push(res.data[i].name);
-          }
-          this.setData({
-            housetype: types
-          })
-        }
-      }),
-      util.request({
-        url: '/general/orientation',
-        success: res => {
-          console.log(res);
-          var types = new Array;
-          for (var i in res.data) {
-            types.push(res.data[i].name);
-          }
-          this.setData({
-            face: types
-          })
-        }
-      }),
-      util.request({
-        url: '/general/huxingroom',
-        success: res => {
-          console.log(res);
-          var types = new Array;
-          for (var i in res.data) {
-            types.push(res.data[i].name);
-          }
-          this.setData({
-            room: types
-          })
-        }
-      }),
-      util.request({
-        url: '/general/huxinghall',
-        success: res => {
-          console.log(res);
-          var types = new Array;
-          for (var i in res.data) {
-            types.push(res.data[i].name);
-          }
-          this.setData({
-            hall: types
-          })
-        }
-      }),
-      util.request({
-        url: '/general/huxingwei',
-        success: res => {
-          console.log(res);
-          var types = new Array;
-          for (var i in res.data) {
-            types.push(res.data[i].name);
-          }
-          this.setData({
-            wei: types
-          })
-        }
-      }),
-      util.request({
-        url: '/general/renovation',
-        success: res => {
-          console.log(res);
-          var types = new Array;
-          for (var i in res.data) {
-            types.push(res.data[i].name);
-          }
-          this.setData({
-            zhuang: types
-          })
-        }
-      }),
-      util.request({
-        url: '/common/promotionAgreement',
-        success: res => {
-          this.setData({
-            xieyi: res.data
-          })
-        }
-      })
+
   },
 
   /**

@@ -1,5 +1,5 @@
 <!-- pages/me/record/index.wxml -->
-<view class="container">
+<view class="container" style="padding-bottom:20rpx;">
   <view class="search" style="display:flex">
     <view class="search-input">
       <view style="display:flex">
@@ -12,5 +12,5 @@
     </view>
     <view class="text">搜索</view>
   </view>
-  <house-list list="{{list}}" bind:detail="show"></house-list>
+  <house-list list="{{list}}" type="0" bind:detail="show"></house-list>
 </view>

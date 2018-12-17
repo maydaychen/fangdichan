@@ -5,13 +5,17 @@ Component({
    */
   properties: {
     list: Array,
+    type: {
+      type: Number,
+      value: 0
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+    date: [1,2]
   },
 
   /**

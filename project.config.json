@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -60,6 +60,12 @@
 					"id": 3,
 					"name": "业绩",
 					"pathName": "pages/me/grade/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布二手房",
+					"pathName": "pages/house/rent/hezu/new/index",
 					"query": ""
 				}
 			]

@@ -1,4 +1,4 @@
-/* pages/house/twohand/new/index.wxss */
+/* pages/house/rent/hezu/new/index.wxss */
 
 @font-face {
   font-family: "iconfont";
@@ -51,7 +51,8 @@ input {
   width: 130rpx;
   background: #f5f5f5;
   border-radius: 10rpx;
-  margin: 0 10rpx;
+  margin: 0 20rpx;
+  text-align: left
 }
 
 .container {
@@ -60,7 +61,7 @@ input {
 
 .top {
   background: #f2f8fd;
-  padding: 20rpx;
+  padding: 10rpx;
   position: relative;
   color: #999;
   font-size: 26rpx;
@@ -95,6 +96,7 @@ input {
 
 .last {
   border-radius: 0 0 10rpx 10rpx;
+  box-shadow:0px 3px 8px 0px rgba(172,171,171,0.15);
 }
 
 .message {
@@ -123,7 +125,7 @@ view.left {
   margin-top: -9%;
 }
 
-.message text {
+.xieyi{
   color: #CE2323;
   font-size: 27rpx;
   text-decoration: underline;
@@ -144,6 +146,7 @@ button {
   height: 100%;
   z-index: 10;
   left: 0rpx;
+  top: 0rpx;
 }
 
 .fixed>view {
@@ -157,6 +160,8 @@ button {
 
 .fixed .bottom {
   padding: 20rpx;
+  font-size: var(--font-size-large);
+  color: var(--color-certification-title);
   border-bottom: 1px solid #ddd;
 }
 
@@ -188,7 +193,7 @@ button {
 }
 
 .search view input {
-  width: 460rpx;
+  width: 400rpx;
 }
 
 .search text {
@@ -203,11 +208,18 @@ button {
 }
 
 textarea {
+  height: 226rpx;
   background: #f5f5f5;
-  margin: 0 auto;
-  margin-top: 20rpx;
+  margin: 40rpx auto 20rpx;
+  padding: 30rpx 40rpx;
+  text-align: left;
   border: 1px solid #ddd;
   border-radius: 8rpx;
+}
+
+.textarea-placeholder {
+  color: var(--color-sub-title);
+  font-size: var(--font-size-medium-x);
 }
 
 .scroll {
@@ -260,4 +272,8 @@ textarea {
   position: absolute;
   right: -10rpx;
   top: -10rpx;
+}
+
+.choose-active {
+  color: #1D87D9 !important;
 }

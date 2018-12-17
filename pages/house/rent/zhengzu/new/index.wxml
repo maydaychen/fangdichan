@@ -1,4 +1,4 @@
-<!--pages/house/rent/zhengzu/new/index.wxml-->
+
 <view class='container'>
   <view class='top'>
     <text class='iconfont icon-yinlianglabashengyin'></text> 保证房源真实有效，一旦发现虚假立即删除...

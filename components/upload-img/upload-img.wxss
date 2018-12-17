@@ -13,7 +13,7 @@
 .imgs-list {
   flex: 1;
   display: flex;
-  margin-top: 60rpx;
+  margin-top: 30rpx;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 0 0 10rpx 10rpx;
@@ -65,15 +65,15 @@
   margin-bottom: 20rpx;
   margin-right: 30rpx;
   overflow: hidden;
-  width: calc((100% - 70rpx) / 3);
+  width: calc((100% - 60rpx) / 3);
   height: 133rpx;
 }
 
-.imgs__item:last-child {
+.imgs__item:nth-child(3n) {
   position: relative;
   margin-bottom: 20rpx;
   margin-right: 0;
   overflow: hidden;
-  width: calc((100% - 70rpx) / 3);
+  width: calc((100% - 60rpx) / 3);
   height: 133rpx;
 }
