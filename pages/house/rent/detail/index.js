@@ -1,4 +1,4 @@
-// pages/house/rent/hezu/edit/index.js
+// pages/house/rent/detail/index.js
 Page({
 
   /**

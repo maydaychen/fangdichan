@@ -12,7 +12,7 @@ Page({
     inside: [],
     house: [],
     housetype_list: [],
-    only_list: [],
+    pay_list: [],
     zhuang_list: [],
     check: false, //是否同意协议
     id: 2, //展示的模块id
@@ -44,8 +44,21 @@ Page({
   searchenter: function (e) { //回车事件
     console.log(e.detail.value);
   },
-
-
+  selectRoom: function (e) {
+    this.setData({
+      room: e.currentTarget.id
+    })
+  },
+  selectHall: function (e) {
+    this.setData({
+      hall: e.currentTarget.id
+    })
+  },
+  selectWei: function (e) {
+    this.setData({
+      wei: e.currentTarget.id
+    })
+  },
   choose: function (e) {
     var id = e.currentTarget.id;
     const index = e.currentTarget.dataset.index
@@ -62,7 +75,7 @@ Page({
         break;
       case "4":
         this.setData({
-          only: index,
+          pay: index,
         })
         break;
       case "5":
@@ -146,7 +159,7 @@ Page({
             only.push(res.data[i].name);
           }
           this.setData({
-            only_list: only,
+            pay_list: only,
           })
         }
       })
@@ -207,11 +220,7 @@ Page({
     })
     console.log(this.data.company_img_list.join(","))
   },
-  imgsOnChange1(e) {
-    this.setData({
-      outdoor_img_list: e.detail
-    })
-  },
+
   imgsOnChange2(e) {
     this.setData({
       room_img_list: e.detail
@@ -220,39 +229,35 @@ Page({
   submit: function (e) {
     let {
       type,
-      only,
       face,
       zhuang,
-      levator,
       company_img_list,
-      outdoor_img_list,
-      room_img_list
+      room_img_list,
+      room,
+      hall,
+      wei
     } = this.data
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     // util.request({
-    //   url: '/House/secondhandHireInsert',
+    //   url: '/House/rentingInsert',
     //   data: {
-    //     openId: app.globalData.openInfo.openid,
-    //     villages_id: "",
-    //     huxing: "",
-    //     price: e.detail.value.price,
-    //     acreage: e.detail.value.acreage,
-    //     typehousing: type,
-    //     solehousing: only,
-    //     orientation: face,
-    //     renovation: zhuang,
-    //     levator: levator,
-    //     floor: e.detail.value.floor,
-    //     totallevel: e.detail.value.totallevel,
-    //     propertyright: e.detail.value.propertyright,
-    //     housinglife: e.detail.value.housinglife,
-    //     name: e.detail.value.name,
-    //     description: e.detail.value.description,
-    //     matching: "",
-    //     indoorimages: company_img_list.join(","),
-    //     partmentimages: outdoor_img_list.join(","),
-    //     outdoorimages: room_img_list.join(","),
-    //     promise: check?1:0,
+    // openId: app.globalData.openInfo.openid,
+    //   type： "整租",
+    //   villages_id: "",
+    //   huxing: room + hall + wei,
+    //   paymentmethod： pay,
+    //   rentmoney: e.detail.value.money,
+    //   acreage: e.detail.value.acreage,
+    //   typehousing: type,
+    //   orientation: face,
+    //   renovation: zhuang,
+    //   floor: e.detail.value.floor,
+    //   totallevel: e.detail.value.totallevel,
+    //   name: e.detail.value.name,
+    //   description: e.detail.value.description,
+    //   indoorimages: company_img_list.join(","),
+    //   partmentimages: room_img_list.join(","),
+    //   promise: check ? 1 : 0,
     //   },
     //   success: res => {
     //     this.setData({

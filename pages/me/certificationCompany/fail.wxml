@@ -1,4 +1,5 @@
 <!-- pages/me/certificationCompany/fail.wxml -->
+ <view class="error" wx:if="{{type==0}}">{{personal.eason}}</view>
 <view class="container">
     <view class="notification">
         <view class="notify-icon iconfont icon-tongzhi"></view>

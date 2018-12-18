@@ -13,3 +13,11 @@
     text-align: center;
     line-height: 124rpx;
 }
+
+.error {
+    height: 72rpx;
+    background: #E64340;
+    color: var(--color-white);
+    text-align: center;
+    line-height: 72rpx;
+}

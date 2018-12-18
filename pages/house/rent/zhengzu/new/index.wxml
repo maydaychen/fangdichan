@@ -24,13 +24,13 @@
         </view>
         <view wx:if="{{id == 2}}" class="scroll">
           <scroll-view scroll-y>
-            <text wx:for="{{room_list}}" wx:key="*this">{{item}}</text>
+            <text wx:for="{{room_list}}" bindtap="selectRoom" id="{{item}}" wx:key="*this" class='{{room == item ? "choose-active" :"" }}'>{{item}}</text>
           </scroll-view>
           <scroll-view scroll-y>
-            <text wx:for="{{hall_list}}" wx:key="*this">{{item}}</text>
+            <text wx:for="{{hall_list}}" bindtap="selectHall" id="{{item}}" wx:key="*this" class='{{hall == item ? "choose-active" :"" }}'>{{item}}</text>
           </scroll-view>
           <scroll-view scroll-y>
-            <text wx:for="{{wei_list}}" wx:key="*this">{{item}}</text>
+            <text wx:for="{{wei_list}}" bindtap="selectWei" id="{{item}}" wx:key="*this" class='{{wei == item ? "choose-active" :"" }}'>{{item}}</text>
           </scroll-view>
         </view>
         <view class='center' wx:for="{{search}}" wx:key="*this">{{item}}</view>
@@ -42,8 +42,8 @@
           </block>
         </view>
         <view wx:if="{{id == 4}}">
-          <block wx:for="{{only_list}}">
-            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{only == item ? "choose-active" :"" }}'>
+          <block wx:for="{{pay_list}}">
+            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{pay == item ? "choose-active" :"" }}'>
               {{item}}
             </view>
           </block>
@@ -122,7 +122,7 @@
       <view class='tops view title-left'>
         房屋面积
         <view class='right' style="color:#666">
-          <input placeholder='真实面积'></input>
+          <input placeholder='真实面积' name="acreage"></input>
           平米
         </view>
       </view>
@@ -136,10 +136,10 @@
       </view>
       <view class='view title-left'>
         楼层
-        <view class='right' style="color:#666">
-          <input></input>
+         <view class='right' style="color:#666">
+          <input name="floor" type="number"></input>
           所在楼层
-          <input></input>
+          <input name="totallevel" type="number"></input>
           总楼层
         </view>
       </view>

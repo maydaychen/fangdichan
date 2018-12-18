@@ -1,11 +1,12 @@
 <!-- pages/me/certificationPerson/fail.wxml -->
+ <view class="error" wx:if="{{type==0}}">{{personal.eason}}</view>
 <view class='container'>
-    <view class="notification">
+    <view class="notification" wx:if="{{type==1}}">
         <view class="notify-icon iconfont icon-tongzhi"></view>
         <text>请保证资料真实有效，一旦发现虚假信息将审核失败。</text>
         <view class="delete-icon iconfont icon-quxiao" bindtap="hide"></view>
     </view>
-    <view class="type-fail">个人认证</view>
+       <view class="type-fail">个人认证</view>
     <view class='list'>
         <view class='ui-input view tops'>
             姓名

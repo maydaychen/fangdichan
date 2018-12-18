@@ -18,7 +18,10 @@ Page({
     id: 2, //展示的模块id
     search: [], //搜索结果,
     title: "",
-    description: ""
+    description: "",
+    room: "",
+    hall: "",
+    wei: ""
   },
   22: function () {
     this.setData({
@@ -46,7 +49,21 @@ Page({
     console.log(e.detail.value);
   },
 
-
+  selectRoom: function (e) {
+    this.setData({
+      room: e.currentTarget.id
+    })
+  },
+  selectHall: function (e) {
+    this.setData({
+      hall: e.currentTarget.id
+    })
+  },
+  selectWei: function (e) {
+    this.setData({
+      wei: e.currentTarget.id
+    })
+  },
   choose: function (e) {
     var id = e.currentTarget.id;
     const index = e.currentTarget.dataset.index
