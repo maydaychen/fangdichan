@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "发布合租"
+  "navigationBarTitleText": "发布合租",
+  "usingComponents": {
+    "upload-img": "/components/upload-img/upload-img"
+  }
 }

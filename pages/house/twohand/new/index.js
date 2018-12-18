@@ -36,11 +36,7 @@ Page({
       description: e.detail.value
     })
   },
-  setTitle: function (e) {
-    this.setData({
-      title: e.detail.value
-    })
-  },
+
   search: function (e) { //搜索结果
     this.setData({
       key: e.detail.value
@@ -49,52 +45,8 @@ Page({
   searchenter: function (e) { //回车事件
     console.log(e.detail.value);
   },
-  img: function (e) { //选择图片
-    if (e.currentTarget.id == 1) {
 
-      app.chooseImg(this.data.inside, res => {
-        this.setData({
-          inside: res
-        })
-      })
-    }
-    if (e.currentTarget.id == 2) {
-      app.chooseImg(this.data.outside, res => {
-        this.setData({
-          outside: res
-        })
-      })
-    }
-    if (e.currentTarget.id == 3) {
-      app.chooseImg(this.data.house, res => {
-        this.setData({
-          house: res
-        })
-      })
-    }
-  },
-  delete: function (e) { //删除图片
-    var that = this;
-    var index = e.currentTarget.dataset.index;
-    if (e.currentTarget.id == 1) {
-      that.data.inside.splice(index, 1);
-      that.setData({
-        inside: that.data.inside
-      })
-    }
-    if (e.currentTarget.id == 2) {
-      that.data.outside.splice(index, 1);
-      that.setData({
-        outside: that.data.outside
-      })
-    }
-    if (e.currentTarget.id == 3) {
-      that.data.house.splice(index, 1);
-      that.setData({
-        house: that.data.house
-      })
-    }
-  },
+
   choose: function (e) {
     var id = e.currentTarget.id;
     const index = e.currentTarget.dataset.index
