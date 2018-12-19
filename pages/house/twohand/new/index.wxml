@@ -9,10 +9,12 @@
     <view class='fixed' hidden='{{show}}'>
       <view wx:if="{{id == 0}}" class="see">
         <!-- 协议 -->
-        <text class='iconfont icon-LC_icon_close_fill_circle' bindtap='22'></text>
-        <view></view>
+        <text class='iconfont icon-LC_icon_close_fill_circle cancel' bindtap='22'></text>
+        <!-- <view></view> -->
+         <htmltowxml text="{{xieyi}}" type="html"></htmltowxml>
       </view>
       <!-- 填写信息 -->
+      <!-- <view wx:if="{{id != 0}}" class="{{id==1?'no-padding':''}}"> -->
       <view wx:if="{{id != 0}}">
         <!-- 承载盒子，不可删 -->
         <view wx:if="{{id == 1}}" class='search'>
@@ -22,19 +24,27 @@
             <text class='iconfont icon-LC_icon_close_fill_circle' style="color:#b3afaf;height:27rpx;width:27rpx"></text>
           </view>
           <text bindtap='searchenter'>搜索</text>
+          <view class='center' wx:for="{{search}}" wx:key="*this" bindtap='chooseViliage' id="{{item.id}}">
+            {{item.name}}
+          </view>
         </view>
         <view wx:if="{{id == 2}}" class="scroll">
           <scroll-view scroll-y>
-            <text wx:for="{{room_list}}" bindtap="selectRoom" id="{{item}}" wx:key="*this" class='{{room == item ? "choose-active" :"" }}'>{{item}}</text>
+            <text wx:for="{{room_list}}" bindtap="selectRoom" id="{{item}}" wx:key="*this" class='{{room == item ? "choose-active" :"" }}'>
+              {{item}}
+            </text>
           </scroll-view>
           <scroll-view scroll-y>
-            <text wx:for="{{hall_list}}" bindtap="selectHall" id="{{item}}" wx:key="*this" class='{{hall == item ? "choose-active" :"" }}'>{{item}}</text>
+            <text wx:for="{{hall_list}}" bindtap="selectHall" id="{{item}}" wx:key="*this" class='{{hall == item ? "choose-active" :"" }}'>
+              {{item}}
+            </text>
           </scroll-view>
           <scroll-view scroll-y>
-            <text wx:for="{{wei_list}}" bindtap="selectWei" id="{{item}}" wx:key="*this" class='{{wei == item ? "choose-active" :"" }}'>{{item}}</text>
+            <text wx:for="{{wei_list}}" bindtap="selectWei" id="{{item}}" wx:key="*this" class='{{wei == item ? "choose-active" :"" }}'>
+              {{item}}
+            </text>
           </scroll-view>
         </view>
-        <view class='center' wx:for="{{search}}" wx:key="*this">{{item}}</view>
         <view wx:if="{{id == 3}}">
           <block wx:for="{{housetype_list}}">
             <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{type == item ? "choose-active" :"" }}'>

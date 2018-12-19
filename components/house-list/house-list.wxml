@@ -29,3 +29,26 @@
     </block>
   </block>
 </block>
+<block wx:if="{{type==1}}">
+  <block wx:for="{{list}}" wx:key="*this">
+    <view class='list' id="{{item.id}}" bindtap='detail'>
+      <view class="content">
+        <image src='/image/house.png' class='left'></image>
+        <view>
+          <view class='title'>宁海里一区东向两居室朝南随时都可以看房</view>
+          <view class='subTitle'>3室2厅</view>
+          <view class='sale'>
+            <text>南北通透</text>
+            <text>低楼层</text>
+            <text>临地铁</text>
+          </view>
+          <view class='bottom'>
+            <text>153万</text>
+            <text>15000/m2</text>
+          </view>
+        </view>
+      </view>
+      <image class="border" src='/image/xian.png' style="padding-top:20rpx"></image>
+    </view>
+  </block>
+</block>

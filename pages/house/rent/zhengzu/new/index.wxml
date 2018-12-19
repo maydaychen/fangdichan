@@ -14,13 +14,16 @@
       <!-- 填写信息 -->
       <view wx:if="{{id != 0}}">
         <!-- 承载盒子，不可删 -->
-        <view wx:if="{{id == 1}}" class='search'>
+            <view wx:if="{{id == 1}}" class='search'>
           <view>
             <text class='iconfont icon-search'></text>
             <input type='search' bindinput='search' bindconfirm='searchenter'></input>
             <text class='iconfont icon-LC_icon_close_fill_circle' style="color:#b3afaf;height:27rpx;width:27rpx"></text>
           </view>
           <text bindtap='searchenter'>搜索</text>
+          <view class='center' wx:for="{{search}}" wx:key="*this" bindtap='chooseViliage' id="{{item.id}}">
+            {{item.name}}
+          </view>
         </view>
         <view wx:if="{{id == 2}}" class="scroll">
           <scroll-view scroll-y>
@@ -33,7 +36,6 @@
             <text wx:for="{{wei_list}}" bindtap="selectWei" id="{{item}}" wx:key="*this" class='{{wei == item ? "choose-active" :"" }}'>{{item}}</text>
           </scroll-view>
         </view>
-        <view class='center' wx:for="{{search}}" wx:key="*this">{{item}}</view>
         <view wx:if="{{id == 3}}">
           <block wx:for="{{housetype_list}}">
             <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{type == item ? "choose-active" :"" }}'>

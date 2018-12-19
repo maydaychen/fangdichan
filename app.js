@@ -4,7 +4,6 @@ App({
   onLaunch: function () {
     util.getInfo({
       success: res => {
-        console.log("check")
         this.getUser();
       }
     })
@@ -17,7 +16,6 @@ App({
         openId: this.globalData.openInfo.openid
       },
       success(res) {
-        console.log("check")
         if (res.data.isNum < 1) {
           wx.redirectTo({
             url: '/pages/login/welcome/index',

@@ -1,15 +1,19 @@
 /* pages/house/rent/index.wxss */
 @import "../index.wxss";
-.house_index{
-  margin:0 auto;
+
+.house_index {
+  margin: 0 auto;
 }
-.container{
-  padding-top:20rpx;
+
+.container {
+  padding-top: 20rpx;
 }
-.house_index:first-child{
-  border-radius:10rpx 10rpx 0rpx 0rpx;
-  border-bottom:1px solid #eee;
+
+.house_index:first-child {
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+  border-bottom: 1px solid #eee;
 }
-.house_index:last-child{
-  border-radius:0rpx 0rpx 10rpx 10rpx;
+
+.house_index:last-child {
+  border-radius: 0rpx 0rpx 10rpx 10rpx;
 }

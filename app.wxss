@@ -80,5 +80,39 @@ button::after {
 .title-left-big {
   color: var(--color-certification-title);
   font-size: var(--font-size-large);
-  font-weight:500;
+  font-weight: 500;
+}
+
+.line {
+  height: 1rpx;
+  width: 100%;
+}
+
+.horizon-center {
+  margin: 0 auto;
+}
+
+.vertical-center {
+  margin: auto 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-between {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.just-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.font-3232 {
+  color: var(--color-certification-title);
 }

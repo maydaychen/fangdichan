@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "发布二手房",
   "usingComponents": {
-    "upload-img": "/components/upload-img/upload-img"
+    "upload-img": "/components/upload-img/upload-img",
+    "htmltowxml": "/components/html2wxml-component/html2wxml"
   }
 }

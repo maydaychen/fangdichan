@@ -1,2 +1,36 @@
 <!--pages/house/rent/detail/index.wxml-->
-<text>pages/house/rent/detail/index.wxml</text>
+<swiper>
+  <swiper-item wx:for="{{banner}}" wx:key="*this">
+      <image src='{{item}}'></image>
+    </swiper-item>
+</swiper>
+<view class='container'>
+
+  <view class="title">新龙城带电梯正规两居室落地窗，随时签约</view>
+  <image src="/image/xian.png" class="line"/>
+  <view class='sale'>
+    <text>宁海里</text>
+    <text>128㎡</text>
+    <text>3室2厅</text>
+  </view>
+  <view class='message'><text class='iconfont icon-jibenxinxi'></text>房源信息
+    <view><span>单价： <text>16500/平米</text> </span> <span>朝向： <text>南</text></span></view>
+    <view><span>楼层： <text>6/18层</text> </span> <span>装修： <text>精装修</text></span></view>
+    <view><span>房屋年限： <text>满五</text> </span> <span>唯一住房： <text>是</text></span></view>
+    <view><span>预算： <text class='blue'>最低首付50万，月供3540元</text> 
+      <text class='iconfont icon-right right'></text> <text class='iconfont icon-Fill right'></text></span> 
+    </view>
+    <view><span>小区： <text class='blue'>宁海里小区二期</text> <text class='iconfont icon-dingweiweizhizuobiaomianxing'></text></span></view>
+  </view>
+  <view class='message a'><text class='iconfont icon-sheshi'></text>房屋设施 
+    <view>
+      <view>1、房屋情况:三室两厅户型正采光好出行方便</view>
+      <view>2、房屋情况:客餐厅，3个卧室通透敞亮.</view>
+      <view>3、小区环境:大片的绿化空气清新，楼间距较宽.</view>
+      <view>4、周边配套:靠近地铁，周边大型超市菜场一应俱全.</view>
+    </view>
+  </view>
+  <view class='message b'><text class='iconfont icon-zuixinfangyuan'></text>房源介绍
+    <view>房东置换诚心出售，价格可以再谈，欢迎看房</view>
+  </view>
+</view>

@@ -1,1 +1,95 @@
 /* pages/house/rent/detail/index.wxss */
+@import '/static/iconfont/iconfont.wxss';
+
+page,
+.container {
+  background: #fff !important;
+  height: 100%;
+}
+
+.title {
+  font-size: var(--font-size-large-x);
+  color: var(--color-certification-title);
+  font-weight: 500;
+}
+
+.sale {
+  padding: 40rpx;
+  text-align: center;
+}
+
+.sale text {
+  padding: 10rpx 20rpx;
+  border-radius: 2rpx;
+  margin-right: 30rpx;
+  color: #8E9CA7;
+  font-size: 24rpx;
+}
+
+.sale text:first-child {
+  background: rgba(254, 228, 131, 0.5);
+}
+
+.sale text:nth-child(2) {
+  background: rgba(191, 220, 242, 0.5);
+}
+
+.sale text:last-child {
+  background: rgba(202, 240, 158, 0.5);
+}
+
+.message {
+  padding: 15rpx;
+  font-size: var(--font-size-large-a);
+  color: var(--color-certification-title);
+  font-weight: 500;
+}
+
+.message>text {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  color: #fff;
+  background: #429EE1;
+  padding: 12rpx;
+  margin-right: 20rpx;
+}
+
+.a>text {
+  background: #fc5f5f;
+  font-size: 36rpx;
+  padding: 9rpx;
+}
+
+.b>text {
+  background: #F9C97A;
+  font-size: 39rpx;
+  padding: 7rpx;
+}
+
+.message>view {
+  margin-left: 9%;
+  font-size: 28rpx;
+  margin-right: 15rpx;
+}
+
+.message>view:first-child {
+  display: flex;
+}
+
+.message>view span {
+  flex: 1;
+  color: #999;
+}
+
+.message>view span:first-child {
+  flex: 1.5;
+}
+
+.message>view span text {
+  color: #000;
+}
+
+.message .blue {
+  color: #52A5E3;
+}
