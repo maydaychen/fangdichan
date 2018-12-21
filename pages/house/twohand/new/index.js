@@ -8,12 +8,12 @@ Page({
    */
   data: {
     show: true,
-    outside: [],
-    inside: [],
-    house: [],
     housetype_list: [],
-    only_list: ['不满两年', '满二', '满五'],
+    only_list: [],
     zhuang_list: [],
+    tag_list: [],
+    tag_select: {},
+    tag_select_list: [],//已选中标签列表
     check: false, //是否同意协议
     id: 2, //展示的模块id
     search: [], //搜索结果,
@@ -104,6 +104,20 @@ Page({
           levator: index,
         })
         break;
+      case "12":
+        var list = this.data.tag_select;
+        var select_list = this.data.tag_select_list;
+        list[index] = !list[index];
+        if (list[index]) {
+          select_list.push(index);
+        } else {
+          select_list.splice(select_list.indexOf(index), 1)
+        }
+        this.setData({
+          tag_select: list,
+          tag_select_list: select_list
+        })
+        break;
     }
   },
   chooseViliage: function (e) {
@@ -131,6 +145,8 @@ Page({
           var huxingroom = new Array;
           var huxinghall = new Array;
           var huxingwei = new Array;
+          var solehousing = new Array;
+          var tags = new Array;
           for (var i in res.data.typeHousing) {
             types.push(res.data.typeHousing[i].name);
           }
@@ -149,13 +165,21 @@ Page({
           for (var i in res.data.huxingwei) {
             huxingwei.push(res.data.huxingwei[i].name);
           }
+          for (var i in res.data.solehousing) {
+            solehousing.push(res.data.solehousing[i].name);
+          }
+          for (var i in res.data.tags) {
+            tags.push(res.data.tags[i].name);
+          }
           this.setData({
             housetype_list: types,
             face_list: orientation,
             zhuang_list: renovation,
             room_list: huxingroom,
             hall_list: huxinghall,
-            wei_list: huxingwei
+            wei_list: huxingwei,
+            only_list: solehousing,
+            tag_list: tags
           })
         }
       }),
@@ -247,7 +271,8 @@ Page({
       room,
       hall,
       wei,
-      check
+      check,
+      tag_select_list
     } = this.data
     util.request({
       url: '/House/secondhandHireInsert',
@@ -268,7 +293,7 @@ Page({
         housinglife: e.detail.value.housinglife,
         name: e.detail.value.name,
         description: e.detail.value.description,
-        matching: "",
+        tags: tag_select_list.join(","),
         indoorimages: company_img_list.join(","),
         partmentimages: outdoor_img_list.join(","),
         outdoorimages: room_img_list.join(","),

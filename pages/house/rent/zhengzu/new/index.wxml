@@ -157,8 +157,12 @@
         标题
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='last title-left' bindtap='show' id="11">
-        描述介绍
+      <view class='view title-left' bindtap='show' id="11">
+        房源介绍
+        <text class='right iconfont icon-right'></text>
+      </view>
+      <view class='last title-left' bindtap='show' id="12">
+        平台标签
         <text class='right iconfont icon-right'></text>
       </view>
       <view class='tops last'>

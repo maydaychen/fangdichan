@@ -11,10 +11,11 @@
   font-size: var(--font-size-large-x);
   color: var(--color-certification-title);
   font-weight: 500;
+  padding: 30rpx 0 40rpx;
 }
 
 .sale {
-  padding: 40rpx;
+  padding: 10rpx 40rpx;
   text-align: center;
 }
 
@@ -44,6 +45,14 @@
   color: var(--color-certification-title);
   font-weight: 500;
   margin-top: 20rpx;
+}
+
+.a {
+  margin-top: 40rpx;
+}
+
+.b {
+  margin-top: 40rpx;
 }
 
 .message>text {
@@ -92,4 +101,106 @@
   margin-left: 9%;
   font-size: 28rpx;
   margin-right: 15rpx;
+}
+
+.title-info-item {
+  width: 33.33%;
+}
+
+.title-info-item view {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: var(--font-size-large-z);
+  font-weight: bold;
+}
+
+.first view {
+  color: #E40C01;
+}
+
+.second view {
+  color: #1C87D8;
+}
+
+.third view {
+  color: #5CB66A;
+}
+
+.sheshi-item {
+  width: 25%;
+  margin-bottom: 30rpx;
+  justify-content: center;
+}
+
+.sheshi-item view:first-child {
+  color: #298ef8;
+}
+
+.sheshi_text {
+  font-size: var(--font-size-medium-x);
+  margin-left: 10rpx;
+  color: var(--color-certification-title);
+}
+
+.promise {
+  background: var(--color-eee);
+  height: 74rpx;
+  border: 1rpx solid #ececec;
+  border-radius: 4rpx;
+}
+
+.promise-left view:first-child {
+  margin-left: 20rpx;
+  font-size: 50rpx;
+  color: #2776ce;
+}
+
+.promise-left view:last-child {
+  margin-left: 20rpx;
+  color: var(--color-certification-title);
+  font-size: var(--font-size-medium-x);
+}
+
+.promise-right view {
+  color: #FF5733;
+}
+
+.promise-right view:first-child {
+  margin-right: 20rpx;
+  font-size: var(--font-size-medium);
+}
+
+.promise-right view:last-child {
+  margin-right: 20rpx;
+  font-size: var(--font-size-medium);
+}
+
+.description {
+  margin: 10rpx 20rpx;
+  color: var(--color-sub-title);
+  font-size: var(--font-size-large);
+}
+
+.manager-item {
+  margin: 20rpx;
+}
+
+.manager-item view:first-child {
+  font-weight: 500;
+  color: var(--color-certification-title);
+  font-size: var(--font-size-large);
+}
+
+.manager-item view:last-child {
+  font-weight: 500;
+  color: var(--color-sub-title);
+  font-size: var(--font-size-small);
+}
+
+.manager-logo {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
 }

@@ -5,17 +5,18 @@
     <text class='iconfont icon-add' bindtap='goto'></text>  
   </view>
   <block wx:for="{{list}}" wx:key="*this">
-    <view class='list' id="{{item.id}}" bindtap='detail'>
+    <view class='list' id="{{index}}" bindtap='detail'>
       <view>
-        <image src='../../../image/house.png' class='left'></image>
-        <view class='left'>宁海里一区东向两居室朝南随时都可以看房
+        <image src='{{item.logo}}' class='left'></image>
+        <view class='left'>
+          <view class="title">{{item.name}}</view>
           <view class='sale'>
-            <text>102㎡</text>
+            <text>{{item.acreage}}㎡</text>
             <text>南北通透</text>
             <text>低楼层</text>
             <text>临地铁</text>
           </view>
-          <text> <text class='iconfont icon-time'></text> 2018-01-05 16:42:06 </text> 
+          <text style="margin-right:30rpx;font-size:26rpx;"> <text class='iconfont icon-time'></text>{{item.createtime}}</text> 
           <text class='bians bian' catchtap='bian' wx:if="{{!item.bian}}" id="{{index}}">编辑</text>
           <text class='bian down' catchtap='close' wx:if="{{item.bian}}" id="{{index}}">下架</text>
           <text class='bian' catchtap='close' wx:if="{{item.bian}}" id="{{index}}">删除</text>

@@ -6,12 +6,12 @@
     <text class='iconfont icon-LC_icon_close_fill_circle'></text>
   </view>
   <form bindsubmit="submit">
-    <view class='fixed' hidden='{{show}}'>
+    <view class='fixed' hidden='{{show}}' catchtouchmove="preventTouchMove">
       <view wx:if="{{id == 0}}" class="see">
         <!-- 协议 -->
         <text class='iconfont icon-LC_icon_close_fill_circle cancel' bindtap='22'></text>
         <!-- <view></view> -->
-         <htmltowxml text="{{xieyi}}" type="html"></htmltowxml>
+        <htmltowxml text="{{xieyi}}" type="html"></htmltowxml>
       </view>
       <!-- 填写信息 -->
       <!-- <view wx:if="{{id != 0}}" class="{{id==1?'no-padding':''}}"> -->
@@ -107,8 +107,24 @@
         <view hidden="{{id != 10}}">
           <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx'></input>
         </view>
-        <view hidden="{{id != 11}}">
-          <textarea hidden="{{id != 11}}" name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......"></textarea>
+        <view hidden="{{id != 11}}" style="display：flex;overflow：auto">
+          <view class="hide_title">户型介绍</view>
+          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
+          <view class="hide_title">适住人群</view>
+          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
+          <view class="hide_title">周边配套</view>
+          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
+          <view class="hide_title">交通出行</view>
+          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
+          <view class="hide_title">核心卖点</view>
+          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
+        </view>
+        <view wx:if="{{id == 12}}">
+          <block wx:for="{{tag_list}}">
+            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{tag_select[item]? "choose-active" :"" }}'>
+              {{item}}
+            </view>
+          </block>
         </view>
       </view>
       <button catchtap='22' wx:if="{{id != 0}}">确定</button>
@@ -179,11 +195,11 @@
         <text class='right iconfont icon-right'></text>
       </view>
       <view class='view title-left' bindtap='show' id="11">
-        描述介绍
+        房源介绍
         <text class='right iconfont icon-right'></text>
       </view>
       <view class='last title-left' bindtap='show' id="12">
-        小区配套
+        平台标签
         <text class='right iconfont icon-right'></text>
       </view>
       <view class='tops last title-left'>

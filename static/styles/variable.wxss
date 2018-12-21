@@ -15,6 +15,7 @@ page {
   --color-split-line-sub: #d2d2d2; /* 浅色分割线色 */
   --color-notification-background: #f2f8fd; /* 通知背景色 */
   --color-white: #fff;
+  --color-eee: #eee;
   --color-light-green: #e6f2e6;
   --color-deep-green: #5cb66a;
   --color-light-blue: #e3edfb;

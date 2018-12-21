@@ -14,21 +14,16 @@ Page({
     }, {
       bian: false
     }],
-    bian: false
   },
   goto: function () { //add
     if (this.data.id == 1) {
       wx.navigateTo({
-
         url: '/pages/house/twohand/new/index',
       })
     }
     if (this.data.id == 2) {
       wx.navigateTo({
         url: '/pages/house/rent/zhengzu/new/index',
-        success: function (res) {},
-        fail: function (res) {},
-        complete: function (res) {},
       })
     }
     if (this.data.id == 3) {
@@ -38,10 +33,12 @@ Page({
     }
 
   },
-  detail: function () { //详情
+  detail: function (e) { //详情
     if (this.data.id == 1) {
+   
       wx.navigateTo({
-        url: '/pages/house/twohand/detail/index',
+        url: '/pages/house/twohand/detail/index?detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
+     
       })
     } else {
       wx.navigateTo({
@@ -67,7 +64,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
     this.setData({
       id: options.id
     })
@@ -82,7 +78,16 @@ Page({
         url: '/House/secondhandHireList',
         success: res => {
           console.log(res);
-
+          for (var index in res.data) {
+            var pic_list = new Array();
+            pic_list = res.data[index]["indoorimages"].split(',');
+            res.data[index]["bian"] = false;
+            res.data[index]["logo"] = pic_list[0];
+          }
+          // console.log(res);
+          this.setData({
+            list: res.data
+          })
         }
       })
     } else {

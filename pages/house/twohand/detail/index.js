@@ -4,15 +4,20 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.detail)
+    // console.log(JSON.parse(options.detail));//解析得到对象 
+    var info = JSON.parse(options.detail);
+    console.log(info.indoorimages);
+    this.setData({
+      info: info, //解析得到对象
+      banner: info.indoorimages.split(',')
+    })
   },
 
   /**

@@ -65,6 +65,7 @@ input {
   position: relative;
   color: #999;
   font-size: 26rpx;
+  border:2rpx solid rgba(162, 213, 252, 0.2);
 }
 
 .top text:first-child {
@@ -76,6 +77,7 @@ input {
   position: absolute;
   right: -5rpx;
   top: -5rpx;
+  font-size: 24rpx;
 }
 
 .list>view {
@@ -161,7 +163,7 @@ button {
   padding: 20rpx;
   font-size: var(--font-size-large);
   color: var(--color-certification-title);
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #DCDCDC;
 }
 
 .fixed>button {
