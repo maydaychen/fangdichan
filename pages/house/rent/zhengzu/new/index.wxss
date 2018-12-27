@@ -211,11 +211,19 @@ button {
   font-size: 33rpx;
 }
 
+.hide_title {
+  text-align: left;
+  /* margin-left: 40rpx;
+  margin-top: 10rpx; */
+  font-size: var(--font-size-large);
+  color: var(--color-certification-title);
+}
+
 textarea {
-  height: 226rpx;
+  height: 130rpx;
   background: #f5f5f5;
-  margin: 40rpx auto 20rpx;
-  padding: 30rpx 40rpx;
+  margin: 10rpx auto 10rpx;
+  padding: 20rpx 40rpx 30rpx;
   text-align: left;
   border: 1px solid #ddd;
   border-radius: 8rpx;
@@ -280,4 +288,11 @@ textarea {
 
 .choose-active {
   color: #1D87D9 !important;
+}
+
+.picker {
+  background: #fff;
+  overflow: hidden;
+  padding: 20rpx;
+  font-size: 29rpx;
 }

@@ -16,7 +16,7 @@
             <text>低楼层</text>
             <text>临地铁</text>
           </view>
-          <text style="margin-right:30rpx;font-size:26rpx;"> <text class='iconfont icon-time'></text>{{item.createtime}}</text> 
+          <text style="margin-right:30rpx;font-size:26rpx;"> <text class='iconfont icon-time' style="margin-right:10rpx"></text>{{item.createtime}}</text> 
           <text class='bians bian' catchtap='bian' wx:if="{{!item.bian}}" id="{{index}}">编辑</text>
           <text class='bian down' catchtap='close' wx:if="{{item.bian}}" id="{{index}}">下架</text>
           <text class='bian' catchtap='close' wx:if="{{item.bian}}" id="{{index}}">删除</text>

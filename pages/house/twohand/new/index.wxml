@@ -45,45 +45,6 @@
             </text>
           </scroll-view>
         </view>
-        <view wx:if="{{id == 3}}">
-          <block wx:for="{{housetype_list}}">
-            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{type == item ? "choose-active" :"" }}'>
-              {{item}}
-            </view>
-          </block>
-        </view>
-        <view wx:if="{{id == 4}}">
-          <block wx:for="{{only_list}}">
-            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{only == item ? "choose-active" :"" }}'>
-              {{item}}
-            </view>
-          </block>
-        </view>
-        <view wx:if="{{id == 5}}">
-          <!-- <view class='bottom' bindtap='choose' data-index="南">南</view>
-          <view class='bottom' bindtap='choose' data-index="北">北</view> -->
-          <!-- <view class='bottom' wx:for="{{face}}" wx:key="*this" bindtap='choose'>{{item}}</view> -->
-          <block wx:for="{{face_list}}">
-            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{face == item ? "choose-active" :"" }}'>
-              {{item}}
-            </view>
-          </block>
-        </view>
-        <view wx:if="{{id == 6}}">
-          <block wx:for="{{zhuang_list}}">
-            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{zhuang == item ? "choose-active" :"" }}'>
-              {{item}}
-            </view>
-          </block>
-        </view>
-        <view wx:if="{{id == 7}}">
-          <view class='bottom' bindtap='choose' id="{{id}}" data-index="是" class='bottom {{levator == "是" ? "choose-active" :"" }}'>
-            是
-          </view>
-          <view class='bottom' bindtap='choose' id="{{id}}" data-index="否" class='bottom {{levator == "否" ? "choose-active" :"" }}'>
-            否
-          </view>
-        </view>
         <view hidden="{{id != 8}}">
           <radio-group name="propertyright">
             <radio id='1' value="40年"></radio>
@@ -106,18 +67,6 @@
         </view>
         <view hidden="{{id != 10}}">
           <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx'></input>
-        </view>
-        <view hidden="{{id != 11}}" style="display：flex;overflow：auto">
-          <view class="hide_title">户型介绍</view>
-          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
-          <view class="hide_title">适住人群</view>
-          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
-          <view class="hide_title">周边配套</view>
-          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
-          <view class="hide_title">交通出行</view>
-          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
-          <view class="hide_title">核心卖点</view>
-          <textarea name="description" placeholder-class="textarea-placeholder" placeholder="小区地理位置不错,周边环境优美,设施齐全,小区地理位置不错,周边环境优美,设施齐全......" fixed="{{true}}"></textarea>
         </view>
         <view wx:if="{{id == 12}}">
           <block wx:for="{{tag_list}}">
@@ -153,26 +102,36 @@
           平米
         </view>
       </view>
-      <view class='view title-left' bindtap='show' id="3">
-        房屋类型
-        <text class='right iconfont icon-right'></text>
-      </view>
-      <view class='last title-left' bindtap='show' id="4">
-        唯一住房
-        <text class='right iconfont icon-right'></text>
-      </view>
-      <view class='tops view title-left' bindtap='show' id="5">
-        朝向
-        <text class='right iconfont icon-right'></text>
-      </view>
-      <view class='view title-left' bindtap='show' id="6">
-        装修
-        <text class='right iconfont icon-right'></text>
-      </view>
-      <view class='view title-left' bindtap='show' id="7">
-        电梯
-        <text class='right iconfont icon-right'></text>
-      </view>
+      <picker bindchange="typeChange" value="{{housetype_list}}" range="{{housetype_list}}">
+        <view class='view title-left picker'>
+          房屋类型
+          <text class='right iconfont icon-right'></text>
+        </view>
+      </picker>
+      <picker bindchange="onlyChange" value="{{only_list}}" range="{{only_list}}">
+        <view class='last title-left picker'>
+          唯一住房
+          <text class='right iconfont icon-right'></text>
+        </view>
+      </picker>
+      <picker bindchange="faceChange" value="{{face_list}}" range="{{face_list}}">
+        <view class='tops view title-left picker'>
+          朝向
+          <text class='right iconfont icon-right'></text>
+        </view>
+      </picker>
+      <picker bindchange="zhuangChange" value="{{zhuang_list}}" range="{{zhuang_list}}">
+        <view class='view title-left picker'>
+          装修
+          <text class='right iconfont icon-right'></text>
+        </view>
+      </picker>
+      <picker bindchange="levatorChange" value="{{is_list}}" range="{{is_list}}">
+        <view class='view title-left picker'>
+          电梯
+          <text class='right iconfont icon-right'></text>
+        </view>
+      </picker>
       <view class='last title-left'>
         楼层
         <view class='right' style="color:#666">
@@ -194,9 +153,21 @@
         标题
         <text class='right iconfont icon-right'></text>
       </view>
-      <view class='view title-left' bindtap='show' id="11">
+      <view class='view title-left'>
         房源介绍
         <text class='right iconfont icon-right'></text>
+      </view>
+      <view>
+        <view class="hide_title">户型介绍</view>
+        <textarea name="suitablecrowd" placeholder-class="textarea-placeholder" placeholder="小高层主卧室朝南，没有太多噪音，顶楼带阁楼，户型方正，得房率高。"></textarea>
+        <view class="hide_title">适住人群</view>
+        <textarea name="peripheralmatching" placeholder-class="textarea-placeholder" placeholder="本房适合刚需改善型住户,精装修拎包入住。房主家具家电全留下。"></textarea>
+        <view class="hide_title">周边配套</view>
+        <textarea name="traffictrip" placeholder-class="textarea-placeholder" placeholder="幼儿园：无锡实验幼儿园"></textarea>
+        <view class="hide_title">交通出行</view>
+        <textarea name="coresellingpoint" placeholder-class="textarea-placeholder" placeholder="公交：102路、722路、10路、703路"></textarea>
+        <view class="hide_title">核心卖点</view>
+        <textarea name="matching" placeholder-class="textarea-placeholder" placeholder="满五唯一，地段特别好，交通便捷，业主诚心卖，房子有土地转让金."></textarea>
       </view>
       <view class='last title-left' bindtap='show' id="12">
         平台标签

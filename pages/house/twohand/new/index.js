@@ -13,13 +13,13 @@ Page({
     zhuang_list: [],
     tag_list: [],
     tag_select: {},
-    tag_select_list: [],//已选中标签列表
+    tag_select_list: [], //已选中标签列表
     check: false, //是否同意协议
     id: 2, //展示的模块id
+    is_list: ["是", "否"],
     search: [], //搜索结果,
     villages_id: "",
     title: "",
-    description: "",
     room: "",
     hall: "",
     wei: ""
@@ -79,31 +79,6 @@ Page({
     var id = e.currentTarget.id;
     const index = e.currentTarget.dataset.index
     switch (id) {
-      case "3":
-        this.setData({
-          type: index,
-        })
-        break;
-      case "4":
-        this.setData({
-          only: index,
-        })
-        break;
-      case "5":
-        this.setData({
-          face: index,
-        })
-        break;
-      case "6":
-        this.setData({
-          zhuang: index,
-        })
-        break;
-      case "7":
-        this.setData({
-          levator: index,
-        })
-        break;
       case "12":
         var list = this.data.tag_select;
         var select_list = this.data.tag_select_list;
@@ -129,6 +104,31 @@ Page({
   check: function () { //是否同意协议 true/false
     this.setData({
       check: !this.data.check
+    })
+  },
+  typeChange: function (e) {
+    this.setData({
+      type: this.data.housetype_list[e.detail.value]
+    })
+  },
+  onlyChange: function (e) {
+    this.setData({
+      only: this.data.only_list[e.detail.value]
+    })
+  },
+  faceChange: function (e) {
+    this.setData({
+      face: this.data.face_list[e.detail.value]
+    })
+  },
+  zhuangChange: function (e) {
+    this.setData({
+      zhuang: this.data.zhuang_list[e.detail.value]
+    })
+  },
+  levatorChange: function (e) {
+    this.setData({
+      levator: this.data.is_list[e.detail.value]
     })
   },
   /**
@@ -292,7 +292,11 @@ Page({
         propertyright: e.detail.value.propertyright,
         housinglife: e.detail.value.housinglife,
         name: e.detail.value.name,
-        description: e.detail.value.description,
+        suitablecrowd: e.detail.value.suitablecrowd,
+        peripheralmatching: e.detail.value.peripheralmatching,
+        traffictrip: e.detail.value.traffictrip,
+        coresellingpoint: e.detail.value.coresellingpoint,
+        matching: e.detail.value.matching,
         tags: tag_select_list.join(","),
         indoorimages: company_img_list.join(","),
         partmentimages: outdoor_img_list.join(","),

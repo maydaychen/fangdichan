@@ -36,20 +36,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 2,
 			"list": [
-				{
-					"id": 0,
-					"name": "认证个人失败",
-					"pathName": "pages/me/certificationCompany/fail",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "钱包页",
-					"pathName": "pages/me/purse/index",
-					"query": ""
-				},
 				{
 					"id": 2,
 					"name": "个人中心",
@@ -57,15 +45,15 @@
 					"query": ""
 				},
 				{
-					"id": 3,
-					"name": "业绩",
-					"pathName": "pages/me/grade/index",
-					"query": ""
-				},
-				{
 					"id": 4,
 					"name": "详情",
 					"pathName": "pages/house/twohand/detail/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发布二手房",
+					"pathName": "pages/house/twohand/new/index",
 					"query": ""
 				}
 			]

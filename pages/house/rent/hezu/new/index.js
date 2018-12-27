@@ -14,9 +14,13 @@ Page({
     housetype_list: [],
     pay_list: [],
     zhuang_list: [],
+    tag_list: [],
+    tag_select: {},
+    tag_select_list: [], //已选中标签列表
     check: false, //是否同意协议
     id: 2, //展示的模块id
     search: [], //搜索结果,
+    is_list: ["是", "否"],
     villages_id: "",
     title: "",
     description: "",
@@ -78,39 +82,51 @@ Page({
     const index = e.currentTarget.dataset.index
     console.log(index)
     switch (id) {
-
-      case "3":
+      case "12":
+        var list = this.data.tag_select;
+        var select_list = this.data.tag_select_list;
+        list[index] = !list[index];
+        if (list[index]) {
+          select_list.push(index);
+        } else {
+          select_list.splice(select_list.indexOf(index), 1)
+        }
         this.setData({
-          type: index,
+          tag_select: list,
+          tag_select_list: select_list
         })
         break;
-      case "4":
-        this.setData({
-          pay: index,
-        })
-        break;
-      case "5":
-        this.setData({
-          face: index,
-        })
-        break;
-      case "6":
-        this.setData({
-          zhuang: index,
-        })
-        break;
-      case "7":
-        this.setData({
-          levator: index,
-        })
-        break;
-
     }
   },
   chooseViliage: function (e) {
     this.setData({
       villages_id: e.currentTarget.id,
       show: !this.data.show
+    })
+  },
+  typeChange: function (e) {
+    this.setData({
+      type: this.data.housetype_list[e.detail.value]
+    })
+  },
+  payChange: function (e) {
+    this.setData({
+      pay: this.data.pay_list[e.detail.value]
+    })
+  },
+  faceChange: function (e) {
+    this.setData({
+      face: this.data.face_list[e.detail.value]
+    })
+  },
+  zhuangChange: function (e) {
+    this.setData({
+      zhuang: this.data.zhuang_list[e.detail.value]
+    })
+  },
+  levatorChange: function (e) {
+    this.setData({
+      levator: this.data.is_list[e.detail.value]
     })
   },
   check: function () { //是否同意协议 true/false
@@ -132,6 +148,7 @@ Page({
           var huxingroom = new Array;
           var huxinghall = new Array;
           var huxingwei = new Array;
+          var tags = new Array;
           for (var i in res.data.typeHousing) {
             types.push(res.data.typeHousing[i].name);
           }
@@ -150,13 +167,17 @@ Page({
           for (var i in res.data.huxingwei) {
             huxingwei.push(res.data.huxingwei[i].name);
           }
+          for (var i in res.data.tags) {
+            tags.push(res.data.tags[i].name);
+          }
           this.setData({
             housetype_list: types,
             face_list: orientation,
             zhuang_list: renovation,
             room_list: huxingroom,
             hall_list: huxinghall,
-            wei_list: huxingwei
+            wei_list: huxingwei,
+            tag_list: tags
           })
         }
       }),
@@ -248,12 +269,14 @@ Page({
       pay,
       face,
       zhuang,
+      levator,
       company_img_list,
       room_img_list,
       room,
       hall,
       wei,
-      check
+      check,
+      tag_select_list
     } = this.data
     util.request({
       url: '/House/rentingInsert',
@@ -268,10 +291,16 @@ Page({
         typehousing: type,
         orientation: face,
         renovation: zhuang,
+        levator: levator,
         floor: e.detail.value.floor,
         totallevel: e.detail.value.totallevel,
         name: e.detail.value.name,
-        description: e.detail.value.description,
+        suitablecrowd: e.detail.value.suitablecrowd,
+        peripheralmatching: e.detail.value.peripheralmatching,
+        traffictrip: e.detail.value.traffictrip,
+        coresellingpoint: e.detail.value.coresellingpoint,
+        matching: e.detail.value.matching,
+        tags: tag_select_list.join(","),
         indoorimages: company_img_list.join(","),
         partmentimages: room_img_list.join(","),
         promise: check ? 1 : 0,

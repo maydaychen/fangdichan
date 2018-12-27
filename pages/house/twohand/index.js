@@ -9,10 +9,6 @@ Page({
   data: {
     list: [{
       bian: false
-    }, {
-      bian: false
-    }, {
-      bian: false
     }],
   },
   goto: function () { //add
@@ -31,18 +27,15 @@ Page({
         url: '/pages/house/rent/hezu/new/index',
       })
     }
-
   },
   detail: function (e) { //详情
     if (this.data.id == 1) {
-   
       wx.navigateTo({
         url: '/pages/house/twohand/detail/index?detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
-     
       })
     } else {
       wx.navigateTo({
-        url: '/pages/house/rent/detail/index',
+        url: '/pages/house/rent/detail/index?detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
       })
     }
   },
