@@ -12,7 +12,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // console.log(JSON.parse(options.detail));//解析得到对象 
+    var info = JSON.parse(options.detail);
+    this.setData({
+      info: info, //解析得到对象
+      banner: (info.indoorimages + "," + info.partmentimages + "," + info.outdoorimages).split(',')
+    })
   },
 
   /**

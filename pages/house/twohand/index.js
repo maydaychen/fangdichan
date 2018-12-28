@@ -35,7 +35,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/house/rent/detail/index?detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
+        url: '/pages/house/rent/detail/index?type='+'&detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
       })
     }
   },
@@ -87,11 +87,21 @@ Page({
       util.request({
         data: {
           openId: app.globalData.openInfo.openid,
+          type: options.id == 2 ? "整租" : "合租"
         },
         url: '/House/rentingList',
         success: res => {
           console.log(res);
-
+          for (var index in res.data) {
+            var pic_list = new Array();
+            pic_list = res.data[index]["indoorimages"].split(',');
+            res.data[index]["bian"] = false;
+            res.data[index]["logo"] = pic_list[0];
+          }
+          // console.log(res);
+          this.setData({
+            list: res.data
+          })
         }
       })
 

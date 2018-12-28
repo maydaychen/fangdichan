@@ -1,23 +1,25 @@
 <!-- pages/house/twohand/detail/index.wxml -->
-<swiper>
-  <swiper-item wx:for="{{banner}}" wx:key="*this">
-    <image src='{{item}}'></image>
-  </swiper-item>
+<swiper indicator-dots="true" indicator-color='#1B82D1' indicator-active-color='#f00' autoplay='true' circular='true' interval='3000' duration='500' class="haibao">
+  <block wx:for="{{banner}}">
+    <swiper-item>
+      <image class='imageBener' src="{{item}}" bindtap='detail'></image>
+    </swiper-item>
+  </block>
 </swiper>
 <view class='container'>
-  <view class="title">新龙城带电梯正规两居室落地窗，随时签约</view>
+  <view class="title">{{info.name}}</view>
   <view class="title-info just-flex">
     <view class="title-info-item first">
       <view class="iconfont .icon-qiandai"></view>
-      <view class="subtitle">132万</view>
+      <view class="subtitle">{{info.price}}万</view>
     </view>
     <view class="title-info-item second">
       <view class="iconfont .icon-mianji"></view>
-      <view class="subtitle">128㎡</view>
+      <view class="subtitle">{{info.acreage}}㎡</view>
     </view>
     <view class="title-info-item third">
       <view class="iconfont .icon-fl-huxing"></view>
-      <view class="subtitle">3室2厅</view>
+      <view class="subtitle">{{info.huxing}}</view>
     </view>
   </view>
   <image src="/image/xian.png" class="line" />
@@ -33,21 +35,21 @@
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">单价:</view>
-      <view class="info-detail">16500/平米</view>
+      <view class="info-detail">{{info.price}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">挂牌:</view>
-      <view class="info-detail">2018.01.01</view>
+      <view class="info-detail">{{info.createtime}}</view>
     </view>
   </view>
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">朝向:</view>
-      <view class="info-detail">南</view>
+      <view class="info-detail">{{info.orientation}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">楼层:</view>
-      <view class="info-detail">中楼层/20层</view>
+      <view class="info-detail">{{info.floor}}</view>
     </view>
   </view>
   <view class="just-flex">
@@ -57,13 +59,13 @@
     </view>
     <view class="just-flex half">
       <view class="info-title">电梯:</view>
-      <view class="info-detail">有</view>
+      <view class="info-detail">{{info.levator}}</view>
     </view>
   </view>
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">装修:</view>
-      <view class="info-detail">简装</view>
+      <view class="info-detail">{{info.renovation}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">年代:</view>
@@ -73,40 +75,21 @@
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">用途:</view>
-      <view class="info-detail">普通住宅</view>
+      <view class="info-detail">{{info.typehousing}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">权属:</view>
       <view class="info-detail">商品房</view>
     </view>
   </view>
-  <view class='message a'>
-    <text class='iconfont icon-sheshi'></text>
-    房屋设施
+  <view class="flex-between">
+    <view class="just-flex half">
+      <view class="info-title">小区:</view>
+      <view class="info-detail locate">新龙城</view>
+    </view>
+    <view class="iconfont icon-you"></view>
   </view>
-  <view class="just-flex">
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-  </view>
-  <view class="flex-between promise">
+  <view class="flex-between promise" style="  margin-top: 40rpx;">
     <view class="just-flex promise-left">
       <view class="iconfont .icon-womenchengnuo"></view>
       <view style="margin-left:20rpx">我们承诺真实房源假一赔百元！</view>
@@ -120,14 +103,33 @@
     <text class='iconfont icon-zuixinfangyuan'></text>
     房源介绍
   </view>
-  <view class="description">房屋情况:两室两厅户型方正，采光好南北通透。周边菜场超市商场医院等设施齐全，公交地铁也都齐全，出现特别方便。</view>
-  <image src="/image/xian.png" class="line" />
-  <view class="flex-between">
-    <view class="manager-item">
-      <view>经纪人带看反馈（20）</view>
-      <view>更新时间 2018.1.1</view>
-    </view>
-    <image src="/image/head.jpg" class="manager-logo" />
+  <view class="just-flex">
+    <image src="/image/huxing.png" class="desc-img" />
+    <view class="desc-title">户型介绍</view>
   </view>
-  <view class="description">此房环境好中间楼层视野好,设施齐全精装两室，拎包出行入住，周边出行也很方便。</view>
+  <view class="desc-content">{{info.suitablecrowd}}</view>
+  <image src="/image/xian.png" class="line" />
+  <view class="just-flex">
+    <image src="/image/people.png" class="desc-img" />
+    <view class="desc-title">适住人群</view>
+  </view>
+  <view class="desc-content">{{info.peripheralmatching}}</view>
+  <image src="/image/xian.png" class="line" />
+  <view class="just-flex">
+    <image src="/image/map.png" class="desc-img" />
+    <view class="desc-title">周边配套</view>
+  </view>
+  <view class="desc-content">{{info.traffictrip}}</view>
+  <image src="/image/xian.png" class="line" />
+  <view class="just-flex">
+    <image src="/image/traffic.png" class="desc-img" />
+    <view class="desc-title">交通出行</view>
+  </view>
+  <view class="desc-content">{{info.coresellingpoint}}</view>
+  <image src="/image/xian.png" class="line" />
+  <view class="just-flex">
+    <image src="/image/star.png" class="desc-img" />
+    <view class="desc-title">核心卖点</view>
+  </view>
+  <view class="desc-content" style="margin-bottom:20rpx">{{info.matching}}</view>
 </view>

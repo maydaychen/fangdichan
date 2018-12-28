@@ -1,15 +1,16 @@
 <!-- pages/house/rent/hezu/new/index.wxml -->
 <view class='container'>
   <view class='top'>
-    <text class='iconfont icon-yinlianglabashengyin'></text>
+    <text class='iconfont icon-tongzhi'></text>
     保证房源真实有效，一旦发现虚假立即删除...
-    <text class='iconfont icon-LC_icon_close_fill_circle'></text>
+    <text class='iconfont icon-quxiao'></text>
   </view>
   <form bindsubmit="submit">
+  
     <view class='fixed' hidden='{{show}}' catchtouchmove="preventTouchMove">
       <view wx:if="{{id == 0}}" class="see">
         <!-- 协议 -->
-        <text class='iconfont icon-LC_icon_close_fill_circle cancel' bindtap='22'></text>
+        <text class='iconfont icon-quxiao cancel' bindtap='22'></text>
         <!-- <view></view> -->
         <htmltowxml text="{{xieyi}}" type="html"></htmltowxml>
       </view>
@@ -19,9 +20,9 @@
         <!-- 承载盒子，不可删 -->
         <view wx:if="{{id == 1}}" class='search'>
           <view>
-            <text class='iconfont icon-search'></text>
+            <text class='iconfont icon-sousuo'></text>
             <input type='search' bindinput='search' bindconfirm='searchenter'></input>
-            <text class='iconfont icon-LC_icon_close_fill_circle' style="color:#b3afaf;height:27rpx;width:27rpx"></text>
+            <text class='iconfont icon-quxiao' style="color:#b3afaf;height:27rpx;width:27rpx"></text>
           </view>
           <text bindtap='searchenter'>搜索</text>
           <view class='center' wx:for="{{search}}" wx:key="*this" bindtap='chooseViliage' id="{{item.id}}">
@@ -66,7 +67,7 @@
           </radio-group>
         </view>
         <view hidden="{{id != 10}}">
-          <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx'></input>
+          <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx;height:80rpx;'></input>
         </view>
         <view wx:if="{{id == 12}}">
           <block wx:for="{{tag_list}}">
@@ -80,13 +81,13 @@
     </view>
     <view class='list'>
       <!-- 显示部分 -->
-      <view class='tops view title-left' bindtap='show' id="1">
+      <view class='tops view title-left' bindtap='show' id="1">-
         小区名称
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
       <view class='last title-left' bindtap='show' id="2">
         房屋户型
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
       <view class='tops view title-left'>
         售价
@@ -105,31 +106,31 @@
       <picker bindchange="typeChange" value="{{housetype_list}}" range="{{housetype_list}}">
         <view class='view title-left picker'>
           房屋类型
-          <text class='right iconfont icon-right'></text>
+          <text class='right iconfont icon-you'></text>
         </view>
       </picker>
       <picker bindchange="onlyChange" value="{{only_list}}" range="{{only_list}}">
         <view class='last title-left picker'>
           唯一住房
-          <text class='right iconfont icon-right'></text>
+          <text class='right iconfont icon-you'></text>
         </view>
       </picker>
       <picker bindchange="faceChange" value="{{face_list}}" range="{{face_list}}">
         <view class='tops view title-left picker'>
           朝向
-          <text class='right iconfont icon-right'></text>
+          <text class='right iconfont icon-you'></text>
         </view>
       </picker>
       <picker bindchange="zhuangChange" value="{{zhuang_list}}" range="{{zhuang_list}}">
         <view class='view title-left picker'>
           装修
-          <text class='right iconfont icon-right'></text>
+          <text class='right iconfont icon-you'></text>
         </view>
       </picker>
       <picker bindchange="levatorChange" value="{{is_list}}" range="{{is_list}}">
         <view class='view title-left picker'>
           电梯
-          <text class='right iconfont icon-right'></text>
+          <text class='right iconfont icon-you'></text>
         </view>
       </picker>
       <view class='last title-left'>
@@ -143,21 +144,21 @@
       </view>
       <view class='tops view title-left' bindtap='show' id="8">
         产权类型
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
       <view class='last title-left' bindtap='show' id="9">
         房屋年限
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
       <view class='tops view title-left' bindtap='show' id="10">
         标题
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
       <view class='view title-left'>
         房源介绍
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
-      <view>
+      <view hidden='{{!show}}'>
         <view class="hide_title">户型介绍</view>
         <textarea name="suitablecrowd" placeholder-class="textarea-placeholder" placeholder="小高层主卧室朝南，没有太多噪音，顶楼带阁楼，户型方正，得房率高。"></textarea>
         <view class="hide_title">适住人群</view>
@@ -171,7 +172,7 @@
       </view>
       <view class='last title-left' bindtap='show' id="12">
         平台标签
-        <text class='right iconfont icon-right'></text>
+        <text class='right iconfont icon-you'></text>
       </view>
       <view class='tops last title-left'>
         <view class="title-left-big">室内图</view>
@@ -181,9 +182,7 @@
             <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left'></image>
           </block> -->
           <upload-img bind:imgs='imgsOnChange' maxCount='6' cover-class='imgs__item--cover'></upload-img>
-          <!-- <view class='left' bindtap='img' id="1">
-            <text class='iconfont icon-xiangji'></text>
-          </view> -->
+     
         </view>
       </view>
       <view class='tops last'>
