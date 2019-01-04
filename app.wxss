@@ -1,6 +1,6 @@
 /**app.wxss**/
 @import '/static/styles/variable.wxss';
-@import '/static/iconfont/iconfont.wxss'
+@import '/static/iconfont/iconfont.wxss';
 
 
 page {

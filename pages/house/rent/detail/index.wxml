@@ -19,18 +19,18 @@
     </view>
     <view class="title-info-item third">
       <view class="iconfont .icon-fl-huxing"></view>
-      <view class="subtitle">{{info.huxing}}</view>
+      <view class="subtitle" style="font-size:36rpx">{{info.huxing}}</view>
     </view>
   </view>
   <image src="/image/xian.png" class="line" />
   <view class='sale'>
-    <text>宁海里</text>
-    <text>128㎡</text>
-    <text>3室2厅</text>
+    <block wx:for="{{info.tags}}" wx:key="index">
+      <text wx:if="{{index<4}}">{{item}}</text>
+    </block>
   </view>
-  <view class='message'>
-    <text class='iconfont icon-jibenxinxi'></text>
-    房源信息
+  <view class='message just-flex'>
+    <image src="/image/jieshao.png"></image>
+    <view>房源信息</view>
   </view>
   <view class="just-flex">
     <view class="just-flex half">
@@ -45,7 +45,7 @@
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">朝向:</view>
-     <view class="info-detail">{{info.orientation}}</view>
+      <view class="info-detail">{{info.orientation}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">楼层:</view>
@@ -54,22 +54,12 @@
   </view>
   <view class="just-flex">
     <view class="just-flex half">
-      <view class="info-title">楼型:</view>
-      <view class="info-detail">板楼</view>
-    </view>
-    <view class="just-flex half">
-      <view class="info-title">电梯:</view>
-      <view class="info-detail">{{info.levator}}</view>
-    </view>
-  </view>
-  <view class="just-flex">
-    <view class="just-flex half">
       <view class="info-title">支付:</view>
       <view class="info-detail">{{info.paymentmethod}}</view>
     </view>
     <view class="just-flex half">
-      <view class="info-title">地铁:</view>
-      <view class="info-detail">有</view>
+      <view class="info-title">电梯:</view>
+      <view class="info-detail">{{info.levator}}</view>
     </view>
   </view>
   <view class="flex-between">
@@ -79,31 +69,17 @@
     </view>
     <view class="iconfont icon-you"></view>
   </view>
-  <view class='message a'>
-    <text class='iconfont icon-sheshi'></text>
-    房屋设施
+  <view class='message just-flex'>
+    <image src="/image/sheshi.jpg"></image>
+    <view>房屋设施</view>
   </view>
-  <view class="just-flex">
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
-    <view class="sheshi-item just-flex">
-      <view class="iconfont .icon-mianji"></view>
-      <view class="sheshi_text">洗衣机</view>
-    </view>
+  <view class="just-flex" style="margin-top:20rpx">
+    <block wx:for="{{info.facilities}}">
+      <view class="sheshi-item just-flex">
+        <image class="facilities_image" src="http://apis.vitlf.com/assets/ximg/{{item}}.png"></image>
+        <text>{{item}}</text>
+      </view>
+    </block>
   </view>
   <view class="flex-between promise">
     <view class="just-flex promise-left">
@@ -115,9 +91,9 @@
       <view style="margin-right:20rpx">举报</view>
     </view>
   </view>
-  <view class='message b'>
-    <text class='iconfont icon-fangyuanguanli' style="font-size:40rpx;"></text>
-    房源介绍
+  <view class='message just-flex'>
+    <image src="/image/fangyuan.png"></image>
+    <view>房源介绍</view>
   </view>
   <view class="just-flex">
     <image src="/image/huxing.png" class="desc-img" />

@@ -14,7 +14,8 @@ Page({
     var info = JSON.parse(options.detail);
     this.setData({
       info: info, //解析得到对象
-      banner: (info.indoorimages + "," + info.partmentimages + "," + info.outdoorimages).split(',')
+      banner: (info.indoorimages + "," + info.partmentimages + "," + info.outdoorimages).split(','),
+      time:info.createtime.split(' ')[0]
     })
   },
 

@@ -19,18 +19,18 @@
     </view>
     <view class="title-info-item third">
       <view class="iconfont .icon-fl-huxing"></view>
-      <view class="subtitle">{{info.huxing}}</view>
+      <view class="subtitle" style="font-size:36rpx">{{info.huxing}}</view>
     </view>
   </view>
   <image src="/image/xian.png" class="line" />
   <view class='sale'>
-    <text>宁海里</text>
-    <text>128㎡</text>
-    <text>3室2厅</text>
+    <block wx:for="{{info.tags}}" wx:key="index">
+      <text wx:if="{{index<4}}">{{item}}</text>
+    </block>
   </view>
-  <view class='message'>
-    <text class='iconfont icon-jibenxinxi'></text>
-    房源信息
+  <view class='message just-flex'>
+    <image src="/image/jieshao.png"></image>
+    <view>房源信息</view>
   </view>
   <view class="just-flex">
     <view class="just-flex half">
@@ -39,7 +39,7 @@
     </view>
     <view class="just-flex half">
       <view class="info-title">挂牌:</view>
-      <view class="info-detail">{{info.createtime}}</view>
+      <view class="info-detail">{{time}}</view>
     </view>
   </view>
   <view class="just-flex">
@@ -99,9 +99,9 @@
       <view style="margin-right:20rpx">举报</view>
     </view>
   </view>
-  <view class='message b'>
-    <text class='iconfont icon-zuixinfangyuan'></text>
-    房源介绍
+  <view class='message just-flex'>
+    <image src="/image/fangyuan.png"></image>
+    <view>房源介绍</view>
   </view>
   <view class="just-flex">
     <image src="/image/huxing.png" class="desc-img" />

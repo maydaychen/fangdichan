@@ -16,15 +16,9 @@ Page({
       wx.navigateTo({
         url: '/pages/house/twohand/new/index',
       })
-    }
-    if (this.data.id == 2) {
+    } else {
       wx.navigateTo({
-        url: '/pages/house/rent/zhengzu/new/index',
-      })
-    }
-    if (this.data.id == 3) {
-      wx.navigateTo({
-        url: '/pages/house/rent/hezu/new/index',
+        url: '/pages/house/rent/hezu/new/index?id=' + this.data.id,
       })
     }
   },
@@ -35,7 +29,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/house/rent/detail/index?type='+'&detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
+        url: '/pages/house/rent/detail/index?type=' + '&detail=' + JSON.stringify(this.data.list[e.currentTarget.id]),
       })
     }
   },
@@ -60,7 +54,22 @@ Page({
     this.setData({
       id: options.id
     })
-    if (options.id == 1) {
+    
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    if (this.data.id == 1) {
       wx.setNavigationBarTitle({
         title: '房源列表',
       })
@@ -79,7 +88,7 @@ Page({
           }
           // console.log(res);
           this.setData({
-            list: res.data
+            list: res.data,
           })
         }
       })
@@ -87,7 +96,8 @@ Page({
       util.request({
         data: {
           openId: app.globalData.openInfo.openid,
-          type: options.id == 2 ? "整租" : "合租"
+          type: this.data.id == 2 ? "整租" : "合租",
+          name: ""
         },
         url: '/House/rentingList',
         success: res => {
@@ -106,21 +116,6 @@ Page({
       })
 
     }
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**

@@ -17,6 +17,9 @@ Page({
     tag_list: [],
     tag_select: {},
     tag_select_list: [], //已选中标签列表
+    facilities_list: [],
+    facilities_select: {},
+    facilities_select_list: [], //已选中标签列表
     check: false, //是否同意协议
     id: 2, //展示的模块id
     search: [], //搜索结果,
@@ -96,6 +99,20 @@ Page({
           tag_select_list: select_list
         })
         break;
+      case "13":
+        var list = this.data.facilities_select;
+        var select_list = this.data.facilities_select_list;
+        list[index] = !list[index];
+        if (list[index]) {
+          select_list.push(index);
+        } else {
+          select_list.splice(select_list.indexOf(index), 1)
+        }
+        this.setData({
+          facilities_select: list,
+          facilities_select_list: select_list
+        })
+        break;
     }
   },
   chooseViliage: function (e) {
@@ -138,6 +155,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      id: options.id
+    })
+    if (options.id == 2) {
+      wx.setNavigationBarTitle({
+        title: '发布整租',
+      })
+    } else {
+      wx.setNavigationBarTitle({
+        title: '发布合租',
+      })
+    }
     util.request({
         url: '/general/getAll',
         success: res => {
@@ -149,6 +178,7 @@ Page({
           var huxinghall = new Array;
           var huxingwei = new Array;
           var tags = new Array;
+          var facilities = new Array;
           for (var i in res.data.typeHousing) {
             types.push(res.data.typeHousing[i].name);
           }
@@ -170,6 +200,9 @@ Page({
           for (var i in res.data.tags) {
             tags.push(res.data.tags[i].name);
           }
+          for (var i in res.data.facilities) {
+            facilities.push(res.data.facilities[i].name);
+          }
           this.setData({
             housetype_list: types,
             face_list: orientation,
@@ -177,7 +210,8 @@ Page({
             room_list: huxingroom,
             hall_list: huxinghall,
             wei_list: huxingwei,
-            tag_list: tags
+            tag_list: tags,
+            facilities_list: facilities
           })
         }
       }),
@@ -276,13 +310,14 @@ Page({
       hall,
       wei,
       check,
-      tag_select_list
+      tag_select_list,
+      facilities_select_list
     } = this.data
     util.request({
       url: '/House/rentingInsert',
       data: {
         openId: app.globalData.openInfo.openid,
-        type: "合租",
+        type: this.data.id == 2 ? "整租" : "合租",
         villages_id: villages_id,
         huxing: room + hall + wei,
         paymentmethod: pay,
@@ -301,6 +336,7 @@ Page({
         coresellingpoint: e.detail.value.coresellingpoint,
         matching: e.detail.value.matching,
         tags: tag_select_list.join(","),
+        facilities: facilities_select_list.join(","),
         indoorimages: company_img_list.join(","),
         partmentimages: room_img_list.join(","),
         promise: check ? 1 : 0,

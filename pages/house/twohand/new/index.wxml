@@ -81,7 +81,7 @@
     </view>
     <view class='list'>
       <!-- 显示部分 -->
-      <view class='tops view title-left' bindtap='show' id="1">-
+      <view class='tops view title-left' bindtap='show' id="1">
         小区名称
         <text class='right iconfont icon-you'></text>
       </view>

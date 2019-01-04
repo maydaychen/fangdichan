@@ -255,3 +255,11 @@ textarea {
   padding: 20rpx;
   font-size: 29rpx;
 }
+
+.cancel {
+  font-size: 40rpx;
+  color: #b3b1b1;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}

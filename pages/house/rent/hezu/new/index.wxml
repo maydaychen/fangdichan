@@ -8,9 +8,10 @@
   <form bindsubmit="submit">
     <view class='fixed' hidden='{{show}}'>
       <view wx:if="{{id == 0}}" class="see">
-        协议
-        <text class='iconfont icon-quxiao' bindtap='22'></text>
-        <view></view>
+        <!-- 协议 -->
+        <text class='iconfont icon-quxiao cancel' bindtap='22'></text>
+        <!-- <view></view> -->
+        <htmltowxml text="{{xieyi}}" type="html"></htmltowxml>
       </view>
       <!-- 填写信息 -->
       <view wx:if="{{id != 0}}">
@@ -73,9 +74,9 @@
             </view>
           </block>
         </view>
-           <view wx:if="{{id == 13}}">
-          <block wx:for="{{tag_list}}">
-            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{tag_select[item]? "choose-active" :"" }}'>
+        <view wx:if="{{id == 13}}">
+          <block wx:for="{{facilities_list}}">
+            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{facilities_select[item]? "choose-active" :"" }}'>
               {{item}}
             </view>
           </block>
@@ -150,7 +151,7 @@
         标题
         <text class='right iconfont icon-you'></text>
       </view>
-      <view class='tops view title-left' bindtap='show' id="13">
+      <view class='view title-left' bindtap='show' id="13">
         房屋设施
         <text class='right iconfont icon-you'></text>
       </view>
