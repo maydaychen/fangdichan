@@ -4,7 +4,16 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    latitude: 31.5285,
+    longitude: 120.28429,
+    markers: [{
+      id: 1,
+      latitude: 31.5285,
+      longitude: 120.28429,
+      name: '测试地点',
+    }],
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -15,16 +24,14 @@ Page({
     this.setData({
       info: info, //解析得到对象
       banner: (info.indoorimages + "," + info.partmentimages + "," + info.outdoorimages).split(','),
-      time:info.createtime.split(' ')[0]
+      time: info.createtime.split(' ')[0]
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示

@@ -2,10 +2,10 @@
 <view>
   <view class='top'>
     <view class='search'>
-      <text class='iconfont icon-cx'></text>
-      <input type='text' placeholder='搜索'></input>
+      <text class='iconfont icon-sousuo'></text>
+      <input type='text' placeholder='搜索' bindinput="change"></input>
     </view>
-    <text class='iconfont icon-add' bindtap='goto'></text>
+    <text class='iconfont icon-zengjia' bindtap='goto'></text>
   </view>
   <block wx:for="{{list}}" wx:key="*this">
     <view class='list' id="{{index}}" bindtap='detail'>
@@ -21,7 +21,7 @@
           </view>
           <view class="flex-between">
             <text class="time">
-              <text class='iconfont icon-time'></text>2018-12-28
+              <text class='iconfont icon-shijian'></text>2018-12-28
             </text>
             <view class="just-flex">
               <view class='bians bian edit' catchtap='bian' wx:if="{{!item.bian}}" id="{{index}}">编辑</view>

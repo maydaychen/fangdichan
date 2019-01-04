@@ -10,6 +10,7 @@ Page({
     list: [{
       bian: false
     }],
+    key: ""
   },
   goto: function () { //add
     if (this.data.id == 1) {
@@ -21,6 +22,12 @@ Page({
         url: '/pages/house/rent/hezu/new/index?id=' + this.data.id,
       })
     }
+  },
+  change: function (e) {
+    this.setData({
+      key: e.detail.value
+    })
+    this.getList();
   },
   detail: function (e) { //详情
     if (this.data.id == 1) {
@@ -47,28 +54,7 @@ Page({
       [up]: false
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.setData({
-      id: options.id
-    })
-    
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  getList: function () {
     if (this.data.id == 1) {
       wx.setNavigationBarTitle({
         title: '房源列表',
@@ -97,7 +83,7 @@ Page({
         data: {
           openId: app.globalData.openInfo.openid,
           type: this.data.id == 2 ? "整租" : "合租",
-          name: ""
+          name: this.data.key
         },
         url: '/House/rentingList',
         success: res => {
@@ -116,6 +102,30 @@ Page({
       })
 
     }
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      id: options.id
+    })
+
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.getList();
   },
 
   /**

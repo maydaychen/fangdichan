@@ -5,14 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    latitude: 31.5285,
+    longitude: 120.28429,
+    markers: [{
+      id: 1,
+      latitude: 31.5285,
+      longitude: 120.28429,
+      name: '测试地点',
+    }],
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(JSON.parse(options.detail));//解析得到对象 
     var info = JSON.parse(options.detail);
     this.setData({
       info: info, //解析得到对象
