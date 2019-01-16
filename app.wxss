@@ -117,3 +117,9 @@ button::after {
 .font-3232 {
   color: var(--color-certification-title);
 }
+
+.single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

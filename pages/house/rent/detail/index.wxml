@@ -2,7 +2,7 @@
 <swiper indicator-dots="true" indicator-color='#1B82D1' indicator-active-color='#f00' autoplay='true' circular='true' interval='3000' duration='500' class="haibao">
   <block wx:for="{{banner}}">
     <swiper-item>
-      <image class='imageBener' src="{{item}}" bindtap='detail'></image>
+      <image class='imageBener' src="{{item}}" bindtap='detail' id="{{index}}"mode="aspectFit"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -35,7 +35,7 @@
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">方式:</view>
-      <view class="info-detail">整租</view>
+      <view class="info-detail">{{info.type}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">装修:</view>
@@ -65,7 +65,7 @@
   <view class="flex-between">
     <view class="just-flex half">
       <view class="info-title">小区:</view>
-      <view class="info-detail locate">新龙城</view>
+      <view class="info-detail locate" bindtap="goMap">{{info.villages.name}}</view>
     </view>
     <view class="iconfont icon-you"></view>
   </view>
@@ -81,7 +81,7 @@
       </view>
     </block>
   </view>
-   <view class="flex-between promise" style="margin: 40rpx 0 ;">
+  <view class="flex-between promise" style="margin: 40rpx 0 ;">
     <view class="just-flex promise-left">
       <view class="iconfont .icon-womenchengnuo"></view>
       <view style="margin-left:20rpx">我们承诺真实房源假一赔百元！</view>

@@ -41,7 +41,11 @@
   background: rgba(254, 228, 131, 0.5);
 }
 
-.sale text:nth-child(2) {
+.sale text:nth-child(2n) {
+  background: rgba(191, 220, 242, 0.5);
+}
+
+.sale text:nth-child(3n) {
   background: rgba(191, 220, 242, 0.5);
 }
 

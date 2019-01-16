@@ -51,9 +51,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "发布二手房",
-					"pathName": "pages/house/twohand/new/index",
+					"id": 2,
+					"name": "发布租房",
+					"pathName": "pages/house/rent/new/index",
 					"query": ""
 				}
 			]

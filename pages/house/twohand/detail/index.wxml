@@ -2,7 +2,7 @@
 <swiper indicator-dots="true" indicator-color='#1B82D1' indicator-active-color='#f00' autoplay='true' circular='true' interval='3000' duration='500' class="haibao">
   <block wx:for="{{banner}}">
     <swiper-item>
-      <image class='imageBener' src="{{item}}" bindtap='detail'></image>
+      <image class='imageBener' src="{{item}}" bindtap='detail' id="{{index}}" mode="aspectFit"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -54,8 +54,8 @@
   </view>
   <view class="just-flex">
     <view class="just-flex half">
-      <view class="info-title">楼型:</view>
-      <view class="info-detail">板楼</view>
+      <view class="info-title">装修:</view>
+      <view class="info-detail">{{info.renovation}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">电梯:</view>
@@ -64,28 +64,15 @@
   </view>
   <view class="just-flex">
     <view class="just-flex half">
-      <view class="info-title">装修:</view>
-      <view class="info-detail">{{info.renovation}}</view>
-    </view>
-    <view class="just-flex half">
-      <view class="info-title">年代:</view>
-      <view class="info-detail">2017年</view>
-    </view>
-  </view>
-  <view class="just-flex">
-    <view class="just-flex half">
       <view class="info-title">用途:</view>
       <view class="info-detail">{{info.typehousing}}</view>
     </view>
-    <view class="just-flex half">
-      <view class="info-title">权属:</view>
-      <view class="info-detail">商品房</view>
-    </view>
+    <view class="just-flex half"></view>
   </view>
   <view class="flex-between">
     <view class="just-flex half">
       <view class="info-title">小区:</view>
-      <view class="info-detail locate">新龙城</view>
+      <view class="info-detail locate" bindtap="goMap">{{info.villages.name}}</view>
     </view>
     <view class="iconfont icon-you"></view>
   </view>

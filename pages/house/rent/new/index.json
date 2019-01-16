@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"租房发布",
+  "usingComponents": {
+    "upload-img": "/components/upload-img/upload-img",
+    "htmltowxml": "/components/html2wxml-component/html2wxml"
+  }
+}

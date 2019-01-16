@@ -10,6 +10,8 @@
     "pages/house/rent/index",
     "pages/house/rent/detail/index",
     "pages/house/rent/hezu/new/index",
+    "pages/house/rent/new/index",
+    "pages/house/rent/new/info",
     "pages/login/welcome/index",
     "pages/me/index",
     "pages/me/code/index",
@@ -29,12 +31,17 @@
   "tabBar": {
     "color": "#666666",
     "selectedColor": "#1B71CC",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "微聊",
         "iconPath": "image/wechat.png",
         "selectedIconPath": "image/wechat2.png"
+      },
+      {
+        "pagePath": "pages/custome/index",
+        "text": "客户",
+        "iconPath": "image/user.png",
+        "selectedIconPath": "image/user2.png"
       },
       {
         "pagePath": "pages/custome/index",

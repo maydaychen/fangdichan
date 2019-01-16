@@ -21,13 +21,41 @@ Page({
   onLoad: function (options) {
     // console.log(JSON.parse(options.detail));//解析得到对象 
     var info = JSON.parse(options.detail);
+    var markers = new Array();
+    var item = new Object;
+    item.id = 1;
+    item.latitude = parseFloat(info.villages.latitude);
+    item.longitude = parseFloat(info.villages.longitude);
+    item.name = info.villages.name;
+    markers.push(item);
     this.setData({
       info: info, //解析得到对象
       banner: (info.indoorimages + "," + info.partmentimages + "," + info.outdoorimages).split(','),
-      time: info.createtime.split(' ')[0]
+      time: info.createtime.split(' ')[0],
+      latitude: parseFloat(info.villages.latitude),
+      longitude: parseFloat(info.villages.longitude),
+      markers: markers
     })
   },
-
+  goMap: function () {
+    let {
+      latitude,
+      longitude,
+    } = this.data
+    wx.openLocation({
+      latitude,
+      longitude,
+      scale: 18
+    })
+  },
+  detail: function (e) {
+    const idx = e.currentTarget.dataset.idx
+    let urls = this.data.banner
+    wx.previewImage({
+      urls,
+      current: urls[idx]
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

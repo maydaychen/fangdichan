@@ -7,9 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [{
-      bian: false
-    }],
+    list: [],
     key: ""
   },
   goto: function () { //add
@@ -19,7 +17,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/house/rent/hezu/new/index?id=' + this.data.id,
+        url: '/pages/house/rent/new/index?id=' + this.data.id,
       })
     }
   },

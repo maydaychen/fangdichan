@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    villages_name: "",
     show: true,
     housetype_list: [],
     only_list: [],
@@ -98,6 +99,7 @@ Page({
   chooseViliage: function (e) {
     this.setData({
       villages_id: e.currentTarget.id,
+      villages_name: e.currentTarget.dataset.index,
       show: !this.data.show
     })
   },
@@ -131,6 +133,46 @@ Page({
       levator: this.data.is_list[e.detail.value]
     })
   },
+  propertyChange: function (e) {
+    this.setData({
+      property: e.detail.value
+    })
+  },
+  housinglifeChange: function (e) {
+    this.setData({
+      housinglife: e.detail.value
+    })
+  },
+  nameChange: function (e) {
+    this.setData({
+      titlename: e.detail.value
+    })
+  },
+  firstChange: function (e) {
+    this.setData({
+      first: e.detail.value
+    })
+  },
+  secondChange: function (e) {
+    this.setData({
+      second: e.detail.value
+    })
+  },
+  thirdChange: function (e) {
+    this.setData({
+      third: e.detail.value
+    })
+  },
+  fourthChange: function (e) {
+    this.setData({
+      fourth: e.detail.value
+    })
+  },
+  fifthChange: function (e) {
+    this.setData({
+      fifth: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -138,7 +180,6 @@ Page({
     util.request({
         url: '/general/getAll',
         success: res => {
-          console.log(res);
           var types = new Array;
           var orientation = new Array;
           var renovation = new Array;
@@ -176,8 +217,11 @@ Page({
             face_list: orientation,
             zhuang_list: renovation,
             room_list: huxingroom,
+            room: huxingroom[0],
             hall_list: huxinghall,
+            hall: huxinghall[0],
             wei_list: huxingwei,
+            wei: huxingwei[0],
             only_list: solehousing,
             tag_list: tags
           })
@@ -274,6 +318,35 @@ Page({
       check,
       tag_select_list
     } = this.data
+    if (!villages_id) {
+      wx.showToast({
+        title: '请选择所在小区',
+        icon: 'none'
+      })
+      return
+    }
+    if (!type || !only || !face || !zhuang || !levator || !tag_select_list) {
+      wx.showToast({
+        title: '请选择房屋相关选项',
+        icon: 'none'
+      })
+      return
+    }
+    if (!e.detail.value.price || !e.detail.value.acreage || !e.detail.value.floor || !e.detail.value.name ||
+      !e.detail.value.totallevel || !e.detail.value.propertyright || !e.detail.value.housinglife) {
+      wx.showToast({
+        title: '请填写房屋相关信息',
+        icon: 'none'
+      })
+      return
+    }
+    if (!company_img_list || !outdoor_img_list || !room_img_list) {
+      wx.showToast({
+        title: '请上传相关图片',
+        icon: 'none'
+      })
+      return
+    }
     util.request({
       url: '/House/secondhandHireInsert',
       data: {

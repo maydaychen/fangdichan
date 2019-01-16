@@ -263,3 +263,17 @@ textarea {
   right: -10rpx;
   top: -10rpx;
 }
+
+.right-text {
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.longtext {
+  width: 400rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: right;
+}

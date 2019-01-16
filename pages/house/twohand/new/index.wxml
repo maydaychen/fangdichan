@@ -6,7 +6,6 @@
     <text class='iconfont icon-quxiao'></text>
   </view>
   <form bindsubmit="submit">
-  
     <view class='fixed' hidden='{{show}}' catchtouchmove="preventTouchMove">
       <view wx:if="{{id == 0}}" class="see">
         <!-- 协议 -->
@@ -25,7 +24,7 @@
             <text class='iconfont icon-quxiao' style="color:#b3afaf;height:27rpx;width:27rpx"></text>
           </view>
           <text bindtap='searchenter'>搜索</text>
-          <view class='center' wx:for="{{search}}" wx:key="*this" bindtap='chooseViliage' id="{{item.id}}">
+          <view class='center' wx:for="{{search}}" wx:key="*this" bindtap='chooseViliage' id="{{item.id}}" data-index="{{item.name}}">
             {{item.name}}
           </view>
         </view>
@@ -47,7 +46,7 @@
           </scroll-view>
         </view>
         <view hidden="{{id != 8}}">
-          <radio-group name="propertyright">
+          <radio-group name="propertyright" bindchange="propertyChange">
             <radio id='1' value="40年"></radio>
             <label for=''>40年</label>
             <radio id='2' value="50年"></radio>
@@ -57,7 +56,7 @@
           </radio-group>
         </view>
         <view hidden="{{id != 9}}">
-          <radio-group name="housinglife">
+          <radio-group name="housinglife" bindchange="housinglifeChange">
             <radio id='1' value="4年"></radio>
             <label for=''>4年</label>
             <radio id='2' value="10年"></radio>
@@ -67,7 +66,7 @@
           </radio-group>
         </view>
         <view hidden="{{id != 10}}">
-          <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx;height:80rpx;'></input>
+          <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx;height:80rpx;' bindinput="nameChange"></input>
         </view>
         <view wx:if="{{id == 12}}">
           <block wx:for="{{tag_list}}">
@@ -81,13 +80,19 @@
     </view>
     <view class='list'>
       <!-- 显示部分 -->
-      <view class='tops view title-left' bindtap='show' id="1">
-        小区名称
-        <text class='right iconfont icon-you'></text>
+      <view class='tops view flex-between' bindtap='show' id="1">
+        <view class="title-left">小区名称</view>
+        <view class="just-flex">
+          <view class="right-text">{{villages_name}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
       </view>
-      <view class='last title-left' bindtap='show' id="2">
-        房屋户型
-        <text class='right iconfont icon-you'></text>
+      <view class='last flex-between' bindtap='show' id="2">
+        <view class="title-left">房屋户型</view>
+        <view class="just-flex">
+          <view class="right-text">{{room}}{{hall}}{{wei}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
       </view>
       <view class='tops view title-left'>
         售价
@@ -104,33 +109,48 @@
         </view>
       </view>
       <picker bindchange="typeChange" value="{{housetype_list}}" range="{{housetype_list}}">
-        <view class='view title-left picker'>
-          房屋类型
-          <text class='right iconfont icon-you'></text>
+        <view class='view flex-between picker'>
+          <view class="title-left">房屋类型</view>
+          <view class="just-flex">
+            <view class="right-text">{{type}}</view>
+            <text class='right iconfont icon-you'></text>
+          </view>
         </view>
       </picker>
       <picker bindchange="onlyChange" value="{{only_list}}" range="{{only_list}}">
-        <view class='last title-left picker'>
-          唯一住房
-          <text class='right iconfont icon-you'></text>
+        <view class='last flex-between picker'>
+          <view class="title-left">唯一住房</view>
+          <view class="just-flex">
+            <view class="right-text">{{only}}</view>
+            <text class='right iconfont icon-you'></text>
+          </view>
         </view>
       </picker>
       <picker bindchange="faceChange" value="{{face_list}}" range="{{face_list}}">
-        <view class='tops view title-left picker'>
-          朝向
-          <text class='right iconfont icon-you'></text>
+        <view class='tops view flex-between picker'>
+          <view class="title-left">朝向</view>
+          <view class="just-flex">
+            <view class="right-text">{{face}}</view>
+            <text class='right iconfont icon-you'></text>
+          </view>
         </view>
       </picker>
       <picker bindchange="zhuangChange" value="{{zhuang_list}}" range="{{zhuang_list}}">
-        <view class='view title-left picker'>
-          装修
-          <text class='right iconfont icon-you'></text>
+        <view class='view flex-between picker'>
+          <view class="title-left">装修</view>
+          <view class="just-flex">
+            <view class="right-text">{{zhuang}}</view>
+            <text class='right iconfont icon-you'></text>
+          </view>
         </view>
       </picker>
       <picker bindchange="levatorChange" value="{{is_list}}" range="{{is_list}}">
-        <view class='view title-left picker'>
-          电梯
-          <text class='right iconfont icon-you'></text>
+        <view class='view flex-between picker'>
+          <view class="title-left">电梯</view>
+          <view class="just-flex">
+            <view class="right-text">{{levator}}</view>
+            <text class='right iconfont icon-you'></text>
+          </view>
         </view>
       </picker>
       <view class='last title-left'>
@@ -142,37 +162,46 @@
           总楼层
         </view>
       </view>
-      <view class='tops view title-left' bindtap='show' id="8">
-        产权类型
+      <view class='tops view flex-between' bindtap='show' id="8">
+        <view class="title-left">产权类型</view>
+        <view class="just-flex">
+          <view class="right-text">{{property}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
+      </view>
+      <view class='last flex-between' bindtap='show' id="9">
+        <view class="title-left">房屋年限</view>
+        <view class="just-flex">
+          <view class="right-text">{{housinglife}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
+      </view>
+      <view class='tops view flex-between' bindtap='show' id="10">
+        <view class="title-left">标题</view>
+        <view class="just-flex">
+          <view class="right-text longtext">{{titlename}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
+      </view>
+      <view class='view title-left flex-between' bindtap='show' id="12">
+        <view class="title-left">平台标签</view>
         <text class='right iconfont icon-you'></text>
       </view>
-      <view class='last title-left' bindtap='show' id="9">
-        房屋年限
-        <text class='right iconfont icon-you'></text>
+      <view class='view title-left flex-between'>
+        <view class="title-left">房源介绍</view>
+        <text ></text>
       </view>
-      <view class='tops view title-left' bindtap='show' id="10">
-        标题
-        <text class='right iconfont icon-you'></text>
-      </view>
-      <view class='view title-left'>
-        房源介绍
-        <text class='right iconfont icon-you'></text>
-      </view>
-      <view hidden='{{!show}}'>
+      <view wx:if='{{show}}' class="last">
         <view class="hide_title">户型介绍</view>
-        <textarea name="suitablecrowd" placeholder-class="textarea-placeholder" placeholder="小高层主卧室朝南，没有太多噪音，顶楼带阁楼，户型方正，得房率高。"></textarea>
+        <textarea name="suitablecrowd" bindinput="firstChange" value="{{first}}" placeholder-class="textarea-placeholder" placeholder="小高层主卧室朝南，没有太多噪音，顶楼带阁楼，户型方正，得房率高。"></textarea>
         <view class="hide_title">适住人群</view>
-        <textarea name="peripheralmatching" placeholder-class="textarea-placeholder" placeholder="本房适合刚需改善型住户,精装修拎包入住。房主家具家电全留下。"></textarea>
+        <textarea name="peripheralmatching" bindinput="secondChange" value="{{second}}" placeholder-class="textarea-placeholder" placeholder="本房适合刚需改善型住户,精装修拎包入住。房主家具家电全留下。"></textarea>
         <view class="hide_title">周边配套</view>
-        <textarea name="traffictrip" placeholder-class="textarea-placeholder" placeholder="幼儿园：无锡实验幼儿园"></textarea>
+        <textarea name="traffictrip" bindinput="thirdChange" value="{{third}}" placeholder-class="textarea-placeholder" placeholder="幼儿园：无锡实验幼儿园"></textarea>
         <view class="hide_title">交通出行</view>
-        <textarea name="coresellingpoint" placeholder-class="textarea-placeholder" placeholder="公交：102路、722路、10路、703路"></textarea>
+        <textarea name="coresellingpoint" bindinput="fourthChange" value="{{fourth}}" placeholder-class="textarea-placeholder" placeholder="公交：102路、722路、10路、703路"></textarea>
         <view class="hide_title">核心卖点</view>
-        <textarea name="matching" placeholder-class="textarea-placeholder" placeholder="满五唯一，地段特别好，交通便捷，业主诚心卖，房子有土地转让金."></textarea>
-      </view>
-      <view class='last title-left' bindtap='show' id="12">
-        平台标签
-        <text class='right iconfont icon-you'></text>
+        <textarea name="matching" bindinput="fifthChange" value="{{fifth}}" placeholder-class="textarea-placeholder" placeholder="满五唯一，地段特别好，交通便捷，业主诚心卖，房子有土地转让金."></textarea>
       </view>
       <view class='tops last title-left'>
         <view class="title-left-big">室内图</view>
@@ -182,7 +211,6 @@
             <image src="{{item}}" bindtap='delete' id="1" data-index="{{index}}" class='left'></image>
           </block> -->
           <upload-img bind:imgs='imgsOnChange' maxCount='6' cover-class='imgs__item--cover'></upload-img>
-     
         </view>
       </view>
       <view class='tops last'>

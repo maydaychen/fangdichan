@@ -118,6 +118,7 @@ Page({
   chooseViliage: function (e) {
     this.setData({
       villages_id: e.currentTarget.id,
+      villages_name: e.currentTarget.dataset.index,
       show: !this.data.show
     })
   },
@@ -146,6 +147,46 @@ Page({
       levator: this.data.is_list[e.detail.value]
     })
   },
+  propertyChange: function (e) {
+    this.setData({
+      property: e.detail.value
+    })
+  },
+  housinglifeChange: function (e) {
+    this.setData({
+      housinglife: e.detail.value
+    })
+  },
+  nameChange: function (e) {
+    this.setData({
+      titlename: e.detail.value
+    })
+  },
+  firstChange: function (e) {
+    this.setData({
+      first: e.detail.value
+    })
+  },
+  secondChange: function (e) {
+    this.setData({
+      second: e.detail.value
+    })
+  },
+  thirdChange: function (e) {
+    this.setData({
+      third: e.detail.value
+    })
+  },
+  fourthChange: function (e) {
+    this.setData({
+      fourth: e.detail.value
+    })
+  },
+  fifthChange: function (e) {
+    this.setData({
+      fifth: e.detail.value
+    })
+  },
   check: function () { //是否同意协议 true/false
     this.setData({
       check: !this.data.check
@@ -162,9 +203,15 @@ Page({
       wx.setNavigationBarTitle({
         title: '发布整租',
       })
+      this.setData({
+        name: "整租"
+      })
     } else {
       wx.setNavigationBarTitle({
         title: '发布合租',
+      })
+      this.setData({
+        name: "合租"
       })
     }
     util.request({
@@ -208,8 +255,11 @@ Page({
             face_list: orientation,
             zhuang_list: renovation,
             room_list: huxingroom,
+            room: huxingroom[0],
             hall_list: huxinghall,
+            hall: huxinghall[0],
             wei_list: huxingwei,
+            wei: huxingwei[0],
             tag_list: tags,
             facilities_list: facilities
           })
@@ -298,6 +348,7 @@ Page({
   },
   submit: function (e) {
     let {
+      name,
       villages_id,
       type,
       pay,
@@ -312,12 +363,41 @@ Page({
       check,
       tag_select_list,
       facilities_select_list
-    } = this.data
+    } = this.data;
+    if (!villages_id) {
+      wx.showToast({
+        title: '请选择所在小区',
+        icon: 'none'
+      })
+      return
+    }
+    if (!type || !pay || !face || !zhuang || !levator || !tag_select_list || !facilities_select_list) {
+      wx.showToast({
+        title: '请选择房屋相关选项',
+        icon: 'none'
+      })
+      return
+    }
+    if (!e.detail.value.acreage || !e.detail.value.floor || !e.detail.value.name ||
+      !e.detail.value.totallevel || !e.detail.value.money || !e.detail.value.matching) {
+      wx.showToast({
+        title: '请填写房屋相关信息',
+        icon: 'none'
+      })
+      return
+    }
+    if (!company_img_list || !room_img_list) {
+      wx.showToast({
+        title: '请上传相关图片',
+        icon: 'none'
+      })
+      return
+    }
     util.request({
       url: '/House/rentingInsert',
       data: {
         openId: app.globalData.openInfo.openid,
-        type: this.data.id == 2 ? "整租" : "合租",
+        type: name,
         villages_id: villages_id,
         huxing: room + hall + wei,
         paymentmethod: pay,
