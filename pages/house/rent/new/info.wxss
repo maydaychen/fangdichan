@@ -1,1 +1,95 @@
 /* pages/house/rent/new/info.wxss */
+.conteiner {
+  background: white;
+  padding: 20rpx;
+  height: 100%;
+  box-sizing: border-box
+}
+
+.content {
+  border-bottom: 1rpx solid #DCDCDC;
+}
+
+.title-first {
+  width: 70%;
+  color: #323232;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  justify-content: center;
+}
+
+.title {
+  width: 30%;
+  text-align: center;
+  color: #323232;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+
+.content input {
+  width: 70%;
+  text-align: center;
+  color: #323232;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+
+
+}
+
+.input-placeholder {
+  color: #666666;
+  font-size: 28rpx;
+}
+
+button {
+  background: #1d87d9;
+  width: 95%;
+  color: #fff;
+  box-shadow: 0px 1px 1px 0px #1d87d9;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  position: fixed;
+  bottom: 96rpx;
+}
+
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .8);
+  font-size: 32rpx;
+  color: #323232;
+}
+
+.mask .top {
+  background: white;
+}
+
+.mask .search {
+  width: 580rpx;
+  background: #eeeeee;
+  margin: 20rpx 0;
+  margin-left: 30rpx;
+  border-radius: 4rpx;
+}
+
+.mask .search input {
+  margin-left: 30rpx;
+}
+
+.mask .top .search-text {
+  margin-right: 40rpx;
+  color: #EDA425;
+  font-size: 30rpx;
+}
+
+.center {
+  text-align: center;
+  padding: 20rpx 0;
+  background: white;
+  border-bottom: 1rpx solid var(--color-border-color);
+}

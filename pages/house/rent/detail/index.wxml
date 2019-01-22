@@ -2,7 +2,7 @@
 <swiper indicator-dots="true" indicator-color='#1B82D1' indicator-active-color='#f00' autoplay='true' circular='true' interval='3000' duration='500' class="haibao">
   <block wx:for="{{banner}}">
     <swiper-item>
-      <image class='imageBener' src="{{item}}" bindtap='detail' id="{{index}}"mode="aspectFit"></image>
+      <image class='imageBener' src="{{item}}" bindtap='detail' id="{{index}}" mode="aspectFit"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -11,20 +11,22 @@
   <view class="title-info just-flex">
     <view class="title-info-item first">
       <view class="iconfont .icon-qiandai"></view>
-      <view class="subtitle">{{info.rentmoney}}万</view>
+      <view class="subtitle">{{info.money}}</view>
     </view>
     <view class="title-info-item second">
       <view class="iconfont .icon-mianji"></view>
-      <view class="subtitle">{{info.acreage}}㎡</view>
+      <view class="subtitle">{{info.square}}㎡</view>
     </view>
     <view class="title-info-item third">
       <view class="iconfont .icon-fl-huxing"></view>
-      <view class="subtitle" style="font-size:36rpx">{{info.huxing}}</view>
+      <view class="subtitle" style="font-size:36rpx">
+        {{info.apartment_huxingroom_id}}{{info.apartment_huxinghall_id}}{{info.apartment_huxingwei_id}}
+      </view>
     </view>
   </view>
   <image src="/image/xian.png" class="line" />
   <view class='sale'>
-    <block wx:for="{{info.tags}}" wx:key="index">
+    <block wx:for="{{info.tagname}}" wx:key="index">
       <text wx:if="{{index<4}}">{{item}}</text>
     </block>
   </view>
@@ -32,42 +34,36 @@
     <image src="/image/jieshao.png"></image>
     <view>房源信息</view>
   </view>
-  <view class="just-flex">
+  <view class="flex-between">
+    <view class="just-flex half">
+      <view class="info-title">小区:</view>
+      <!-- <view class="info-detail locate" bindtap="goMap">{{info.villages.name}}</view> -->
+      <view class="info-detail">{{info.villages.name}}</view>
+    </view>
     <view class="just-flex half">
       <view class="info-title">方式:</view>
       <view class="info-detail">{{info.type}}</view>
-    </view>
-    <view class="just-flex half">
-      <view class="info-title">装修:</view>
-      <view class="info-detail">{{info.renovation}}</view>
     </view>
   </view>
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">朝向:</view>
-      <view class="info-detail">{{info.orientation}}</view>
+      <view class="info-detail">{{info.general_orientation_id}}</view>
     </view>
     <view class="just-flex half">
       <view class="info-title">楼层:</view>
-      <view class="info-detail">{{info.floor}}</view>
+      <view class="info-detail">{{type_floor}} / {{info.floor}}层</view>
     </view>
   </view>
   <view class="just-flex">
     <view class="just-flex half">
       <view class="info-title">支付:</view>
-      <view class="info-detail">{{info.paymentmethod}}</view>
+      <view class="info-detail">{{info.general_paymentmethod_id}}</view>
     </view>
     <view class="just-flex half">
-      <view class="info-title">电梯:</view>
-      <view class="info-detail">{{info.levator}}</view>
+      <view class="info-title">装修:</view>
+      <view class="info-detail">{{info.general_renovation_id}}</view>
     </view>
-  </view>
-  <view class="flex-between">
-    <view class="just-flex half">
-      <view class="info-title">小区:</view>
-      <view class="info-detail locate" bindtap="goMap">{{info.villages.name}}</view>
-    </view>
-    <view class="iconfont icon-you"></view>
   </view>
   <view class='message just-flex'>
     <image src="/image/sheshi.jpg"></image>
@@ -96,12 +92,12 @@
     <image src="/image/fangyuan.png"></image>
     <view>房源介绍</view>
   </view>
-  <view class="just-flex">
+  <!-- <view class="just-flex">
     <image src="/image/huxing.png" class="desc-img" />
     <view class="desc-title">户型介绍</view>
-  </view>
-  <view class="desc-content">{{info.suitablecrowd}}</view>
-  <image src="/image/xian.png" class="line" />
+  </view> -->
+  <view class="desc-content" style="margin-bottom:20rpx">{{info.describe}}</view>
+  <!-- <image src="/image/xian.png" class="line" />
   <view class="just-flex">
     <image src="/image/people.png" class="desc-img" />
     <view class="desc-title">适住人群</view>
@@ -124,5 +120,5 @@
     <image src="/image/star.png" class="desc-img" />
     <view class="desc-title">核心卖点</view>
   </view>
-  <view class="desc-content" style="margin-bottom:20rpx">{{info.matching}}</view>
+  <view class="desc-content" style="margin-bottom:20rpx">{{info.matching}}</view> -->
 </view>

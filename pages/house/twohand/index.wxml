@@ -14,14 +14,14 @@
         <view class='content'>
           <view class="title">{{item.name}}</view>
           <view class='sale just-flex'>
-            <view>{{item.acreage}}㎡</view>
-            <block wx:for="{{item.tags}}" wx:key="index">
+            <view>{{item.square}}㎡</view>
+            <block wx:for="{{item.tagname}}" wx:key="index">
               <view wx:if="{{index<4}}">{{item}}</view>
             </block>
           </view>
           <view class="flex-between">
             <text class="time">
-              <text class='iconfont icon-shijian'></text>2018-12-28
+              <text class='iconfont icon-shijian'></text>{{item.createtime}}
             </text>
             <view class="just-flex">
               <view class='bians bian edit' catchtap='bian' wx:if="{{!item.bian}}" id="{{index}}">编辑</view>

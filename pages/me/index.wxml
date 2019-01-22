@@ -53,6 +53,13 @@
     </view>
     <view class="icon-right iconfont icon-you"></view>
   </navigator>
+  <navigator class="profile-button ui-input" url='/pages/add/index'>
+    <view style='display:flex;align-items:center'>
+      <image class="icon" src="/image/new-icon.png"></image>
+      <text class="person_choice">房源发布</text>
+    </view>
+    <view class="icon-right iconfont icon-you"></view>
+  </navigator>
   <navigator class="profile-button ui-input" url='grade/index'>
     <view style='display:flex;align-items:center'>
       <image class="icon" src="/image/grade-icon.png"></image>

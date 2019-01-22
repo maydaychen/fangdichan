@@ -1,2 +1,42 @@
-<!--pages/house/rent/new/info.wxml-->
-<text>pages/house/rent/new/info.wxml</text>
+<!-- pages/house/rent/new/info.wxml -->
+<view class="conteiner">
+  <view class="just-flex content">
+    <view class="title">小区：</view>
+    <view class="just-flex title-first">
+      <view wx:if="{{villages_name}}" bindtap='show' id="1">{{villages_name}}</view>
+      <view wx:else bindtap='show' id="1">请选择小区名称</view>
+      <view class="iconfont icon-icon--" style="margin:0 10rpx;"></view>
+      <view class="iconfont icon-ditu"></view>
+    </view>
+  </view>
+  <view class="just-flex content">
+    <view class="title">楼栋：</view>
+    <input placeholder="请输入楼栋号" bindinput="firstChange" value="{{first}}" type="number" wx:if='{{show}}' placeholder-class="input-placeholder" />
+  </view>
+  <view class="just-flex content">
+    <view class="title">单元：</view>
+    <input placeholder="请输入单元号" bindinput="secondChange" value="{{second}}" type="number" wx:if='{{show}}' placeholder-class="input-placeholder" />
+  </view>
+  <view class="just-flex content">
+    <view class="title">楼层：</view>
+    <input placeholder="请输入楼层号" bindinput="thirdChange" value="{{third}}" type="number" wx:if='{{show}}' placeholder-class="input-placeholder" />
+  </view>
+  <view class="just-flex content">
+    <view class="title">门牌：</view>
+    <input placeholder="请输入门牌号" bindinput="fourthChange" value="{{fourth}}" type="number" wx:if='{{show}}' placeholder-class="input-placeholder" />
+  </view>
+  <button bind:tap="back">确定</button>
+</view>
+<view class="mask" hidden='{{show}}'>
+  <view class="top flex-between">
+    <view class='search just-flex'>
+      <text class='iconfont icon-sousuo'></text>
+      <input type='text' placeholder='请输入小区名称' bindinput='search' bindconfirm='searchenter' confirm-type="search"></input>
+    </view>
+    <view class="search-text" bindtap='searchenter'>搜索</view>
+  </view>
+  <view class='center' wx:for="{{search}}" wx:key="*this" bindtap='chooseViliage' id="{{item.id}}" data-index="{{item.name}}">
+    {{item.name}}
+  </view>
+  <button catchtap='22' style="margin:10rpx;width:730rpx;">取消</button>
+</view>

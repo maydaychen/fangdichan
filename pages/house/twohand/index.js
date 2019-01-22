@@ -79,16 +79,16 @@ Page({
     } else {
       util.request({
         data: {
-          openId: app.globalData.openInfo.openid,
+          openid: app.globalData.openInfo.openid,
           type: this.data.id == 2 ? "整租" : "合租",
           name: this.data.key
         },
-        url: '/House/rentingList',
+        url: '/Renting/list',
         success: res => {
           console.log(res);
           for (var index in res.data) {
             var pic_list = new Array();
-            pic_list = res.data[index]["indoorimages"].split(',');
+            pic_list = res.data[index]["smallimages"].split(',');
             res.data[index]["bian"] = false;
             res.data[index]["logo"] = pic_list[0];
           }

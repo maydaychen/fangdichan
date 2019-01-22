@@ -35,6 +35,22 @@ page {
   font-size: 29rpx;
 }
 
+.type-choice {
+  font-size: 26rpx;
+  color: #323232;
+  background: rgba(238, 238, 238, 1);
+  border-radius: 4px;
+  height: 40rpx;
+  width: 80rpx;
+  text-align: center
+}
+
+.active {
+  color: #2996EA !important;
+  background: rgba(191, 220, 242, 0.5) !important;
+  border: 1px solid rgba(88, 171, 243, 1) !important;
+}
+
 .picker {
   background: #fff;
   overflow: hidden;
@@ -85,6 +101,7 @@ input {
   display: inline-block;
   vertical-align: middle;
   width: 130rpx;
+  height: 55rpx;
   background: #f5f5f5;
   border-radius: 10rpx;
   margin: 0 20rpx;
@@ -93,7 +110,7 @@ input {
 }
 
 .choice {
-  width: 150rpx;
+  width: 100rpx;
   height: 55rpx;
   line-height: 55rpx;
   color: #666666;
@@ -102,4 +119,177 @@ input {
   border-radius: 10rpx;
   text-align: center;
   padding: 0 10rpx;
+}
+
+
+/* 隐藏的部分 */
+
+.fixed {
+  background-color: rgba(0, 0, 0, .8);
+  height: 100%;
+  z-index: 100;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+.fixed>view {
+  background: #fff;
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 130rpx;
+}
+
+.fixed .bottom {
+  padding: 20rpx;
+  font-size: var(--font-size-large);
+  color: var(--color-certification-title);
+  border-bottom: 1rpx solid #DCDCDC;
+}
+
+.fixed>button {
+  position: absolute;
+  bottom: 20rpx;
+  left: 2.5%;
+}
+
+.center {
+  text-align: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid var(--color-border-color);
+}
+
+.search {
+  padding: 20rpx;
+}
+
+.search>text {
+  font-size: 60rpx;
+  color: #999;
+  vertical-align: middle;
+  margin-left: 5%;
+}
+
+.search view:first-child {
+  padding: 15rpx 30rpx;
+  display: inline-block;
+  background: #f5f5f5;
+}
+
+.search view input {
+  width: 400rpx;
+}
+
+.search text {
+  font-size: 35rpx;
+  vertical-align: middle;
+  color: #777;
+}
+
+.search>text {
+  color: #D89622;
+  font-size: 33rpx;
+}
+
+.hide_title {
+  text-align: left;
+  font-size: var(--font-size-large);
+  color: var(--color-certification-title);
+}
+
+textarea {
+  height: 130rpx;
+  background: #f5f5f5;
+  margin: 10rpx auto 10rpx;
+  padding: 20rpx 40rpx 30rpx;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+}
+
+.textarea-placeholder {
+  color: var(--color-sub-title);
+  font-size: var(--font-size-medium-x);
+}
+
+.scroll {
+  display: flex;
+}
+
+.scroll scroll-view {
+  flex: 1;
+}
+
+.scroll scroll-view:first-child {
+  background: #E5E5E5;
+}
+
+.scroll scroll-view:nth-child(2) {
+  background: #F1F1F1;
+}
+
+.scroll text {
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 20rpx;
+}
+
+.fixed>view radio-group {
+  padding: 150rpx 0rpx;
+}
+
+.fixed view radio {
+  margin-right: 10rpx;
+}
+
+.fixed view label {
+  margin-right: 50rpx;
+}
+
+.fixed view label:last-child {
+  margin-right: 0rpx;
+}
+
+.fixed .see {
+  margin: 10%;
+  width: 80%;
+  border-radius: 10rpx;
+  top: 0rpx;
+}
+
+.cancel {
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+
+.choose-active {
+  color: #1D87D9 !important;
+}
+
+.no-padding {
+  padding-bottom: 0 !important;
+}
+
+.picker {
+  background: #fff;
+  overflow: hidden;
+  padding: 20rpx;
+  font-size: 29rpx;
+}
+
+.right-text {
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.longtext {
+  width: 400rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: right;
 }

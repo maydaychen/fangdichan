@@ -1,0 +1,15 @@
+<!-- pages/add/index.wxml -->
+<view class="container">
+  <navigator class="just-flex">
+    <image src="/image/add-title.png" class="img-title" />
+  </navigator>
+  <navigator class="just-flex" url="../house/rent/new/index">
+    <image src="/image/add-rent.png" class="img-content" />
+  </navigator>
+  <navigator class="just-flex">
+    <image src="/image/add-new.png" class="img-content" />
+  </navigator>
+  <navigator class="just-flex" url="/pages/house/twohand/new/index">
+    <image src="/image/add-twohand.png" class="img-content" />
+  </navigator>
+</view>

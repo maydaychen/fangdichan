@@ -6,12 +6,72 @@
     <text class='iconfont icon-quxiao'></text>
   </view>
   <form bindsubmit="submit">
+    <view class='fixed' hidden='{{show}}'>
+      <view wx:if="{{id == 0}}" class="see">
+        <!-- 协议 -->
+        <text class='iconfont icon-quxiao cancel' bindtap='22'></text>
+        <!-- <view></view> -->
+        <htmltowxml text="{{xieyi}}" type="html"></htmltowxml>
+      </view>
+      <!-- 填写信息 -->
+      <view wx:if="{{id != 0}}">
+        <!-- 承载盒子，不可删 -->
+        <view wx:if="{{id == 2}}" class="scroll">
+          <scroll-view scroll-y>
+            <text wx:for="{{room_list}}" bindtap="selectRoom" id="{{index}}" wx:key="*this" class='{{room == item.name ? "choose-active" :"" }}'>
+              {{item.name}}
+            </text>
+          </scroll-view>
+          <scroll-view scroll-y>
+            <text wx:for="{{hall_list}}" bindtap="selectHall" id="{{index}}" wx:key="*this" class='{{hall == item.name ? "choose-active" :"" }}'>
+              {{item.name}}
+            </text>
+          </scroll-view>
+          <scroll-view scroll-y>
+            <text wx:for="{{wei_list}}" bindtap="selectWei" id="{{index}}" wx:key="*this" class='{{wei == item.name ? "choose-active" :"" }}'>
+              {{item.name}}
+            </text>
+          </scroll-view>
+        </view>
+        <view wx:if="{{id == 3}}">
+          <textarea name="name" placeholder='请输入房屋描述' type="text" style='width:80%;margin-top:20rpx;height:100rpx;' bindinput="descriptionChange"></textarea>
+        </view>
+        <view hidden="{{id != 10}}">
+          <input name="name" placeholder='请输入标题' type="text" style='width:90%;margin-top:20rpx;height:80rpx;' bindinput="nameChange"></input>
+        </view>
+        <view wx:if="{{id == 12}}">
+          <block wx:for="{{tag_list}}">
+            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{tag_select[item]? "choose-active" :"" }}'>
+              {{item}}
+            </view>
+          </block>
+        </view>
+        <view wx:if="{{id == 13}}">
+          <block wx:for="{{facilities_list}}">
+            <view bindtap='choose' id="{{id}}" data-index="{{item}}" class='bottom {{facilities_select[item]? "choose-active" :"" }}'>
+              {{item}}
+            </view>
+          </block>
+        </view>
+      </view>
+      <button catchtap='22' wx:if="{{id != 0}}">确定</button>
+    </view>
     <view class='list'>
+      <view class="tops last just-flex">
+        <view class="title-left" style="width:30%">租房类型</view>
+        <view class="just-flex" style="justify-content:center;width:70%">
+          <view class="type-choice {{type==0?'active':''}}" style="margin-right:90rpx" bind:tap="typeChange" id="0">
+            整租
+          </view>
+          <view class="type-choice {{type==1?'active':''}}" bind:tap="typeChange" id="1">合租</view>
+        </view>
+      </view>
       <!-- 显示部分 -->
-      <view class='tops view flex-between' bindtap='show' id="1">
+      <view class='tops view flex-between'>
         <view class="title-left">小区名称</view>
         <view class="just-flex" bind:tap="select_address">
-          <view class="right-text">选择所在小区</view>
+          <view wx:if="{{floor}}" class="right-text">{{viliage_name}}</view>
+          <view wx:else class="right-text">选择所在小区</view>
           <text class='right iconfont icon-ditu' style="color:#666;font-size:34rpx;margin-left:14rpx"></text>
         </view>
       </view>
@@ -28,28 +88,45 @@
         <view class="just-flex">
           <view class="title-left" style="margin-right:14rpx">面积/租金</view>
           <view class="just-flex">
-            <input class="right-text" placeholder="真实面积" type="digit"></input>
+            <input class="right-text" placeholder="真实面积" name="acreage" type="digit" maxlength="8"></input>
             <view class='right-text'>平米</view>
           </view>
         </view>
         <view class="just-flex">
-          <input class="right-text" placeholder="真实面积" type="digit"></input>
+          <input class="right-text" placeholder="真实面积" name="money" type="digit" maxlength="5"></input>
           <view class='right-text'>元/月</view>
         </view>
       </view>
-      <view class='view flex-between'>
+      <!-- <view class='view flex-between'>
         <view class="just-flex">
           <view class="title-left" style="margin-right:40rpx">户型/设施</view>
-          <view class="choice single-line">三室两厅</view>
+          <view class="choice single-line" bindtap='show' id="2">{{room}}{{hall}}{{wei}}</view>
         </view>
-        <view class="choice single-line">请选择</view>
-      </view>
+        <view wx:if="{{facilities}}" class="choice single-line" bindtap='show' id="13">
+          {{facilities}}
+        </view>
+        <view wx:else class="choice single-line" bindtap='show' id="13">请选择</view>
+      </view> -->
       <view class='view flex-between'>
         <view class="just-flex">
-          <view class="title-left" style="margin-right:40rpx">装修/朝向</view>
-          <view class="choice single-line">精装</view>
+          <view class="title-left" style="margin-right:40rpx">户型/装修/朝向</view>
+          <picker bindchange="zhuangChange" value="{{zhuang_list}}" range="{{zhuang_list}}">
+            <view class="choice single-line">{{zhuang}}</view>
+          </picker>
         </view>
-        <view class="choice single-line">朝南</view>
+        <view class="just-flex">
+          <view class="choice single-line" bindtap='show' id="2" style="margin-right:40rpx">{{room}}{{hall}}{{wei}}</view>
+          <picker bindchange="faceChange" value="{{face_list}}" range="{{face_list}}">
+            <view class="choice single-line">{{face}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class='view flex-between' bindtap='show' id="13">
+        <view class="title-left">房屋设施</view>
+        <view class="just-flex">
+          <view class="right-text longtext">{{facilities}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
       </view>
       <view class='view flex-between' bindtap='show' id="10">
         <view class="title-left">房源标题</view>
@@ -58,20 +135,23 @@
           <text class='right iconfont icon-you'></text>
         </view>
       </view>
-      <view class='view title-left flex-between' bindtap='show' id="13">
+      <view class='view title-left flex-between' bindtap='show' id="3">
         <view class="title-left">房源描述</view>
         <text class='right iconfont icon-you'></text>
       </view>
       <view class='view title-left flex-between' bindtap='show' id="12">
         <view class="title-left">平台标签</view>
-        <text class='right iconfont icon-you'></text>
+        <view class="just-flex">
+          <view class="right-text longtext">{{tag}}</view>
+          <text class='right iconfont icon-you'></text>
+        </view>
       </view>
       <view class="tops last">
         <view class="title-left">
           房源图片
           <text class="subtitle">(不允许发布违规违法信息，如有发布自行承担一切后果)</text>
         </view>
-        <upload-img bind:imgs='imgsOnChange' maxCount='6' cover-class='imgs__item--cover'></upload-img>
+        <upload-img bind:imgs='imgsOnChange' maxCount='9' cover-class='imgs__item--cover'></upload-img>
       </view>
       <view class='tops last'>
         <text class="title-left">房源承诺</text>

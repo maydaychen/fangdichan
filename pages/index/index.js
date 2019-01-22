@@ -3,11 +3,16 @@
 const app = getApp()
 
 Page({
-  data: {
+  data: {},
+
+  onLoad: function () {
+    // //建立连接
+    // wx.connectSocket({
+    //   url: "wss://chat.vitlf.com",
+    // })
+    // wx.onSocketOpen(function () {
+    //   console.log("连接成功");
+    // })
   },
 
-  onLoad: function() {
-    
-  },
-  
 })

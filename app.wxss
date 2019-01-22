@@ -12,7 +12,7 @@ page {
 
 .container {
   background-color: var(--color-background);
-  font-size: var(--font-size-medium-x);
+  font-size: var(--font-size-medium-x); 
   line-height: 1.5;
 }
 

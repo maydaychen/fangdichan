@@ -1,0 +1,11 @@
+/* pages/add/index.wxss */
+.img-title {
+  height: 124rpx;
+  width: 556rpx;
+  margin: 28rpx auto;
+}
+.img-content{
+  height: 258rpx;
+  width: 708rpx;
+  margin: 14rpx auto;
+}
